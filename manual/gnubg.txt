@@ -2514,7 +2514,7 @@ bearoff and gammon distributions):
 15                 10                 112
 15                 11                 284
 15                 12                 682
-15                 13                 approx 1,700
+15                 13                 1,543
 15                 14                 approx 4,300
 15                 15                 approx 10,700
 15                 16                 approx 26,700
@@ -2679,7 +2679,10 @@ Generate your own
 -----------------
 
    gnubg is supplied with a program `makebearoff' that is used to
-generate bearoff databases.
+generate bearoff databases. Due to various limitations it is only
+possible to generate bearoff databases with a size less than 2GB, i.e.,
+the 13pt one-sided database and the 11 chequer two-sided database are
+the largest databases that can be generated with `makebearoff'.
 
    To generate one sided database issue
 
@@ -2783,7 +2786,7 @@ sided bearoff databases, i.e., databases generated with default options.
 15                 10                 `81b3898f06bbd08ee8295a839251a10a'
 15                 11                 `78ecb4be86dab6af8755ea4063d50fb6'
 15                 12                 `770fcff48894a96ebb2249343ef94866'
-15                 13                 not available
+15                 13                 `cc74b69a62f6e648936f533838a527a8'
 15                 14                 not available
 15                 15                 not available
 15                 16                 not available
