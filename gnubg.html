@@ -1,0 +1,123 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <title>GNU Backgammon - GNU Project - Free Software Foundation (FSF)</title>
+<link REV="made" HREF="mailto:webmasters@www.gnu.org">
+</head>
+<body text="#000000" bgcolor="#FFFFFF" link="#1F00FF" vlink="#9900DD" alink="#FF0000">
+
+<h3>
+GNU Backgammon</h3>
+<!-- These quick navigation menu bar lines can't be longer then about -->
+<!-- 72 characters or lynx will break then poorly. -->
+<!-- If we add more then 2 lines, they will become too cluttered to be -->
+<!-- quickly and easily understood. -->
+<!-- Obviously, we list ONLY the most useful/important URLs here. -->
+<!-- Some major categories should have this menu at the top -->
+<!-- <CENTER>-->
+<!--   <A HREF="/index.html"-->
+<!--      NAME = "index">Home</A>|-->
+<!--   <A HREF="/philosophy/philosophy.html">Philosophy</a>|-->
+<!--   <A HREF="/order/order.html">Order</A>|-->
+<!--   <A HREF="/order/ftp.html">Download</A>|-->
+<!--   <A HREF="/software/software.html">Software</A>|-->
+<!--   <A HREF="/doc/doc.html">Documentation</a>-->
+<!-- </CENTER>-->
+<a href="/graphics/gnu-head-sm.jpg"><img SRC="/graphics/gnu-head-sm.jpg"
+ALT="[image of the Head of a GNU]" height=122 width=129></a>
+<a href="/graphics/gnu-head-sm.jpg">
+(jpeg 7k)</a><a href="/graphics/gnu-head.jpg">(jpeg 21k)</a>
+<a href="/philosophy/gif.html">no
+gifs due to patent problems</a>
+<br>&nbsp;
+<ol>GNU Backgammon (gnubg) plays and analyses backgammon games and matches.
+  <p>
+
+  It is currently a work-in-progress.  So far it is
+  able to play both independent games and tournament matches,
+  evaluate and roll out positions, tune its own evaluation functions using
+  either <a href="http://www.research.ibm.com/massdist/tdl.html">TD</a> or
+  supervised training, maintain databases of positions for training and other
+  purposes, and more.
+  <p>
+
+  It is driven by a command-line interface, and
+  displays an ASCII rendition of a board on text-only terminals, but
+  also allows the user to play games and manipulate positions with a
+  <a href="http://www.gtk.org/">GTK+</a>
+  <a href="board.png">board window (png 77k)</a> where available.
+  <p>
+  Plans for the future include completing its ability to analyse
+  games and matches, and making it extensible on platforms where
+  <a href="/software/guile/guile.html">Guile</a>
+  is available, so that the user can program it to answer sophisticated
+  questions like "How many chequers must Black have borne off in positions
+  like this one to be able to accept a double?" and automate complicated
+  rollout tasks.
+  <P>
+  It currently plays at the level of an advanced to open flight
+  tournament player (depending what parameters are used, it rates 
+  between the high 1800s and low 2000s on
+  <a href="http://www.fibs.com/">FIBS</a>, the First Internet Backgammon
+  Server -- at its best, it is in the top 5 of over 6000 rated
+  players there) and is gradually improving; it should
+  be somewhat stronger than this when released. Since almost all of the CPU
+  time required during supervised training is spent performing rollouts, and
+  rollouts can easily be performed in parallel, it is hoped that users will
+  be able to pool rollout results and collectively train it to a level
+  stronger than any individual could obtain.
+  <p>
+
+If you can tolerate the rough edges, periodic pre-releases of the
+  source will be made on <a href="ftp://alpha.gnu.org/gnu/gnubg/">the
+  alpha.gnu.org FTP server</a>.<p>
+
+Anonymous CVS access to the very latest code
+ is available: if you have a CVS client, set <tt>CVSROOT</tt> to
+ <tt>:pserver:anoncvs@subversions.gnu.org:/cvs</tt> and check out module
+ <tt>gnubg</tt>.  If not, daily snapshots of the CVS repository are
+ made available by <a href="ftp://alpha.gnu.org/gnu/gnubg/snapshots/">FTP</a>,
+ or you can browse the repository through the
+ <a href="http://subversions.gnu.org/cgi-bin/cvsweb/gnubg/">WWW gateway</a>.
+ Do not expect this code to be stable; it will generally include both more
+ features and more bugs than the main pre-release version.<p>
+
+The <a href="/manual/gnubg/">GNU Backgammon manual</a> is available on the WWW
+ as well as in the distribution, but bear in mind that this manual is still
+ being completed and might not correspond to any particular version of
+ <tt>gnubg</tt>.  Please <a href="mailto:bug-gnubg@gnu.org">send comments</a>
+ if you would like to improve or extend the manual.<p>
+
+You can also compete against recent versions of gnubg on FIBS;
+ it plays there under the names "gnu", "mgnutest" and "mpgnu".<p>
+
+Please send comments to
+<a href="mailto:bug-gnubg@gnu.org">&lt;bug-gnubg@gnu.org&gt;</a>.</ol>
+
+<hr>Return to <a href="http://www.gnu.org/home.html">GNU's home page</a>.
+<p>
+
+Please send FSF &amp; GNU inquiries &amp; questions to
+<i><a href="mailto:gnu@gnu.org">gnu@gnu.org</a></i>.
+There are also <a href="http://www.gnu.org/home.html#ContactInfo">other
+ways to contact</a> the FSF.
+<p>Please send comments on these web pages to <i><a href="mailto:webmasters@www.gnu.org">webmasters@www.gnu.org</a></i>,
+send other questions to
+<i><a href="mailto:gnu@gnu.org">gnu@gnu.org</a></i>.
+<p>
+
+Copyright (C) 1999, 2000 Free Software Foundation, Inc., 59 Temple Place -
+Suite 330, Boston, MA 02111, USA
+<p>
+
+Verbatim copying and distribution of this entire article is permitted
+in any medium, provided this notice is preserved.
+<p>
+
+&nbsp;Updated:
+<!-- hhmts start -->
+18 Oct 2000 gtw
+<!-- hhmts end -->
+<hr>
+</body>
+</HTML>
