@@ -1,0 +1,47 @@
+<html lang="en">
+<head>
+<title>GNU Backgammon</title>
+<meta http-equiv="Content-Type" content="text/html">
+<meta name="description" content="GNU Backgammon">
+<meta name="generator" content="makeinfo 4.3">
+<link href="http://www.gnu.org/software/texinfo/" rel="generator-home">
+</head>
+<body>
+<div class="node">
+<p>
+Node:<a name="Compiling%20and%20installing%20the%20source">Compiling and installing the source</a>,
+Previous:<a rel="previous" accesskey="p" href="Installing-a-FreeBSD-package-or-port.html#Installing%20a%20FreeBSD%20package%20or%20port">Installing a FreeBSD package or port</a>,
+Up:<a rel="up" accesskey="u" href="Installing-the-software.html#Installing%20the%20software">Installing the software</a>
+<hr><br>
+</div>
+
+<h3 class="section">Compiling and installing the source</h3>
+
+   <p>Download the sources from <a href="http://www.acepoint.de/GnuBG/sources/">GNU Backgammon sources</a>. 
+We try to put daily snapshots there. Be aware, that these sources may not compile!
+
+   <p>Unzip and untar the sources and change into the source directory:
+
+<pre class="example">     #: tar -xzvf gnubg-[version].tar.gz
+     #: cd gnubg-[version]
+     </pre>
+
+   <p>Copy at least the file <code>gnubg.weights</code> into the source directory. Then do a
+
+<pre class="example">     #: aclocal -I m4
+     #: autoconf
+     #: automake --add-missing
+     #: ./configure
+     #: make
+     #: make install
+     </pre>
+
+   <p>The first three commands may not be necessary depending on your system. The command
+<code>./configure</code> includes some options you may like to use. You can get all options
+with
+
+<pre class="example">     #: ./configure --help
+     </pre>
+
+   </body></html>
+

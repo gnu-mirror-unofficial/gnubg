@@ -1,0 +1,356 @@
+<html lang="en">
+<head>
+<title>GNU Backgammon</title>
+<meta http-equiv="Content-Type" content="text/html">
+<meta name="description" content="GNU Backgammon">
+<meta name="generator" content="makeinfo 4.3">
+<link href="http://www.gnu.org/software/texinfo/" rel="generator-home">
+</head>
+<body>
+<div class="node">
+<p>
+Node:<a name="Absolute%20ratings">Absolute ratings</a>,
+Next:<a rel="next" accesskey="n" href="Additional-documentation.html#Additional%20documentation">Additional documentation</a>,
+Previous:<a rel="previous" accesskey="p" href="Bearoff-databases.html#Bearoff%20databases">Bearoff databases</a>,
+Up:<a rel="up" accesskey="u" href="index.html#Top">Top</a>
+<hr><br>
+</div>
+
+<h2 class="chapter">Absolute ratings</h2>
+
+   <a href="mailto:kvandoel@xs4all.nl">Kees van den Doel</a>
+
+<h4 class="subsection">Summary</h4>
+
+   <p>Simulations were performed to establish the relation between the rating
+difference (<strong>R</strong>) between backgammon players of various strengths, and the
+error rates for the two players. This will allow a match analysis to translate
+the error rate of each player into an estimation of the absolute ratings of the
+players, once the rating of &amp;quot;perfect play&amp;quot; has been defined. Of
+course, this estimate will be only as good as the quality of the analysis and
+will become invalid for the estimation of the rating of players at a comparable
+level as at which the analysis was performed. However, the measured relation
+does not depend on the analysis level and remains valid for very high levels of
+analysis such as rollouts.
+
+   <p>Two sets of simulations were performed. In the first the relation between
+the difference in normalized error rate per unforced decision (<strong>DEPD</strong>) and
+rating difference <strong>R</strong> was measured. The main result of the first
+simulation set is an almost linear relation between <strong>DEPD</strong> and <strong>R</strong>,
+which depends somewhat on the match length. As a by-product of this
+investigation the relative strengths of various playing levels of GNUBG were
+determined precisely by rating.
+
+   <p>The second set of simulations attempts to improve on the linear model of the
+first set, by separating out the effects of cube errors and chequer play
+errors. A bilinear fit was made of <strong>R</strong> to both the normalized chequer play
+error per unforced move (<strong>EPM</strong>) and the cube error per unforced cube
+decision (<strong>EPC</strong>). The resulting bilinear fit is shown to improve the
+prediction of the rating difference, especially for matches with very poor cube
+handling compared to chequer play.
+
+   <p>The scripts used for the simulations and a readme file explaining their use
+are available
+<a href="http://www.cs.ubc.ca/~kvdoel/tmp/ratings/gnubgScripts.zip">here</a>.
+
+   <p>The final result is the following formula for the rating difference:<br><strong>R = a2(N)*EPM+b(N)*EPC</strong>,<br>
+where<br><strong>a2(N) = 8798 + 25526/N</strong>,<br>
+and<br><strong>b(N) = 863 - 519/N</strong>.
+
+<h3 class="section">Part I: Rating and DEPD</h3>
+
+<h4 class="subsection">Introduction</h4>
+
+   <p>In order to estimate the rating difference between playing levels we played
+a series of 1000 matches of a given match length between various levels and
+estimated the rating difference by analyzing the results. From the analysis we
+obtain the normalized error rate per unforced decision and the &amp;quot;luck
+adjusted result&amp;quot; (<strong>P</strong>), which is an estimate of the match winning
+probability using variance reduction. These numbers were averaged over the 1000
+matches and the variance was also estimated. The rating difference <strong>R</strong> and
+a 90% confidence interval was then estimated from the 90% confidence interval
+of <strong>P</strong> using the FIBS rating formula, <strong>P = 1/(1 + 10^(R*sqrt(N)/2000))</strong>,
+with <strong>N</strong> the match length.
+
+   <p>Simulations were performed for match lengths of 1, 3, 5, 7, 11, and 23. For
+practical reasons it was necessary to perform the error and luck analysis at
+0-ply (expert level of GNUBG) and consider only levels at the expert level
+(0-ply) and below (0-ply with noise addition). Equal noise was generated for
+chequer play and for cube decisions. The following levels (0-ply with given
+noise) were paired:
+
+   <p><table><tr align="left"><td valign="top"><strong>player 1</strong>
+</td><td valign="top"><strong>player 2</strong>
+<br></td></tr><tr align="left"><td valign="top">0
+</td><td valign="top">0.005
+<br></td></tr><tr align="left"><td valign="top">0
+</td><td valign="top">0.015
+<br></td></tr><tr align="left"><td valign="top">0
+</td><td valign="top">0.02
+<br></td></tr><tr align="left"><td valign="top">0
+</td><td valign="top">0.04
+<br></td></tr><tr align="left"><td valign="top">0
+</td><td valign="top">0.06
+<br></td></tr><tr align="left"><td valign="top">0.04
+</td><td valign="top">0.06
+<br></td></tr><tr align="left"><td valign="top">Level pairings
+   <br></td></tr></table>
+
+   <p>The assumption that the rating difference between players depends only
+on <strong>DEPD</strong>
+and not on the absolute level of play was verified implicitly with this choice
+as the last pairing has both players with noise addition. If the
+absolute <strong>EPD</strong>
+mattered the last pairing would give results inconsistent with the first five,
+which is not the case except for 1pt matches where as described in the results
+section.
+
+   <p>With these settings, the simulation took about 100 hours on a 950Mhz Pentium
+III. Simulations were performed on Windows XP, using GAWK and sh scripts within
+the GNU ULTILS in combination with the no-GUI version of GNUBG (build 03 08
+07). They should work equally well on LINUX.
+
+   <p>Three AWK scripts are used to create GNUBG scripts to play a given number of
+matches, analyze them, and to collect statistics. Separate scripts were used in
+order to modularize the tasks so the simulation can be interrupted and
+continued without loss of data. The resulting match statistics were then
+processed trough a fourth AWK script which computes the average rating <strong>R</strong>,
+and the average <strong>DEPD</strong> over the set, as well as the 90% confidence
+intervals as estimated for a variance estimation. The levels of the players and
+the analysis level is set in the .gnubgautorc file, outside the scripts. 
+Further analysis was then performed in MATLAB.
+
+<h4 class="subsection">Results</h4>
+
+   <p>The results of the simulations are given in the figure below for all
+match lengths.
+
+   <img src="rall.png" alt="rall.png">
+<strong>R</strong> versus <strong>DEPD</strong> for various match lengths
+
+   <p>More detailed results are given in the figures below for each specific
+match length. The measured data points are indicated by the
+circles. The red line is a piecewise linear interpolation through the
+data points. The black lines indicate the 90% confidence interval. The
+green line is a least square fit through the data points (minimizing
+the sum of squares of absolute rating differences)
+
+   <img src="r3.png" alt="r3.png">
+3pt match
+
+   <img src="r5.png" alt="r5.png">
+5pt match
+
+   <img src="r7.png" alt="r7.png">
+7pt match
+
+   <img src="r11.png" alt="r11.png">
+11pt match
+
+   <img src="r23.png" alt="r23.png">
+23pt match
+
+   <img src="r1.png" alt="r1.png">
+1pt match
+
+   <p>For all match length except 1, the linear fit seems quite good and we can
+approximate the rating difference by <strong>R= a(N)*DEPD</strong>, where
+<strong>N</strong> is the match length. The function <strong>N*a(N)</strong> is
+plotted in the figure below, along with a linear least square fit.
+
+   <img src="lsqcoeff.png" alt="lsqcoeff.png">
+Coefficient <strong>N*a(N)</strong> versus match length
+
+   <p>The linear fit of <strong>N*a(N)</strong> gives the following rating
+formula:<br><strong>R = (11971 + 23681/N) * DEPD</strong>. <br> In the figure
+below the formula is plotted along with the actual data points;
+
+   <img src="rallfitted.png" alt="rallfitted.png">
+
+   <p>Rating versus <strong>DEPD</strong> approximated by <strong>R = (11971 +
+23681/N) * DEPD</strong>. The dotted lines are the prediction, the solid lines
+are piecewise linear segments through the data.
+
+   <p>The bump in the curve for the 1pt match around <strong>DEPD=0.015</strong> is
+caused by the data point from the <strong>0.04 - 0.06</strong> (intermediate -
+beginner). Apparently the approximation that the rating difference
+does not depend on the absolute values of the error rates is less
+accurate for 1pt matches.
+
+   <p>Note that, for the purpose of measuring <strong>DEPD</strong> between simulated
+players, it is a reasonable approximation to analyze a match at expert level if
+both players are playing at expert level or worse. This is because we are only
+interested in the difference between the error rates. When a match is
+re-analyzed at World Class level (2-ply) the individual error rates increase,
+but the difference remains approximately constant. To verify this explicitly,
+we ran 2 sets of 40 matches between 0-ply expert level and 0-ply advanced level
+(.015 noise) and analyzed them both at 0-ply and at 2-ply. The results
+are given in the table below.
+
+   <p><table><tr align="left"><td valign="top"><strong>0-ply</strong>
+</td><td valign="top"><strong>2-ply</strong>
+<br></td></tr><tr align="left"><td valign="top">0.0075
+<br></td></tr><tr align="left"><td valign="top">0.0068
+<br></td></tr><tr align="left"><td valign="top">0.0080
+<br></td></tr><tr align="left"><td valign="top">0.0072
+   <br></td></tr></table>
+2-ply versus 0-ply <strong>DEPD</strong> testimates
+
+   <p>We see that the error in the 0-ply estimation appears to be in the order of 5%. 
+As an additional verification, a set of 100 3 pt matches was played between the
+World Class level (2-ply) and the expert level which was analyzed at 2-ply. It
+was found that the resulting <strong>DEPD</strong> and rating difference <strong>R</strong> was
+well predicted by the model. The data point is indicated by the 'X' on the
+figure for the 3pt match above and fits well on the curve.
+
+<h4 class="subsection">Conclusions</h4>
+
+   <p>The data is well approximated by a linear relation between rating
+difference and error per decision difference of the form
+<strong>R=a(N)*DEPD</strong> where <strong>N</strong> is the match length. An
+excellent approximation for <strong>a(N)</strong> is <strong>a(N) = 23681/N +
+11971</strong>. The approximation is worst for <strong>N=1</strong>. The assumption
+that <strong>R</strong> does not depend on the absolute <strong>EPD</strong> but only
+on the difference was validated, except for <strong>N=1</strong>. The
+assumption that<strong>DEPD</strong> for matches between players at or below
+the GNUBG expert level can we approximated by a 0-ply analysis was
+verified by re-analyzing some matches at 2-ply with small effect on
+the <strong>DEPD</strong>. An explicit simulation of a series of 2-ply versus
+0-ply matches resulted in an estimated <strong>R</strong> which fitted the
+model very well, supporting the assumption that the linear relation
+between <strong>R</strong> and <strong>DEPD</strong> is valid for any level of
+analysis.
+
+<h3 class="section">Part II: Rating and EPM and EPC</h3>
+
+<h4 class="subsection">Introduction</h4>
+
+   <p>In the above we have assumed that the rating depends only on<strong>DEPD = (totMoveErrors + totCubeErrors)/totalDecisions</strong>. In reality the
+rating difference will depend on some combination of chequerplay skill and cube
+skill, at which the above formula makes an educated guess. A more powerful
+predictor taking into account the separate effect of cube errors and
+chequerplay errors can be obtained by simulating matches with independently
+varied cube and chequerplay noise and fitting the rating by a bilinear form <strong>R=
+a2(N)*EPM +b(N)*EPC</strong>, with <strong>EPC = moverErr/unforcedMoves</strong> and <strong>EPC=cubeErr/unforcedCubeDecisions</strong>.
+
+   <p>For match lengths of 3, 5, 7, 11, and 23, 500 matches between GNUBG 0-ply
+and GNUBG 0-ply with 16 different noise settings were played. The chequer play
+noise settings were <strong>0, 0.02, 0.04, 0.06</strong> and the cube play noise settings
+were <strong>0.05, 0.1, 0.4, 0.8</strong>, 16 combinations in total. For each set of 500
+matches the <strong>EPM</strong> and <strong>EPC</strong> were averaged. The rating difference was estimated as
+in Part I by using the luck adjusted result.
+
+   <p>For each match length the 16 data points were fitted to <strong>R = a2(N)*EPM
++b(N)*EPC</strong> with a least square method, minimizing the squares of the rating
+differences. For <strong>N=1</strong> there are no cube decisions and <strong>a2(1) = a(1) = 37916</strong>.
+
+<h4 class="subsection">Results</h4>
+
+   <p>In the figures, below, we plot <strong>R</strong> against <strong>DEPD</strong>. 
+The green &amp;quot;O&amp;quot; indicates the measure rating differences, the green
+dots the 90% confidence interval of the data, the red &amp;quot;X&amp;quot; indicates
+the linear fit using the formula from Part I, and the blue &amp;quot;X&amp;quot;
+indicates the prediction from the bilinear fit with the coefficients a2 and b as
+indicated.
+
+   <img src="d3.png" alt="d3.png">
+Measurements and fit for match length 3.
+
+   <img src="d5.png" alt="d5.png">
+Measurements and fit for match length 5.
+
+   <img src="d7.png" alt="d7.png">
+Measurements and fit for match length 7.
+
+   <img src="d11.png" alt="d11.png">
+Measurements and fit for match length 11.
+
+   <img src="d23.png" alt="d23.png">
+Measurements and fit for match length 23.
+
+   <p>The coefficients <strong>a2(N)</strong> and <strong>b(N)</strong> as a function of
+match length are well approximated by a linear function of
+<strong>1/N</strong>. We show these coefficients and a linear fit in the two
+figures below.
+
+   <img src="fita2.png" alt="fita2.png">
+Fitting <strong>Na2(N)</strong> with  a linear function.
+
+   <img src="fitb.png" alt="fitb.png">
+Fitting <strong>Nb(N)</strong> with a linear function.
+
+<h4 class="subsection">Conclusions</h4>
+
+   <p>The bilinear fit improves the linear fit especially for
+large cube errors. Usually the linear estimate is too high, reflecting too much
+weight given to the cube errors, for which the bilinear formula corrects. The
+data is well approximated by<br><strong>R = a2(N)*EPM+b(N)*EPC</strong>,<br>
+where<br><strong>a2(N) = 8798 + 25526/N</strong>,<br>
+and<br><strong>b(N) = 863 - 519/N</strong>.
+
+<h4 class="subsection">Appendix: Misc. measurements</h4>
+
+   <p><table><tr align="left"><td valign="top"><strong>Player1</strong>
+</td><td valign="top"><strong>Player2</strong>
+</td><td valign="top"><strong>Match length</strong>
+</td><td valign="top"><strong>R1-R2</strong>
+</td><td valign="top"><strong>DEPD (e2-e1)</strong>
+</td><td valign="top"><strong>EPM</strong>
+</td><td valign="top"><strong>EPC</strong>
+<br></td></tr><tr align="left"><td valign="top">expInt
+</td><td valign="top">intExp
+</td><td valign="top">5pt
+</td><td valign="top">472 [451 493]
+</td><td valign="top">-
+</td><td valign="top">-0.0344
+</td><td valign="top">-0.01
+<br></td></tr><tr align="left"><td valign="top">expBeg
+</td><td valign="top">advExp
+</td><td valign="top">5pt
+</td><td valign="top">115 [103 127]
+</td><td valign="top">-
+</td><td valign="top">-0.00865
+</td><td valign="top">+0.0176
+<br></td></tr><tr align="left"><td valign="top">expExp
+</td><td valign="top">expBeg
+</td><td valign="top">5pt
+</td><td valign="top">31 [21 41]
+</td><td valign="top">-
+</td><td valign="top">0
+</td><td valign="top">-0.0185
+<br></td></tr><tr align="left"><td valign="top">expExp
+</td><td valign="top">expBeg
+</td><td valign="top">11pt
+</td><td valign="top">29 [23 36]
+</td><td valign="top">-
+</td><td valign="top">0
+</td><td valign="top">-0.0165
+<br></td></tr><tr align="left"><td valign="top">expExp
+</td><td valign="top">expBeg2 (1.0 cubenoise)
+</td><td valign="top">5pt
+</td><td valign="top">191 [176 206]
+</td><td valign="top">-
+</td><td valign="top">0
+</td><td valign="top">-0.192
+<br></td></tr><tr align="left"><td valign="top">wclassWclass
+</td><td valign="top">wclassExp
+</td><td valign="top">5pt
+</td><td valign="top">6 [-15 27]
+</td><td valign="top">-
+</td><td valign="top">-
+</td><td valign="top">-
+<br></td></tr><tr align="left"><td valign="top">1-ply
+</td><td valign="top">0-ply
+</td><td valign="top">5pt
+</td><td valign="top">13 [-4 30]
+</td><td valign="top">-
+</td><td valign="top">-
+</td><td valign="top">-
+   <br></td></tr></table>
+
+   <p>Some misc.  measurements. expBeg for example means chequer play at
+level expert, cubeplay at level beginner. Rating interval is the 90%
+confidence interval.
+
+   </body></html>
+

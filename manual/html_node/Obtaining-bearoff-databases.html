@@ -1,0 +1,215 @@
+<html lang="en">
+<head>
+<title>GNU Backgammon</title>
+<meta http-equiv="Content-Type" content="text/html">
+<meta name="description" content="GNU Backgammon">
+<meta name="generator" content="makeinfo 4.3">
+<link href="http://www.gnu.org/software/texinfo/" rel="generator-home">
+</head>
+<body>
+<div class="node">
+<p>
+Node:<a name="Obtaining%20bearoff%20databases">Obtaining bearoff databases</a>,
+Previous:<a rel="previous" accesskey="p" href="Bearoff-databases-with-GNU-Backgammon.html#Bearoff%20databases%20with%20GNU%20Backgammon">Bearoff databases with GNU Backgammon</a>,
+Up:<a rel="up" accesskey="u" href="Bearoff-databases.html#Bearoff%20databases">Bearoff databases</a>
+<hr><br>
+</div>
+
+<h3 class="section">Obtaining bearoff databases</h3>
+
+<h4 class="subsection">Generate your own</h4>
+
+   <p><tt>gnubg</tt> is supplied with a program <code>makebearoff</code> that is used to
+generate bearoff databases.
+
+   <p>To generate one sided database issue
+
+<pre class="example">     makebearoff -o 10 -f gnubg_os.bd
+     </pre>
+
+   <p>to generate the one sided 10 point database. The program
+<code>makebearoff</code> uses a cache to store previously generated
+positions. You may set the cache size with the <code>-s size</code>
+option, e.g.,
+
+<pre class="example">     makebearoff -o 10 -s 123456789 -f gnubg_os.bd
+     </pre>
+
+   <p>to use 123,456,789 bytes of memory for cache size. In general, if the
+cache size is less than the size of the database to be generated, then
+extra time is needed to generate the bearoff database because some
+positions may have to be calculated several times.
+
+   <p><code>makebearoff</code> can also reuse previously generated databases, so
+if you already had generated the 9 point database you can reuse it:
+
+<pre class="example">     mv gnubg_os.bd gnubg_os9.bd
+     makebearoff -o 10 -O gnubg_os9.bd -f gnubg_os.bd
+     </pre>
+
+   <p>Note that <code>makebearoff</code> requires temporary disk space to generate
+both one sided and two sided databases. In general, twice the disk
+space of the database to be generated is needed.
+
+   <p>To generate a two sided database issue
+
+<pre class="example">     makebearoff -t 6x8 -f gnubg_ts.bd
+     </pre>
+
+   <p>This example will generate the 8 chequers on 6 points database. Again,
+it's possible to adjust the amount of memory with the <code>-s</code>
+option. It's recommended to set the cache size to the maximum amount of memory
+available (although there is no need to set it beyond the size of the
+bearoff database to be generated).
+
+   <p>Other options for <code>makebearoff</code> are available, see
+<code>makebearoff --help</code> for the complete set.
+
+   <p>At compile time the built-in one sided
+bearoff database is generated with the command
+
+<pre class="example">     makebearoff -o 6 | makebearoff1 -o br1.c
+     </pre>
+
+   <p>which generated a 6 point one sided bearoff database. The database is
+piped into makebearoff1 that generates the C code for the
+database. The resulting <code>br1.c</code> is more than 8MB, so it's not
+distributed with the source for <tt>gnubg</tt>.
+
+   <p>The accompanying program <code>makehyper</code> is used to generate
+databases for Hypergammon. For example, to generate the 3-chequer
+database issue the command
+
+<pre class="example">     makehyper -c 3 -f hyper3.bd
+     </pre>
+
+   <p>Since the generation is <em>very</em> time consuming <code>makehyper</code>
+will generate a checkpoint file (in the example above:
+<code>hyper1.bd.tmp</code>) that can be used to restart the calculation if
+needed by using the <code>-r</code> option. You can also change the
+default convergence threshold of 0.00001 if you're happy with less
+accurate equities. To generate the 3 chequer database you need
+approximately 400 MB of free memory. On a 2.4 GHz box with 512 MB of
+RAM the calculation ran for 58 iterations of 3000 seconds each, i.e., a
+total of 48 hours!
+
+   <p>See <code>makehyper --help</code> for the complete set of available
+options.
+
+<h4 class="subsection">Download</h4>
+
+   <p>You may download the two sided database with 6 chequers on 6 points from
+<a href="ftp://alpha.gnu.org/gnu/gnubg/gnubg_ts0.bd.gz">ftp://alpha.gnu.org/gnu/gnubg/gnubg_ts0.bd.gz</a> and the one sided
+database with 15 chequers 6 points from
+<a href="ftp://alpha.gnu.org/gnu/gnubg/gnubg_os0.bd.gz">ftp://alpha.gnu.org/gnu/gnubg/gnubg_os0.bd.gz</a>.
+
+   <p>Later, other databases may be available for download or it may be
+possible to purchase these on CDROM or DVD for a nominal fee.
+
+<h4 class="subsection">Verification of databases</h4>
+
+   <p>To verify that your generated or downloaded bearoff database is
+correct, the table below lists the MD5 checksums for a number of
+possible databases.
+
+<h5 class="subsubsection">One-sided bearoff databases (compressed)</h5>
+
+   <p>The table below contains the MD5 checksums for the compressed one
+sided bearoff databases, i.e., databases generated with default options.
+
+   <p><table><tr align="left"><td valign="top"><strong>Chequers</strong>
+</td><td valign="top"><strong>Points</strong>
+</td><td valign="top"><strong>MD5 checksum</strong>
+<br></td></tr><tr align="left"><td valign="top">15        </td><td valign="top">1        </td><td valign="top"><code>c789f049ec98ce4e307b471257999f39</code>
+<br></td></tr><tr align="left"><td valign="top">15        </td><td valign="top">2        </td><td valign="top"><code>b6e61c1625ae4b3b164e93ab064192b9</code>
+<br></td></tr><tr align="left"><td valign="top">15        </td><td valign="top">3        </td><td valign="top"><code>346dae6139ccb4b227c534373e5c52e4</code>
+<br></td></tr><tr align="left"><td valign="top">15        </td><td valign="top">4        </td><td valign="top"><code>653255f5f9f22fd50277f7ff25b2a343</code>
+<br></td></tr><tr align="left"><td valign="top">15        </td><td valign="top">5        </td><td valign="top"><code>2064f9a56b23117d053a573c96a92fa2</code>
+<br></td></tr><tr align="left"><td valign="top">15        </td><td valign="top">6        </td><td valign="top"><code>3dc7b833c4670849cee00479a9e21b49</code>
+<br></td></tr><tr align="left"><td valign="top">15        </td><td valign="top">7        </td><td valign="top"><code>67235c8e0ee152df5daf36cbeae5b3c2</code>
+<br></td></tr><tr align="left"><td valign="top">15        </td><td valign="top">8        </td><td valign="top"><code>a4acbb5c7e9e1f08e561afe0af934e5c</code>
+<br></td></tr><tr align="left"><td valign="top">15        </td><td valign="top">9        </td><td valign="top"><code>9c4ddab4e51c3e668c9c97b8f8768dbc</code>
+<br></td></tr><tr align="left"><td valign="top">15        </td><td valign="top">10       </td><td valign="top"><code>81b3898f06bbd08ee8295a839251a10a</code>
+<br></td></tr><tr align="left"><td valign="top">15        </td><td valign="top">11       </td><td valign="top"><code>78ecb4be86dab6af8755ea4063d50fb6</code>
+<br></td></tr><tr align="left"><td valign="top">15        </td><td valign="top">12       </td><td valign="top"><code>770fcff48894a96ebb2249343ef94866</code>
+<br></td></tr><tr align="left"><td valign="top">15        </td><td valign="top">13       </td><td valign="top">not available
+<br></td></tr><tr align="left"><td valign="top">15        </td><td valign="top">14       </td><td valign="top">not available
+<br></td></tr><tr align="left"><td valign="top">15        </td><td valign="top">15       </td><td valign="top">not available
+<br></td></tr><tr align="left"><td valign="top">15        </td><td valign="top">16       </td><td valign="top">not available
+<br></td></tr><tr align="left"><td valign="top">15        </td><td valign="top">17       </td><td valign="top">not available
+<br></td></tr><tr align="left"><td valign="top">15        </td><td valign="top">18       </td><td valign="top">not available
+   <br></td></tr></table>
+
+<h4 class="subsection">Two-sided bearoff databases (with cubeless and cubeful equities)</h4>
+
+   <p>The table below contains the MD5 checksums for the default two
+sided bearoff databases.
+
+   <p><table><tr align="left"><td valign="top"><strong>Chequers</strong>
+</td><td valign="top"><strong>Points</strong>
+</td><td valign="top"><strong>MD5 checksum</strong>
+<br></td></tr><tr align="left"><td valign="top">1         </td><td valign="top">6        </td><td valign="top"><code>7ed6f8e7fce16ea2b80e07a4a516653c</code>
+<br></td></tr><tr align="left"><td valign="top">2         </td><td valign="top">6        </td><td valign="top"><code>e9d760bf213841c285245ed757a52f4d</code>
+<br></td></tr><tr align="left"><td valign="top">3         </td><td valign="top">6        </td><td valign="top"><code>9d67da3db32ad4720cc38eecf9a67967</code>
+<br></td></tr><tr align="left"><td valign="top">4         </td><td valign="top">6        </td><td valign="top"><code>9156f37032d1d4b0352a41186e632dfc</code>
+<br></td></tr><tr align="left"><td valign="top">5         </td><td valign="top">6        </td><td valign="top"><code>0db19ab08feae1feb33ddbd709479f62</code>
+<br></td></tr><tr align="left"><td valign="top">6         </td><td valign="top">6        </td><td valign="top"><code>44b6040b49b46cb9dd2ce8caa947044d</code>
+<br></td></tr><tr align="left"><td valign="top">7         </td><td valign="top">6        </td><td valign="top"><code>9eb8b042d4d2ddf8d40e74a892745ad5</code>
+<br></td></tr><tr align="left"><td valign="top">8         </td><td valign="top">6        </td><td valign="top"><code>fcdbbc80b7ef84ddc81b839d0f26bed1</code>
+<br></td></tr><tr align="left"><td valign="top">9         </td><td valign="top">6        </td><td valign="top"><code>a11b2d410d51401143d05e73f9ffac15</code>
+<br></td></tr><tr align="left"><td valign="top">10        </td><td valign="top">6        </td><td valign="top"><code>12dc70c86f356d06bc96ee38dee40c62</code>
+<br></td></tr><tr align="left"><td valign="top">11        </td><td valign="top">6        </td><td valign="top">not available
+<br></td></tr><tr align="left"><td valign="top">12        </td><td valign="top">6        </td><td valign="top">not available
+<br></td></tr><tr align="left"><td valign="top">13        </td><td valign="top">6        </td><td valign="top">not available
+<br></td></tr><tr align="left"><td valign="top">14        </td><td valign="top">6        </td><td valign="top">not available
+<br></td></tr><tr align="left"><td valign="top">15        </td><td valign="top">6        </td><td valign="top">not available
+   <br></td></tr></table>
+
+<h5 class="subsubsection">Two-sided databases for Hypergammon</h5>
+
+   <p>As the generation of the Hypergammon databases are an iterative
+process it's not possible to give MD5 checksum for these, as it depend
+heavily on your convergence threshold, the number of restarts, and
+rounding errors.
+
+   <p>Below is a random position from the database. The equities and
+percentages in your own database should be very similiar (if not identical):
+
+<pre class="example">      GNU Backgammon  Position ID: ADAAAQAkIAAAAA
+                      Match ID   : cAkAAAAAAAAA
+      +13-14-15-16-17-18------19-20-21-22-23-24-+     O: gnubg
+      |       X     X    |   |                X |     0 points
+      |                  |   |                  |
+      |                  |   |                  |
+      |                  |   |                  |
+      |                  |   |                  |
+     v|                  |BAR|                  |     (Cube: 1)
+      |                  |   |                  |
+      |                  |   |                  |
+      |                  |   |                  |
+      | O                |   |                  |     On roll
+      | O                |   |             O    |     0 points
+      +12-11-10--9--8--7-------6--5--4--3--2--1-+     X: jth
+     
+                  Player       Opponent
+     Position         3018          2831
+     
+     Owned cube                    : -0.0230
+     Centered cube                 : -0.2310
+     Centered cube (Jacoby rule)   : -0.2186
+     Opponent owns cube            : -0.3548
+     
+             Win     W(g)    W(bg)   L(g)    L(bg)   Equity  (cubeful)
+     static: 0.456   0.244   0.014   0.318   0.019   (-0.168  (-0.219))
+     
+     
+     No double           : -0.219
+     Double, pass        : +1.000   (+1.219)
+     Double, take        : -0.710   (-0.491)
+     
+     Correct cube action: No double, beaver
+     
+     </pre>
+
+   </body></html>
+
