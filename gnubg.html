@@ -1,47 +1,66 @@
-<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
-<html>
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+
 <head>
-   <title>GNU Backgammon - GNU Project - Free Software Foundation (FSF)</title>
-<link REV="made" HREF="mailto:webmasters@www.gnu.org">
-<META NAME="keywords" CONTENT="gnubg">
+<title>GNU Backgammon</title>
+<meta http-equiv="content-type" content='text/html; charset=utf-8' />
+<link rel="stylesheet" type="text/css" href="/gnu.css" />
+<link rev="made" href="webmasters@gnu.org" />
 </head>
-<body text="#000000" bgcolor="#FFFFFF" link="#1F00FF" vlink="#9900DD" alink="#FF0000">
 
-<h3>
-GNU Backgammon</h3>
-<!-- These quick navigation menu bar lines can't be longer then about -->
-<!-- 72 characters or lynx will break then poorly. -->
-<!-- If we add more then 2 lines, they will become too cluttered to be -->
-<!-- quickly and easily understood. -->
-<!-- Obviously, we list ONLY the most useful/important URLs here. -->
-<!-- Some major categories should have this menu at the top -->
-<!-- <CENTER>-->
-<!--   <A HREF="/index.html"-->
-<!--      NAME = "index">Home</A>|-->
-<!--   <A HREF="/philosophy/philosophy.html">Philosophy</a>|-->
-<!--   <A HREF="/order/order.html">Order</A>|-->
-<!--   <A HREF="/order/ftp.html">Download</A>|-->
-<!--   <A HREF="/software/software.html">Software</A>|-->
-<!--   <A HREF="/doc/doc.html">Documentation</a>-->
-<!-- </CENTER>-->
-<a href="/graphics/gnu-head-sm.jpg"><img SRC="/graphics/gnu-head-sm.jpg"
-ALT="[image of the Head of a GNU]" height=122 width=129></a>
-<a href="/graphics/gnu-head-sm.jpg">
-(jpeg 7k)</a><a href="/graphics/gnu-head.jpg">(jpeg 21k)</a>
-<a href="/philosophy/gif.html">no
-gifs due to patent problems</a>
-<br>&nbsp;
-<ol>GNU Backgammon (gnubg) plays and analyses backgammon games and matches.
-  <p>
+<!-- This document is in XML, and xhtml 1.0 -->
+<!-- Please make sure to properly nest your tags -->
+<!-- and ensure that your final document validates -->
+<!-- consistent with W3C xhtml 1.0 and CSS standards -->
+<!-- See validator.w3.org -->
 
-  It is currently a work-in-progress.  So far it is
+<body>
+
+<a href="#translations">Translations</a> of this page
+
+<h3>GNU Backgammon</h3>
+
+<!-- When you replace this graphic, make sure you change -->
+<!-- the link to also point to the correct HTML page. -->
+<!-- If you make a new graphic for this page, make sure it -->
+<!-- has a corresponding entry in /graphics/graphics.html. -->
+
+<a href="/graphics/agnuhead.html"><img src="/graphics/gnu-head-sm.jpg" alt=" [image of the Head of a GNU] " width="129" height="122" /></a>
+
+<hr />
+
+<!-- Put your content here -->
+<!-- Following is an example -->
+<h4>Table of Contents</h4>
+<ul>
+  <li>
+    <a href="#introduction" id="TOCintroduction">Introduction to GNU Backgammon</a>
+  </li>
+  <li><a href="#features" id="TOCfeatures">Features in GNU Backgammon</a></li>
+  <li><a href="#downloading" id="TOCdownloading">Downloading 
+  GNU Backgammon</a></li>
+  <li><a href="#documentation" id="TOCdocumentation">Documentation and
+  other resources</a></li>
+</ul>
+
+<hr />
+
+<h4>
+<a href="#TOCintroduction" id="introduction">Introduction to GNU Backgammon</a>
+</h4>
+
+<p>GNU Backgammon (gnubg) plays and analyses backgammon games and matches.</p>
+<p>It is currently a work-in-progress.  So far it is
   able to play both independent games and tournament matches,
   evaluate and roll out positions, tune its own evaluation functions using
   either <a href="http://www.research.ibm.com/massdist/tdl.html">TD</a> or
   supervised training, maintain databases of positions for training and other
-  purposes, and more.
-  <p>
+  purposes, and more. See the following section for a more complete list.
+<p>
 
+<p>
   It is driven by a command-line interface, and
   displays an ASCII rendition of a board on text-only terminals, but
   also allows the user to play games and manipulate positions with a
@@ -57,61 +76,172 @@ gifs due to patent problems</a>
   <a href="http://www.fibs.com/">FIBS</a>, the First Internet Backgammon
   Server -- at its best, it is in the top 5 of over 6000 rated
   players there) and is gradually improving; it should
-  be somewhat stronger than this when released. Since almost all of the CPU
-  time required during supervised training is spent performing rollouts, and
-  rollouts can easily be performed in parallel, it is hoped that users will
-  be able to pool rollout results and collectively train it to a level
-  stronger than any individual could obtain.
-  <p>
+  be somewhat stronger than this when released. You can also play GNU
+  Backgammon on <a href="http://www.gamesgrid.com/">Gamesgrid</a>
+  where it rates around 1900, which is in the top 50. As of April 2004
+  the top bot GGraccoon has an experience of close to 20,000,000!
+</p>
 
+<h4>
+<a href="#TOCfeatures" id="features">Features in GNU Backgammon</a>
+</h4>
+
+<p>The following features can be found in the current prelease 0.14.2
+of GNU Backgammon. Note that some of the features and experimental
+and/or in progress:
+
+<ul>
+  <li>Tournament match and money session cube handling</li>
+  <li>A command line interface (with full command editing features if GNU
+  readline is available) that lets you play matches and sessions against
+  gnubg.</li>
+  <li>Support for either a GTK+ interface with a graphical board window, or
+  a rough ASCII representation of a board on text terminals. For the
+  GTK+ interface both 2D and 3D graphics are available.</li>
+  <li>Functions to generate legal moves and evaluate positions at varying
+  search depths.</li>
+  <li>Neural net functions for giving cubeless evaluations of all other
+  contact and race positions.</li>
+  <li>Support for both 1-sided and 2-sided bearoff databases: 1-sided
+  bearoff database for 15 chequers on the first 6 points and optional
+  2-sided database kept in memory.  Optional larger 1-sided and 2-sided
+  databases stored on disk.</li>
+  <li>Automated rollouts of positions, with lookahead and race variance
+  reduction where appropriate. Rollouts may also be extended.</li>
+  <li>Both TD(0) and supervised training of neural net weights.</li>
+  <li>Position databases for supervised training (if GNU dbm is
+  available).</li>
+  <li>Loading and saving .sgf games and matches (.sgf files are in the
+  Smart Game Format).</li>
+  <li>Exporting games and matches to HTML, LaTeX, .mat, PDF, PNG, PostScript
+  and plain text formats.</li>
+  <li>Importing .bkg, .mat, .pos, .sgg, .tmg and FIBS "oldmoves"
+  files.</li>
+  <li>Scripting ability (if GNU Guile or Python is available).</li>
+  <li>Automatic and manual annotation (analysis and commentary) of games and
+  matches.</li>
+  <li>Record keeping of statistics of players in games and
+  matches (both native inside gnubg and externally using relational
+  databases and Python).</li>
+  <li>Native language support; 10 languages complete or in progress:
+  (cs_CZ, da_DK, en_GB; en_US, fr_FR, de_DE, is_IS, it_IT, ja_JP, and
+  tr_TR)
+</ul>
+  
+<h4>
+<a href="#TOCdownloading" id="downloading">Downloading GNU Backgammon</a>
+</h4>
+
+<p>
 If you can tolerate the rough edges, periodic pre-releases of the
   source will be made on <a href="ftp://alpha.gnu.org/gnu/gnubg/">the
-  alpha.gnu.org FTP server</a>. The current pre-release is <a href="ftp://alpha.gnu.org/gnu/gnubg/README.txt">0.14.2</a>.<p>
+  alpha.gnu.org FTP server</a>. The current pre-release is <a href="ftp://alpha.gnu.org/gnu/gnubg/README.txt">0.14.2</a>.</p>
 
+<p>
 Anonymous CVS access to the very latest code
  is <a
  href="https://savannah.gnu.org/cvs/?group=gnubg">available</a>. Do
  not expect this code to be stable; it will generally 
  include both more features and more bugs than the main pre-release
- version.<p>
+ version.
+</p>
 
+<p>
 Binary versions of the pre-releases as well as a lot of other stuff
-can be found at <a href="http://www.gnubg.org/">www.gnubg.org</a>. 
+can be found at <a href="http://www.gnubg.org/">http://www.gnubg.org</a>. 
+</p>
 
-<p><a href="http://www.gnu.org/manual/gnubg/">The GNU Backgammon manual</a> is
+<h4>
+<a href="#TOCdocumentation" id="documentation">Documentation and other
+resources</a>
+</h4>
+
+<p><a href="/manual/gnubg/">The GNU Backgammon manual</a> is
 available in the distribution, but bear in mind that this manual is still being
 completed and might not correspond to any particular version of <tt>gnubg</tt>.
 Please <a href="mailto:bug-gnubg@gnu.org">send comments</a> if you would like
 to improve or extend the manual.<p>
 
-You can also compete against recent versions of gnubg on FIBS; it plays there
-under the names "gnu", "mgnutest", "mpgnu" and "mgnu_zp".<p>
+<p>There is also an <a
+href="http://www.bkgm.com/gnu/AllAboutGNU.html">tutorial</a> avaiable.
+</p>
 
-Please send comments to
-<a href="mailto:bug-gnubg@gnu.org">&lt;bug-gnubg@gnu.org&gt;</a>.</ol>
-
-<hr>Return to <a href="http://www.gnu.org/home.html">GNU's home page</a>.
 <p>
+ Bugs, feature requests, patches, etc. should be sent to the <a
+ href="mailto:bug-gnubg@gnu.org">gnubg mailing list</a> or submitted
+ using the <a href="https://savannah.gnu.org/bugs/?group=gnubg">bug
+ tracker</a>. 
+</p>
 
-Please send FSF &amp; GNU inquiries &amp; questions to
-<i><a href="mailto:gnu@gnu.org">gnu@gnu.org</a></i>.
-There are also <a href="http://www.gnu.org/home.html#ContactInfo">other
-ways to contact</a> the FSF.
-<p>Please send comments on these web pages to <i><a href="mailto:webmasters@www.gnu.org">webmasters@www.gnu.org</a></i>,
-send other questions to
-<i><a href="mailto:gnu@gnu.org">gnu@gnu.org</a></i>.
+Additional information may be found at <a
+href="http://www.gnubg.org/">http://www.gnubg.org</a>.
+
+
+<!-- If needed, change the copyright block at the bottom. In general, -->
+<!-- all pages on the GNU web server should have the section about    -->
+<!-- verbatim copying.  Please do NOT remove this without talking     -->
+<!-- with the webmasters first. --> 
+<!-- Please make sure the copyright date is consistent with the document -->
+<!-- and that it is like this "2001, 2002" not this "2001-2002." -->
+
+<p style="font-size: 10pt;">
+<a id="translations"></a>
+<b>Translations of this page:</b><br />
+
+<!-- Please keep this list alphabetical, and in the original -->
+<!-- language if possible, otherwise default to English -->
+<!-- If you do not have it English, please comment what the -->
+<!-- English is.  If you add a new language here, please -->
+<!-- advise web-trans@gnu.org and add it to -->
+<!--    - in /home/www/bin/nightly-vars either TAGSLANG or WEBLANG -->
+<!--    - in /home/www/html/server/standards/README.translations.html -->
+<!--      one of the lists under the section "Translations Underway" -->
+<!--    - if there is a translation team, you also have to add an alias -->
+<!--      to mail.gnu.org:/com/mailer/aliases -->
+<!-- Please also check you have the 2 letter language code right versus -->
+<!--     http://www.w3.org/WAI/ER/IG/ert/iso639.htm -->
+
+[ <a href="/boilerplate.html">English</a>]
+</p>
+
+<div class="copyright">
 <p>
+Return to the <a href="/home.html">GNU Project home page</a>.
+</p>
 
-Copyright (C) 1999, 2000, 2001, 2002, 2003 Free Software Foundation,
-Inc., 59 Temple Place - Suite 330, Boston, MA 02111, USA
 <p>
+Please send FSF &amp; GNU inquiries to 
+<a href="mailto:gnu@gnu.org"><em>gnu@gnu.org</em></a>.
+There are also <a href="/home.html#ContactInfo">other ways to contact</a> 
+the FSF.
+<br />
+Please send broken links and other corrections (or suggestions) to
+<a href="mailto:webmasters@gnu.org"><em>webmasters@gnu.org</em></a>.
+</p>
 
-Verbatim copying and distribution of this entire article is permitted
-in any medium, provided this notice is preserved.
 <p>
+Please see the 
+<a href="/server/standards/README.translations.html">Translations
+README</a> for information on coordinating and submitting
+translations of this article.
+</p>
 
-&nbsp;Updated:
-$Date: 2004/04/06 10:16:42 $ $Author: thyssen $
-<hr>
+<p>
+Copyright (C) 2001, 2003, 2004 Free Software Foundation, Inc.,
+59 Temple Place - Suite 330, Boston, MA 02111, USA
+<br />
+Verbatim copying and distribution of this entire article is
+permitted in any medium without royalty provided this notice is 
+preserved.
+</p>
+
+<p>
+Updated:
+<!-- timestamp start -->
+$Date: 2004/04/06 11:23:40 $ $Author: thyssen $
+<!-- timestamp end -->
+</p>
+</div>
+
 </body>
-</HTML>
+</html>
