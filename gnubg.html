@@ -51,89 +51,83 @@
 <a href="#TOCintroduction" id="introduction">Introduction to GNU Backgammon</a>
 </h4>
 
-<p>GNU Backgammon (gnubg) plays and analyses backgammon games and matches.</p>
-<p>It is currently a work-in-progress.  So far it is
-  able to play both independent games and tournament matches,
-  evaluate and roll out positions, tune its own evaluation functions using
-  either <a href="http://www.research.ibm.com/massdist/tdl.html">TD</a> or
-  supervised training, maintain databases of positions for training and other
-  purposes, and more. See the following section for a more complete list.
-<p>
-
-<p>
-  It is driven by a command-line interface, and
-  displays an ASCII rendition of a board on text-only terminals, but
-  also allows the user to play games and manipulate positions with a
-  <a href="http://www.gtk.org/">GTK+</a>
-  <a href="board.png">board window (png 117k)</a> where available.
-  It is extensible on platforms which support
-  <a href="/software/guile/guile.html">Guile</a> and/or Python.
-  <p>
-
-  It currently plays at about the level of a championship flight
-  tournament player (depending on its parameters and its luck in
-  recent games, it rates at around 2000 on
-  <a href="http://www.fibs.com/">FIBS</a>, the First Internet Backgammon
-  Server -- at its best, it is in the top 5 of over 6000 rated
-  players there) and is gradually improving; it should
-  be somewhat stronger than this when released. GNU Backgammon can be
-  played at numerous other online backgammon servers.
+   <p>GNU Backgammon (gnubg)
+plays and analyzes backgammon games and matches. It is able to play and
+analyze both money games and tournament matches, evaluate and roll out
+positions, and more. Driven by a command-line interface, it displays an
+ASCII rendering of a board on text-only terminals, but also allows the
+user to play games and manipulate positions with a <a href="board.png">graphical GTK+
+	interface</a>. GNU Backgammon is
+extensible on platforms which support Python.
 </p>
 
-<h4>
-<a href="#TOCfeatures" id="features">Features in GNU Backgammon</a>
-</h4>
+   <p>GNU Backgammon is a world
+class opponent and rates at around 2000 on FIBS, the First Internet
+Backgammon Server &ndash; at its best, it is in the top 5 of over 6000 rated
+players there). GNU Backgammon
+can be played on numerous other on-line backgammon servers.
 
-<p>The following features can be found in the current prelease 0.14.2
-of GNU Backgammon. Note that some of the features and experimental
-and/or in progress:
+   <p>The following features can be found in the current release of
+GNU Backgammon.
 
-<ul>
-  <li>Tournament match and money session cube handling</li>
-  <li>A command line interface (with full command editing features if GNU
-  readline is available) that lets you play matches and sessions against
-  gnubg.</li>
-  <li>Support for either a GTK+ interface with a graphical board window, or
-  a rough ASCII representation of a board on text terminals. For the
-  GTK+ interface both 2D and 3D graphics are available.</li>
-  <li>Functions to generate legal moves and evaluate positions at varying
-  search depths.</li>
-  <li>Neural net functions for giving cubeless evaluations of all other
-  contact and race positions.</li>
-  <li>Support for both 1-sided and 2-sided bearoff databases: 1-sided
-  bearoff database for 15 chequers on the first 6 points and optional
-  2-sided database kept in memory.  Optional larger 1-sided and 2-sided
-  databases stored on disk.</li>
-  <li>Automated rollouts of positions, with lookahead and race variance
-  reduction where appropriate. Rollouts may also be extended.</li>
-  <li>Both TD(0) and supervised training of neural net weights.</li>
-  <li>Position databases for supervised training (if GNU dbm is
-  available).</li>
-  <li>Loading and saving .sgf games and matches (.sgf files are in the
-  Smart Game Format).</li>
-  <li>Exporting games and matches to HTML, LaTeX, .mat, PDF, PNG, PostScript
-  and plain text formats.</li>
-  <li>Importing .bkg, .mat, .pos, .sgg, .tmg and FIBS "oldmoves"
-  files.</li>
-  <li>Scripting ability (if GNU Guile or Python is available).</li>
-  <li>Automatic and manual annotation (analysis and commentary) of games and
-  matches.</li>
-  <li>Record keeping of statistics of players in games and
-  matches (both native inside gnubg and externally using relational
-  databases and Python).</li>
-  <li>Native language support; 10 languages complete or in progress:
-  (cs_CZ, da_DK, en_GB; en_US, fr_FR, de_DE, is_IS, it_IT, ja_JP, and
-  tr_TR)
+     <ul>
+<li>A command line interface (with full command editing features if
+GNU readline is available) that lets you play matches and sessions
+against GNU Backgammon with a rough ASCII representation of the board
+on text terminals.
+
+     <li>Support for a GTK+ interface with a graphical board window. Both
+2D and 3D graphics are available.
+
+     <li>Tournament match and money session cube handling and cubeful play. 
+All governed by an underlying cubeless money game based
+neuralnet.
+
+     <li>Support for both 1-sided and 2-sided bearoff databases: 1-sided
+bearoff database for 15 checkers on the first 6 points and optional
+2-sided database kept in memory. Optional larger 1-sided and 2-sided
+databases stored on disk.
+
+     <li>Automated rollouts of positions, with lookahead and race variance
+reduction where appropriate. Rollouts may be extended.
+
+     <li>Automatic and manual annotation (analysis and commentary) of games
+and matches.
+
+     <li>Record keeping of statistics of players in games and matches (both
+native inside GNU
+Backgammon and externally using relational databases and
+Python).
+
+     <li>Loading and saving analyzed games and matches as .sgf files (Smart
+Game Format).
+
+     <li>Exporting positions, games and matches to: (.eps) Encapsulated
+Postscript, (.gam) Jellyfish Game, (.html) HTML, (.mat) Jellyfish
+Match, (.pdf) PDF, (.png) Portable Network Graphics, (.pos) Jellyfish
+Position, (.ps) PostScript, (.sgf) Gnu Backgammon File, (.tex) LaTeX,
+(.txt) Plain Text, (.txt) Snowie Text
+
+     <li>Import of matches and positions from a number of file formats:
+(.bkg) Hans Berliner's BKG Format, (.gam) GammonEmpire Game, (.gam)
+PartyGammon Game, (.mat) Jellyfish Match, (.pos) Jellyfish Position,
+(.sgf) Gnu Backgammon File, (.sgg) GamesGrid Save Game, (.tmg)
+TrueMoneyGames, (.txt) Snowie Text
+
+     <li>Python Scripting ability.
+
+     <li>Native language support; 10 languages complete or in progress:
+(cs_CZ, da_DK, en_GB; en_US, fr_FR, de_DE, is_IS, it_IT, ja_JP, and
+tr_TR)
 </ul>
-  
+
 <h4>
 <a href="#TOCdownloading" id="downloading">Downloading GNU Backgammon</a>
 </h4>
 
 <p>
-If you can tolerate the rough edges, periodic pre-releases of the
-  source will be made on <a href="ftp://alpha.gnu.org/gnu/gnubg/">the
-  alpha.gnu.org FTP server</a>. The current pre-release is <a href="ftp://alpha.gnu.org/gnu/gnubg/README.txt">0.14.2</a>.</p>
+Releases of the source will be made on <a href="ftp://alpha.gnu.org/gnu/gnubg/">the
+  alpha.gnu.org FTP server</a>. The current pre-release is <a href="ftp://alpha.gnu.org/gnu/gnubg/README.txt">0.15</a>.</p>
 
 <p>
 Anonymous CVS access to the very latest code
@@ -158,11 +152,7 @@ resources</a>
 available in the distribution, but bear in mind that this manual is still being
 completed and might not correspond to any particular version of <tt>gnubg</tt>.
 Please <a href="mailto:bug-gnubg@gnu.org">send comments</a> if you would like
-to improve or extend the manual.<p>
-
-<p>There is also an <a
-href="http://www.bkgm.com/gnu/AllAboutGNU.html">tutorial</a> avaiable.
-</p>
+to improve or extend the manual.</p>
 
 <p>
  Bugs, feature requests, patches, etc. should be sent to the <a
@@ -181,26 +171,6 @@ href="http://www.gnubg.org/">http://www.gnubg.org</a>.
 <!-- with the webmasters first. --> 
 <!-- Please make sure the copyright date is consistent with the document -->
 <!-- and that it is like this "2001, 2002" not this "2001-2002." -->
-
-<p style="font-size: 10pt;">
-<a id="translations"></a>
-<b>Translations of this page:</b><br />
-
-<!-- Please keep this list alphabetical, and in the original -->
-<!-- language if possible, otherwise default to English -->
-<!-- If you do not have it English, please comment what the -->
-<!-- English is.  If you add a new language here, please -->
-<!-- advise web-trans@gnu.org and add it to -->
-<!--    - in /home/www/bin/nightly-vars either TAGSLANG or WEBLANG -->
-<!--    - in /home/www/html/server/standards/README.translations.html -->
-<!--      one of the lists under the section "Translations Underway" -->
-<!--    - if there is a translation team, you also have to add an alias -->
-<!--      to mail.gnu.org:/com/mailer/aliases -->
-<!-- Please also check you have the 2 letter language code right versus -->
-<!--     http://www.w3.org/WAI/ER/IG/ert/iso639.htm -->
-
-[ <a href="gnubg.html">English</a>]
-</p>
 
 <div class="copyright">
 <p>
@@ -236,7 +206,7 @@ preserved.
 <p>
 Updated:
 <!-- timestamp start -->
-$Date: 2006/11/20 09:00:04 $ $Author: ramprasadb $
+$Date: 2007/11/16 13:08:28 $ $Author: c_anthon $
 <!-- timestamp end -->
 </p>
 </div>
