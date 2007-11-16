@@ -1,0 +1,118 @@
+<html lang="en">
+<head>
+<title>Getting checker play hints while playing - GNU Backgammon Manual  V0.16</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="description" content="GNU Backgammon Manual  V0.16">
+<meta name="generator" content="makeinfo 4.8">
+<link title="Top" rel="start" href="index.html#Top">
+<link rel="up" href="Getting-hints-manually.html#Getting-hints-manually" title="Getting hints manually">
+<link rel="next" href="Getting-cube-decision-hints-while-playing.html#Getting-cube-decision-hints-while-playing" title="Getting cube decision hints while playing">
+<link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+  pre.display { font-family:inherit }
+  pre.format  { font-family:inherit }
+  pre.smalldisplay { font-family:inherit; font-size:smaller }
+  pre.smallformat  { font-family:inherit; font-size:smaller }
+  pre.smallexample { font-size:smaller }
+  pre.smalllisp    { font-size:smaller }
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+--></style>
+</head>
+<body>
+<div class="node">
+<p>
+<a name="Getting-checker-play-hints-while-playing"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Getting-cube-decision-hints-while-playing.html#Getting-cube-decision-hints-while-playing">Getting cube decision hints while playing</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="Getting-hints-manually.html#Getting-hints-manually">Getting hints manually</a>
+<hr>
+</div>
+
+<h4 class="subsection">5.1.1 Getting checker play hints while playing</h4>
+
+<p>If you want to get a hint of the best move or the best cube action
+press the Hint button in the tool bar or the menu option
+Analyze-&gt;Hint. 
+This will open a hint window.
+
+<p class="noindent"><a name="The-hint-window"></a>
+
+   <p><strong>The hint window</strong>
+
+   <p>[[hintwindow.png]]
+
+   <p>This Hint window shows a list of all possible moves for the position
+and dice roll. The different moves are sorted by how GNU
+Backgammon ranks each move; there is one move on each
+line in the list. The rest of the numbers may look a bit complicated and
+cryptic but, once you learn what each number means, it isn't really that
+bad.
+
+     <ol type=1 start=1>
+
+     <li><em>Rank</em> is the number that shows
+GNU Backgammon's rank of the move. All
+moves evaluated at a given ply are ranked above those evaluated at a
+lesser ply. If you use the 0, 1, 2, etc, buttons below the hint list
+to re-evaluate one or more moves, the moves will be moved
+accordingly. Therefore, for accurate results when re-evaluating a
+move that you are interested in, it is usually best to
+<em>re-evaluate all moves above it in the list</em>. 
+(And slipping with the mouse and re-evaluating, e.g., a 3-ply move
+at 2-ply may make the move <em>disappear</em> down to
+the bottom of the list!)
+
+     <li><em>Type</em> is a description of the evaluation
+that was used to calculate the results. Cubeful means that it is
+taking into account the possibility that someone may double. 
+Occasionally you may see several moves with the equity of -1.000,
+(See <em>Equity</em> below), despite significantly
+different winning percentiles. This is because it thinks that if any
+of these moves are played then the opponent will double and you
+should pass. The n-ply is the depth to which GNU
+Backgammon analyzed the move.
+
+     <li><em>Win</em> is the fractions of games that
+GNU Backgammon thinks will be won by a
+single game, gammon or backgammon.
+
+     <li><em>Wg</em> is the fractions of games that
+GNU Backgammon thinks will be won by a
+gammon or backgammon.
+
+     <li><em>Wbg</em> is the fractions of games that
+GNU Backgammon thinks will be won by a
+backgammon.
+
+     <li><em>Loose</em> is the fractions of games that
+GNU Backgammon thinks will be lost by a
+single game, gammon or backgammon. (Notice that this number is equal
+to 1 - Win)
+
+     <li><em>Lg</em> is the fractions of games that
+GNU Backgammon thinks will be lost by a
+gammon or backgammon.
+
+     <li><em>Lbg</em> is the fractions of games that
+GNU Backgammon thinks will be lost by a
+backgammon.
+
+     <li><em>Equity</em> is the overall evaluation of the
+position by the program, after considering the different win/loss
+percentiles, the cube position, and the match score. A 1.000 would
+mean that you are expected to win a point, a 0.000 would mean that
+it is roughly equal, and a -1.000 that you are expected to lose a
+point. When the evaluation is cubeful this number is not computable
+by the win/loss brake down of the previous columns.
+
+     <li><em>Diff.</em> is the difference in equity,
+perceived in comparison to the top ranked move.
+
+     <li><em>Move</em> is the move being evaluated. In the
+case of a red line, it is the move that was played.
+        </ol>
+
+   </body></html>
+

@@ -1,0 +1,71 @@
+<html lang="en">
+<head>
+<title>Introduction to rollouts - GNU Backgammon Manual  V0.16</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="description" content="GNU Backgammon Manual  V0.16">
+<meta name="generator" content="makeinfo 4.8">
+<link title="Top" rel="start" href="index.html#Top">
+<link rel="up" href="Rollouts.html#Rollouts" title="Rollouts">
+<link rel="next" href="Rollouts-in-GNU-Backgammon.html#Rollouts-in-GNU-Backgammon" title="Rollouts in GNU Backgammon">
+<link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+  pre.display { font-family:inherit }
+  pre.format  { font-family:inherit }
+  pre.smalldisplay { font-family:inherit; font-size:smaller }
+  pre.smallformat  { font-family:inherit; font-size:smaller }
+  pre.smallexample { font-size:smaller }
+  pre.smalllisp    { font-size:smaller }
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+--></style>
+</head>
+<body>
+<div class="node">
+<p>
+<a name="Introduction-to-rollouts"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Rollouts-in-GNU-Backgammon.html#Rollouts-in-GNU-Backgammon">Rollouts in GNU Backgammon</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="Rollouts.html#Rollouts">Rollouts</a>
+<hr>
+</div>
+
+<h3 class="section">9.1 Introduction to rollouts</h3>
+
+<p>The million dollar question is simple enough: out of all the games
+that could result from playing this position, how many do we win (and
+how many of our wins and losses are gammons, and how many are
+backgammons)? The model is exactly the same as if we had an urn with a
+googol balls in it (it's a big urn), and many of the balls have win
+written on them, and some say gammon loss, and if we look hard enough
+there are a few that read backgammon win, and so on. ((Balls and urns
+are to probability theorists what teapots and checkerboards are to
+computer graphics researchers, or <em>squeamish
+ossifrage</em> is to cryptographers &ndash; they seem to come with the
+territory.)) Instead of having the patience to count the googol balls,
+we just give the urn a really good shake and then pull 100 balls out
+without looking, and say for instance "Well, I got 53 wins, 31 losses, 9
+gammon wins, 6 gammon losses, and a backgammon win &ndash; looks like my
+equity's roughly +0.26." and go home. If we were a bit more thorough, we
+could go a bit further and figure out that by cheating and measuring the
+sample proportions instead of the population proportions, we introduced
+a standard error of 0.06 into our result. (Of course, the trick is to
+select a sample size that's big enough that you reduce the standard
+error to a tolerable level, but small enough that the answer arrives
+before you get bored.)
+
+   <p>It will come as no surprise that a rollout with a limited number of
+trials follows exactly the same procedure. It's sufficient to say that
+the proportion of wins/gammons etc. that come up when GNU
+Backgammon plays against itself (say) 1296 times, aren't
+likely to vary all that much from the proportion we would get if we
+measured the proportion of results in every game we could possibly get
+of GNU Backgammon playing against itself. (Of
+course, there may still be some doubt whether the results of
+GNU Backgammon vs. GNU
+Backgammon are representative of the results of a
+perfect player vs. a perfect player, or of you vs. Joe Average, but
+that's another story.)
+
+   </body></html>
+

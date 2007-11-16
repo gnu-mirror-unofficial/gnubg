@@ -1,0 +1,95 @@
+<html lang="en">
+<head>
+<title>Match info - GNU Backgammon Manual  V0.16</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="description" content="GNU Backgammon Manual  V0.16">
+<meta name="generator" content="makeinfo 4.8">
+<link title="Top" rel="start" href="index.html#Top">
+<link rel="up" href="Python-scripting.html#Python-scripting" title="Python scripting">
+<link rel="prev" href="Match-description.html#Match-description" title="Match description">
+<link rel="next" href="Python-game.html#Python-game" title="Python game">
+<link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+  pre.display { font-family:inherit }
+  pre.format  { font-family:inherit }
+  pre.smalldisplay { font-family:inherit; font-size:smaller }
+  pre.smallformat  { font-family:inherit; font-size:smaller }
+  pre.smallexample { font-size:smaller }
+  pre.smalllisp    { font-size:smaller }
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+--></style>
+</head>
+<body>
+<div class="node">
+<p>
+<a name="Match-info"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Python-game.html#Python-game">Python game</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="Match-description.html#Match-description">Match description</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="Python-scripting.html#Python-scripting">Python scripting</a>
+<hr>
+</div>
+
+<h4 class="subsection">11.3.3 Match info</h4>
+
+<p>A dictionary containing the following items:
+
+   <p>match-length
+
+   <p>variation
+
+   <p>One of Standard,Nackgammon, Hypergammon1, Hypergammon2 or
+Hypergammon3.
+
+   <p>rules (optional)
+
+   <p>Additional rules used. A subset of NoCube, Crawford and Jacoby.
+
+   <p>X
+
+   <p>O
+
+   <p>Per player information. Each a dictionary containing rating and
+name.
+
+   <p>annotator (optional)
+
+   <p>round (optional)
+
+   <p>place (optional)
+
+   <p>date (optional)
+
+   <p>Sequence of (Day,Month,Year).
+
+   <p>event (optional)
+
+   <p>default-eval-context
+
+   <p>Default evaluation context. A dictionary in the same format as
+returned by evalcontext().
+
+   <p>default-rollout-context
+
+   <p>Default rollout context.
+
+   <p>Example,
+
+   <p>&gt;&gt;&gt; m['match-info']
+
+   <p>{'match-length': 25, 'rules': ('Crawford',),
+'default-eval-context': {'plies': 2, 'deterministic': 1, 'reduced': 0,
+'noise': 0.0, 'cubeful': 1}, 'annotator': 'GNU 0.14', 'O': {'rating':
+'0 (Exp 0)', 'name': 'Moshe Tissona'}, 'round': 'Final', 'place':
+'Monte Carlo', 'variation': 'Standard', 'default-rollout-context':
+{'n-truncation': 11, 'initial-position': 0, 'trials': 0,
+'stop-on-std': 0, 'variance-reduction': 1, 'late-eval': 0,
+'truncated-rollouts': 0, 'truncate-bearoff2': 1, 'cubeful': 1,
+'truncate-bearoffOS': 1, 'seed': 1177750272, 'quasi-random-dice': 1,
+'minimum-games': 144}, 'date': (13, 7, 2003), 'X': {'rating': '0 (Exp
+0)', 'name': 'Jon Royset'}, 'event': 'World Championship 2003'}
+
+   </body></html>
+

@@ -1,0 +1,145 @@
+<html lang="en">
+<head>
+<title>Introduction to move filters - GNU Backgammon Manual  V0.16</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="description" content="GNU Backgammon Manual  V0.16">
+<meta name="generator" content="makeinfo 4.8">
+<link title="Top" rel="start" href="index.html#Top">
+<link rel="up" href="Move-filters.html#Move-filters" title="Move filters">
+<link rel="next" href="Defining-move-filters.html#Defining-move-filters" title="Defining move filters">
+<link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+  pre.display { font-family:inherit }
+  pre.format  { font-family:inherit }
+  pre.smalldisplay { font-family:inherit; font-size:smaller }
+  pre.smallformat  { font-family:inherit; font-size:smaller }
+  pre.smallexample { font-size:smaller }
+  pre.smalllisp    { font-size:smaller }
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+--></style>
+</head>
+<body>
+<div class="node">
+<p>
+<a name="Introduction-to-move-filters"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Defining-move-filters.html#Defining-move-filters">Defining move filters</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="Move-filters.html#Move-filters">Move filters</a>
+<hr>
+</div>
+
+<h5 class="subsubsection">10.1.10.1 Introduction to move filters</h5>
+
+<p>GNU Backgammon uses a technique
+called move filters in order to prune the complete list of legal
+moves when analyzing checker play decisions. Move filters can be
+considered a generalization of the search space used in earlier
+versions of GNU Backgammon.
+
+   <p>A move filter for a given ply, say, 2-ply, consists of four
+parameters for each sub ply:
+
+     <ol type=1 start=1>
+
+     <li>whether to analyze at all at this sub ply,
+
+     <li>the number of moves always accepted at the given level,
+
+     <li>the number of extra moves to add,
+
+     <li>the threshold for adding extra moves.
+        </ol>
+
+   <p>A move filter for a given ply, say, 2-ply, consists of four
+parameters for each sub ply:
+
+   <p>whether to analyze at all at this sub ply, the number of moves
+always accepted at the given level, the number of extra moves to
+add, the threshold for adding extra moves. For example, for 2-ply
+checker play decisions there are two move filters: one for pruning
+at 0-ply, and another for pruning at 1-ply. The predefined setting
+<em>Normal</em> has: accept 0 moves and add up to 8
+moves within 0.16 at 0-ply, and no pruning at 1-ply.
+
+   <p>Consider the opening position where 4-2 has been rolled:
+
+<p class="noindent"><a name="Example-of-move-filter-settings"></a>
+
+   <p><strong>Example of move filter settings</strong>
+
+   <p>[[movefilterex.png]]
+
+   <p>GNU Backgammon starts by finding all
+possible moves and evaluate those at 0-ply:
+
+   <p><table summary=""><tr align="left"><td valign="top" width="17%">1.</td><td valign="top" width="17%">Cubeful</td><td valign="top" width="17%">0-ply</td><td valign="top" width="17%">8/4 6/4</td><td valign="top" width="17%">Eq.:+0.189</td><td valign="top" width="17%">
+<br></td></tr><tr align="left"><td valign="top" width="17%">2.</td><td valign="top" width="17%">Cubeful</td><td valign="top" width="17%">0-ply</td><td valign="top" width="17%">24/20 13/11</td><td valign="top" width="17%">Eq.:+0.046</td><td valign="top" width="17%">(-0.143)
+<br></td></tr><tr align="left"><td valign="top" width="17%">3.</td><td valign="top" width="17%">Cubeful</td><td valign="top" width="17%">0-ply</td><td valign="top" width="17%">13/11 13/9</td><td valign="top" width="17%">Eq.:+0.044</td><td valign="top" width="17%">(-0.145)
+<br></td></tr><tr align="left"><td valign="top" width="17%">4.</td><td valign="top" width="17%">Cubeful</td><td valign="top" width="17%">0-ply</td><td valign="top" width="17%">24/22 13/9</td><td valign="top" width="17%">Eq.:+0.034</td><td valign="top" width="17%">(-0.155)
+<br></td></tr><tr align="left"><td valign="top" width="17%">5.</td><td valign="top" width="17%">Cubeful</td><td valign="top" width="17%">0-ply</td><td valign="top" width="17%">24/22 24/20</td><td valign="top" width="17%">Eq.:-0.006</td><td valign="top" width="17%">(-0.194)
+<br></td></tr><tr align="left"><td valign="top" width="17%">6.</td><td valign="top" width="17%">Cubeful</td><td valign="top" width="17%">0-ply</td><td valign="top" width="17%">24/18</td><td valign="top" width="17%">Eq.:-0.009</td><td valign="top" width="17%">(-0.198)
+<br></td></tr><tr align="left"><td valign="top" width="17%">7.</td><td valign="top" width="17%">Cubeful</td><td valign="top" width="17%">0-ply</td><td valign="top" width="17%">24/20 6/4</td><td valign="top" width="17%">Eq.:-0.019</td><td valign="top" width="17%">(-0.208)
+<br></td></tr><tr align="left"><td valign="top" width="17%">8.</td><td valign="top" width="17%">Cubeful</td><td valign="top" width="17%">0-ply</td><td valign="top" width="17%">13/9 6/4</td><td valign="top" width="17%">Eq.:-0.024</td><td valign="top" width="17%">(-0.213)
+<br></td></tr><tr align="left"><td valign="top" width="17%">9.</td><td valign="top" width="17%">Cubeful</td><td valign="top" width="17%">0-ply</td><td valign="top" width="17%">13/7</td><td valign="top" width="17%">Eq.:-0.052</td><td valign="top" width="17%">(-0.241)
+<br></td></tr><tr align="left"><td valign="top" width="17%">10.</td><td valign="top" width="17%">Cubeful</td><td valign="top" width="17%">0-ply</td><td valign="top" width="17%">24/20 8/6</td><td valign="top" width="17%">Eq.:-0.053</td><td valign="top" width="17%">(-0.242)
+   <br></td></tr></table>
+
+   <p>According to the move filter the first 0 moves are accepted. The
+equity of the best move is +0.189, and according to the move filter
+we add up to 8 extra moves if they're within 0.160, that is, if they
+have equity higher than 0.029. Moves 5 through 18 all have equity
+lower that, so the move list after pruning at 0-ply consists of
+moves 1 through 4. According to the move filter we do not perform
+any pruning at 1-ply, so moves 1 through 4 are submitted for
+evaluation at 2-ply;
+
+   <p><table summary=""><tr align="left"><td valign="top" width="17%">1.</td><td valign="top" width="17%">Cubeful</td><td valign="top" width="17%">2-ply</td><td valign="top" width="17%">8/4 6/4</td><td valign="top" width="17%">Eq.:+0.180</td><td valign="top" width="17%">
+<br></td></tr><tr align="left"><td valign="top" width="17%">2.</td><td valign="top" width="17%">Cubeful</td><td valign="top" width="17%">2-ply</td><td valign="top" width="17%">24/20 13/11</td><td valign="top" width="17%">Eq.:+0.052</td><td valign="top" width="17%">(-0.127)
+<br></td></tr><tr align="left"><td valign="top" width="17%">3.</td><td valign="top" width="17%">Cubeful</td><td valign="top" width="17%">2-ply</td><td valign="top" width="17%">13/11 13/9</td><td valign="top" width="17%">Eq.:+0.043</td><td valign="top" width="17%">(-0.137)
+<br></td></tr><tr align="left"><td valign="top" width="17%">4.</td><td valign="top" width="17%">Cubeful</td><td valign="top" width="17%">2-ply</td><td valign="top" width="17%">24/22 13/9</td><td valign="top" width="17%">Eq.:+0.035</td><td valign="top" width="17%">(-0.145)
+<br></td></tr><tr align="left"><td valign="top" width="17%">5.</td><td valign="top" width="17%">Cubeful</td><td valign="top" width="17%">0-ply</td><td valign="top" width="17%">24/22 24/20</td><td valign="top" width="17%">Eq.:-0.006</td><td valign="top" width="17%">(-0.185)
+<br></td></tr><tr align="left"><td valign="top" width="17%">6.</td><td valign="top" width="17%">Cubeful</td><td valign="top" width="17%">0-ply</td><td valign="top" width="17%">24/18</td><td valign="top" width="17%">Eq.:-0.009</td><td valign="top" width="17%">(-0.189)
+<br></td></tr><tr align="left"><td valign="top" width="17%">7.</td><td valign="top" width="17%">Cubeful</td><td valign="top" width="17%">0-ply</td><td valign="top" width="17%">24/20 6/4</td><td valign="top" width="17%">Eq.:-0.019</td><td valign="top" width="17%">(-0.199)
+<br></td></tr><tr align="left"><td valign="top" width="17%">8.</td><td valign="top" width="17%">Cubeful</td><td valign="top" width="17%">0-ply</td><td valign="top" width="17%">13/9 6/4</td><td valign="top" width="17%">Eq.:-0.024</td><td valign="top" width="17%">(-0.203)
+<br></td></tr><tr align="left"><td valign="top" width="17%">9.</td><td valign="top" width="17%">Cubeful</td><td valign="top" width="17%">0-ply</td><td valign="top" width="17%">13/7</td><td valign="top" width="17%">Eq.:-0.052</td><td valign="top" width="17%">(-0.232)
+<br></td></tr><tr align="left"><td valign="top" width="17%">10.</td><td valign="top" width="17%">Cubeful</td><td valign="top" width="17%">0-ply</td><td valign="top" width="17%">24/20 8/6</td><td valign="top" width="17%">Eq.:-0.053</td><td valign="top" width="17%">(-0.232)
+   <br></td></tr></table>
+
+   <p>If we instead request a 4-ply checker play decision,
+GNU Backgammon will use the move
+filters defined for 4-ply:
+
+   <p><table summary=""><tr align="left"><td valign="top" width="25%">Ply</td><td valign="top" width="25%">Accept moves</td><td valign="top" width="25%">Extra moves</td><td valign="top" width="25%">Threshold for extra moves
+<br></td></tr><tr align="left"><td valign="top" width="25%">0</td><td valign="top" width="25%">0</td><td valign="top" width="25%">8</td><td valign="top" width="25%">0.160
+<br></td></tr><tr align="left"><td valign="top" width="25%">1</td><td valign="top" width="25%">no pruning</td><td valign="top" width="25%"></td><td valign="top" width="25%">
+<br></td></tr><tr align="left"><td valign="top" width="25%">2</td><td valign="top" width="25%">0</td><td valign="top" width="25%">2</td><td valign="top" width="25%">0.040
+<br></td></tr><tr align="left"><td valign="top" width="25%">3</td><td valign="top" width="25%">no pruning</td><td valign="top" width="25%"></td><td valign="top" width="25%">
+   <br></td></tr></table>
+
+   <p>The 4-ply move filter is identical to the 2-ply for pruning at
+0-ply, so after 0-ply we have the same three moves as above. Since
+there is no pruning at 1-ply these three moves are evaluated at
+2-ply as above. There is no pruning at 3-ply.
+
+   <p>At 4-ply we do not accept any moves, but add up to two moves if
+there within 0.040 from the best move. Since the second best move is
+-0.138 worse than the best move, we do not accept any moves to be
+evaluated at 4-ply. Hence GNU Backgammon
+will actually not evaluate any moves on 4-ply.
+
+   <p>The predefined move filters all have accept 0 moves, in order to
+facilitate fast decisions and analysis, i.e., no need to waste much
+time over obvious moves.
+
+   <p>For post-mortem analysis it may be worthwhile to ensure that GNU
+Backgammon analyzes at least two moves at the specified ply. To do
+this, specify accept 2 moves in the move filters you use for
+analysis. However, do note that GNU
+Backgammon will force evaluation at the specified ply
+if the actual move made is doubtful. This ensures that all errors
+and blunders are evaluated at the same level.
+
+   </body></html>
+

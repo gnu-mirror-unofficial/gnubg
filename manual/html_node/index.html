@@ -1,50 +1,195 @@
 <html lang="en">
 <head>
-<title>GNU Backgammon</title>
-<meta http-equiv="Content-Type" content="text/html">
-<meta name="description" content="GNU Backgammon">
-<meta name="generator" content="makeinfo 4.3">
-<link href="http://www.gnu.org/software/texinfo/" rel="generator-home">
+<title>GNU Backgammon Manual  V0.16</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="description" content="GNU Backgammon Manual  V0.16">
+<meta name="generator" content="makeinfo 4.8">
+<link title="Top" rel="start" href="index.html#Top">
+<link rel="up" href="../index.html#dir" title="(dir)">
+<link rel="next" href="Introduction.html#Introduction" title="Introduction">
+<link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+  pre.display { font-family:inherit }
+  pre.format  { font-family:inherit }
+  pre.smalldisplay { font-family:inherit; font-size:smaller }
+  pre.smallformat  { font-family:inherit; font-size:smaller }
+  pre.smallexample { font-size:smaller }
+  pre.smalllisp    { font-size:smaller }
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+--></style>
 </head>
 <body>
-<h1 class="settitle">GNU Backgammon</h1>
 <div class="node">
 <p>
-Node:<a name="Top">Top</a>,
-Next:<a rel="next" accesskey="n" href="Introduction.html#Introduction">Introduction</a>,
-Up:<a rel="up" accesskey="u" href="../index.html#dir">(dir)</a>
-<hr><br>
+<a name="Top"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Introduction.html#Introduction">Introduction</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="../index.html#dir">(dir)</a>
+<hr>
 </div>
 
-<h2 class="unnumbered">GNU Backgammon</h2>
-
-   <p>This manual describes how to use GNU Backgammon to play and analyse
-backgammon games and matches.  It corresponds to version 0.14.2-devel
-(updated in October, 2003).
+<h2 class="unnumbered">GNU Backgammon Manual  V0.16</h2>
 
 <ul class="menu">
-<li><a accesskey="1" href="Introduction.html#Introduction">Introduction</a>: 			What is GNU Backgammon. 
-<li><a accesskey="2" href="For-the-impatient.html#For%20the%20impatient">For the impatient</a>: 			A short description how to use GNU Backgammon. 
-<li><a accesskey="3" href="How-to-play-backgammon.html#How%20to%20play%20backgammon">How to play backgammon</a>: 		The rules of the game. 
-<li><a accesskey="4" href="Installing-the-software.html#Installing%20the%20software">Installing the software</a>: 		How to install GNU Backgammon under MS Windows, FreeBSD and Linux. 
-<li><a accesskey="5" href="Starting-GNU-Backgammon.html#Starting%20GNU%20Backgammon">Starting GNU Backgammon</a>: 		Starting the software using a terminal and the graphical user interface (GUI)
-<li><a accesskey="6" href="Playing-backgammon.html#Playing%20backgammon">Playing backgammon</a>: 			How to play a game, match or session. 
-<li><a accesskey="7" href="Saving-games.html#Saving%20games">Saving games</a>: 			How to save your positions, games, matches and sessions. 
-<li><a accesskey="8" href="Opening-files.html#Opening%20files">Opening files</a>: 			How to open saved positions, games, matches and sessions. 
-<li><a accesskey="9" href="Import-files.html#Import%20files">Import files</a>: 			Opening files from different formats. 
-<li><a href="Export-files.html#Export%20files">Export files</a>: 			Saving files into different formats. 
-<li><a href="Settings.html#Settings">Settings</a>: 				Changing settings in GNU Backgammon. 
-<li><a href="Analysis-and-rollouts.html#Analysis%20and%20rollouts">Analysis and rollouts</a>: 		How to analyse positions, games, matches or sessions. 
-<li><a href="Position-and-match-IDs.html#Position%20and%20match%20IDs">Position and match IDs</a>: 		A brief technical explanation. 
-<li><a href="Cubeful-equities.html#Cubeful%20equities">Cubeful equities</a>:                     How do <tt>gnubg</tt> calculate cubeful equities. 
-<li><a href="Training.html#Training">Training</a>: 				How to store databases and train the neural nets. 
-<li><a href="Scripting.html#Scripting">Scripting</a>:                            How to use <tt>gnubg</tt> python scripting. 
-<li><a href="Bearoff-databases.html#Bearoff%20databases">Bearoff databases</a>:                    How to generate bearoff databases for use with GNU Backgammon
-<li><a href="Absolute-ratings.html#Absolute%20ratings">Absolute ratings</a>:                     How are the absolute ratings derived
-<li><a href="Additional-documentation.html#Additional%20documentation">Additional documentation</a>:             Links to other documentation regarding backgammon or GNU Backgammon
-<li><a href="GNU-Free-Documentation-License.html#GNU%20Free%20Documentation%20License">GNU Free Documentation License</a>: 	Your rights regarding this manual. 
-<li><a href="Command-Index.html#Command%20Index">Command Index</a>:                        Index of available commands
-<li><a href="Concept-Index.html#Concept%20Index">Concept Index</a>:                        Index
+<li><a accesskey="1" href="Introduction.html#Introduction">Introduction</a>:                 Introduction to GNU Backgammon
+<li><a accesskey="2" href="Rules-of-the-game.html#Rules-of-the-game">Rules of the game</a>:            Backgammon rules by Tom Keith
+<li><a accesskey="3" href="Starting-GNU-Backgammon.html#Starting-GNU-Backgammon">Starting GNU Backgammon</a>:      Starting GNU Backgammon. Command line
+                                  options. 
+<li><a accesskey="4" href="Playing-a-game.html#Playing-a-game">Playing a game</a>
+<li><a accesskey="5" href="Getting-hints-and-Tutor-Mode.html#Getting-hints-and-Tutor-Mode">Getting hints and Tutor Mode</a>
+<li><a accesskey="6" href="Time-controls.html#Time-controls">Time controls</a>
+<li><a accesskey="7" href="Setting-up-a-position.html#Setting-up-a-position">Setting up a position</a>
+<li><a accesskey="8" href="Working-with-matches.html#Working-with-matches">Working with matches</a>
+<li><a accesskey="9" href="Rollouts.html#Rollouts">Rollouts</a>
+<li><a href="Customizing-GNU-Backgammon.html#Customizing-GNU-Backgammon">Customizing GNU Backgammon</a>
+<li><a href="Technical-Notes.html#Technical-Notes">Technical Notes</a>
+<li><a href="Frequently-Asked-Questions.html#Frequently-Asked-Questions">Frequently Asked Questions</a>
+<li><a href="GNU-Free-Documentation-License.html#GNU-Free-Documentation-License">GNU Free Documentation License</a>
+
+</li></ul>
+<p>--- The Detailed Node Listing ---
+
+<p>Introduction
+
+</p>
+<ul class="menu">
+<li><a href="GPL-copying_002fwarranty-info.html#GPL-copying_002fwarranty-info">GPL copying/warranty info</a>
+
+</li></ul>
+<p>Rules of the game
+
+</p>
+<ul class="menu">
+<li><a href="Setup.html#Setup">Setup</a>
+<li><a href="Object-of-the-Game.html#Object-of-the-Game">Object of the Game</a>
+<li><a href="Movement-of-the-Checkers.html#Movement-of-the-Checkers">Movement of the Checkers</a>
+<li><a href="Hitting-and-Entering.html#Hitting-and-Entering">Hitting and Entering</a>
+<li><a href="Bearing-Off.html#Bearing-Off">Bearing Off</a>
+<li><a href="Doubling.html#Doubling">Doubling</a>
+<li><a href="Gammons-and-Backgammons.html#Gammons-and-Backgammons">Gammons and Backgammons</a>
+<li><a href="Optional-Rules.html#Optional-Rules">Optional Rules</a>
+<li><a href="Rules-for-Match-Play.html#Rules-for-Match-Play">Rules for Match Play</a>
+
+</li></ul>
+<p>Starting GNU Backgammon
+
+</p>
+<ul class="menu">
+<li><a href="Linux-and-Unix.html#Linux-and-Unix">Linux and Unix</a>
+<li><a href="Microsoft-Windows.html#Microsoft-Windows">Microsoft Windows</a>
+<li><a href="Mac-OSX.html#Mac-OSX">Mac OSX</a>
+<li><a href="Command-line-options.html#Command-line-options">Command line options</a>
+
+</li></ul>
+<p>Playing a game
+
+</p>
+<ul class="menu">
+<li><a href="Starting-a-new-match.html#Starting-a-new-match">Starting a new match</a>
+<li><a href="Rolling-the-dice.html#Rolling-the-dice">Rolling the dice</a>
+<li><a href="Moving-the-checkers.html#Moving-the-checkers">Moving the checkers</a>
+<li><a href="Using-the-double-cube.html#Using-the-double-cube">Using the double cube</a>
+<li><a href="Resigning.html#Resigning">Resigning</a>
+
+</li></ul>
+<p>Getting hints and Tutor Mode
+
+</p>
+<ul class="menu">
+<li><a href="Getting-hints-manually.html#Getting-hints-manually">Getting hints manually</a>
+<li><a href="Tutor-mode.html#Tutor-mode">Tutor mode</a>
+
+</li></ul>
+<p>Setting up a position
+
+</p>
+<ul class="menu">
+<li><a href="Entering-Edit-mode.html#Entering-Edit-mode">Entering Edit mode</a>
+<li><a href="Editing.html#Editing">Editing</a>
+<li><a href="Clearing-the-board.html#Clearing-the-board">Clearing the board</a>
+<li><a href="Quick-edit.html#Quick-edit">Quick edit</a>
+<li><a href="Editing-by-drag-and-drop.html#Editing-by-drag-and-drop">Editing by drag and drop</a>
+<li><a href="Setting-the-player-on-turn.html#Setting-the-player-on-turn">Setting the player on turn</a>
+<li><a href="Setting-the-dice.html#Setting-the-dice">Setting the dice</a>
+<li><a href="Setting-the-cube.html#Setting-the-cube">Setting the cube</a>
+<li><a href="Setting-the-score.html#Setting-the-score">Setting the score</a>
+<li><a href="Exiting-Edit-mode.html#Exiting-Edit-mode">Exiting Edit mode</a>
+<li><a href="Analyzing-the-position.html#Analyzing-the-position">Analyzing the position</a>
+
+</li></ul>
+<p>Working with matches
+
+</p>
+<ul class="menu">
+<li><a href="Retrieving-and-storing-backgammon-files.html#Retrieving-and-storing-backgammon-files">Retrieving and storing backgammon files</a>
+<li><a href="Entering-live-tournament-matches.html#Entering-live-tournament-matches">Entering live tournament matches</a>
+<li><a href="Analyzing-matches.html#Analyzing-matches">Analyzing matches</a>
+<li><a href="Reviewing-matches.html#Reviewing-matches">Reviewing matches</a>
+
+</li></ul>
+<p>Rollouts
+
+</p>
+<ul class="menu">
+<li><a href="Introduction-to-rollouts.html#Introduction-to-rollouts">Introduction to rollouts</a>
+<li><a href="Rollouts-in-GNU-Backgammon.html#Rollouts-in-GNU-Backgammon">Rollouts in GNU Backgammon</a>
+
+</li></ul>
+<p>Customizing GNU Backgammon
+
+</p>
+<ul class="menu">
+<li><a href="Evaluation-settings.html#Evaluation-settings">Evaluation settings</a>
+<li><a href="Appearance.html#Appearance">Appearance</a>
+
+</li></ul>
+<p>Technical Notes
+
+</p>
+<ul class="menu">
+<li><a href="Obtaining-bearoff-databases.html#Obtaining-bearoff-databases">Obtaining bearoff databases</a>
+<li><a href="Match-Equity-Tables.html#Match-Equity-Tables">Match Equity Tables</a>
+<li><a href="Python-scripting.html#Python-scripting">Python scripting</a>
+<li><a href="Guile-scripting.html#Guile-scripting">Guile scripting</a>
+<li><a href="Equities-explained.html#Equities-explained">Equities explained</a>
+<li><a href="A-technical-description-of-the-Position-ID.html#A-technical-description-of-the-Position-ID">A technical description of the Position ID</a>
+<li><a href="A-technical-description-of-the-Match-ID.html#A-technical-description-of-the-Match-ID">A technical description of the Match ID</a>
+<li><a href="Description-of-the-CSS-style-sheet.html#Description-of-the-CSS-style-sheet">Description of the CSS style sheet</a>
+
+</li></ul>
+<p>Frequently Asked Questions
+
+</p>
+<ul class="menu">
+<li><a href="General-questions.html#General-questions">General questions</a>
+<li><a href="How-to-install.html#How-to-install">How to install</a>
+<li><a href="Running-GNU-Backgammon.html#Running-GNU-Backgammon">Running GNU Backgammon</a>
+<li><a href="Playing-backgammon.html#Playing-backgammon">Playing backgammon</a>
+<li><a href="Settings.html#Settings">Settings</a>
+<li><a href="Analyzing.html#Analyzing">Analyzing</a>
+<li><a href="Databases.html#Databases">Databases</a>
+<li><a href="Abbreviations.html#Abbreviations">Abbreviations</a>
+
+</li></ul>
+<p>GNU Free Documentation License
+
+</p>
+<ul class="menu">
+<li><a href="PREAMBLE.html#PREAMBLE">PREAMBLE</a>
+<li><a href="APPLICABILITY-AND-DEFINITIONS.html#APPLICABILITY-AND-DEFINITIONS">APPLICABILITY AND DEFINITIONS</a>
+<li><a href="VERBATIM-COPYING.html#VERBATIM-COPYING">VERBATIM COPYING</a>
+<li><a href="COPYING-IN-QUANTITY.html#COPYING-IN-QUANTITY">COPYING IN QUANTITY</a>
+<li><a href="MODIFICATIONS.html#MODIFICATIONS">MODIFICATIONS</a>
+<li><a href="COMBINING-DOCUMENTS.html#COMBINING-DOCUMENTS">COMBINING DOCUMENTS</a>
+<li><a href="COLLECTIONS-OF-DOCUMENTS.html#COLLECTIONS-OF-DOCUMENTS">COLLECTIONS OF DOCUMENTS</a>
+<li><a href="AGGREGATION-WITH-INDEPENDENT-WORKS.html#AGGREGATION-WITH-INDEPENDENT-WORKS">AGGREGATION WITH INDEPENDENT WORKS</a>
+<li><a href="TRANSLATION.html#TRANSLATION">TRANSLATION</a>
+<li><a href="TERMINATION.html#TERMINATION">TERMINATION</a>
+<li><a href="FUTURE-REVISIONS-OF-THIS-LICENSE.html#FUTURE-REVISIONS-OF-THIS-LICENSE">FUTURE REVISIONS OF THIS LICENSE</a>
+<li><a href="ADDENDUM_003b-How-to-use-this-License-for-your-documents.html#ADDENDUM_003b-How-to-use-this-License-for-your-documents">ADDENDUM; How to use this License for your documents</a>
+
 </ul>
 
    </body></html>

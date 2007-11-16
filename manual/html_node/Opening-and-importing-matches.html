@@ -1,0 +1,66 @@
+<html lang="en">
+<head>
+<title>Opening and importing matches - GNU Backgammon Manual  V0.16</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="description" content="GNU Backgammon Manual  V0.16">
+<meta name="generator" content="makeinfo 4.8">
+<link title="Top" rel="start" href="index.html#Top">
+<link rel="up" href="Retrieving-and-storing-backgammon-files.html#Retrieving-and-storing-backgammon-files" title="Retrieving and storing backgammon files">
+<link rel="prev" href="The-Smart-Game-Format.html#The-Smart-Game-Format" title="The Smart Game Format">
+<link rel="next" href="Saving-and-exporting-positions_003b-games-or-matches.html#Saving-and-exporting-positions_003b-games-or-matches" title="Saving and exporting positions; games or matches">
+<link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+  pre.display { font-family:inherit }
+  pre.format  { font-family:inherit }
+  pre.smalldisplay { font-family:inherit; font-size:smaller }
+  pre.smallformat  { font-family:inherit; font-size:smaller }
+  pre.smallexample { font-size:smaller }
+  pre.smalllisp    { font-size:smaller }
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+--></style>
+</head>
+<body>
+<div class="node">
+<p>
+<a name="Opening-and-importing-matches"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Saving-and-exporting-positions_003b-games-or-matches.html#Saving-and-exporting-positions_003b-games-or-matches">Saving and exporting positions; games or matches</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="The-Smart-Game-Format.html#The-Smart-Game-Format">The Smart Game Format</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="Retrieving-and-storing-backgammon-files.html#Retrieving-and-storing-backgammon-files">Retrieving and storing backgammon files</a>
+<hr>
+</div>
+
+<h4 class="subsection">8.1.2 Opening and importing matches</h4>
+
+<p>Since version 0.16 the GUI recognizes all importable files
+automatically (with the exception of the FIBS format). To open or
+import a file choose File-&gt;Open. A file dialog box will appear where you can select the
+file and the dialog will inform you of the recognized format, if the
+file is importable. You can also use the keyboard shortcut Ctrl-O, or
+the tool bar button labeled Open, to open the file dialog box
+directly.
+
+   <p>It is still possible to import an unrecognized file by using the
+underlying command line interface. Enable the command pane by choosing View-&gt;Command. In the command pane type in <code>import oldmoves
+&lt;filepath&gt;</code> to import, e.g., an oldmoves fibs
+formatted file.
+
+   <p>The following table contains the supported formats and the
+corresponding commands for manual import of a file.
+
+   <p><table summary=""><tr align="left"><td valign="top" width="50%">FIBS oldmoves format</td><td valign="top" width="50%"><code>import oldmoves &lt;filepath&gt;</code>
+<br></td></tr><tr align="left"><td valign="top" width="50%">Gamesgrid Save Game</td><td valign="top" width="50%"><code>import sgg &lt;filepath&gt;</code>
+<br></td></tr><tr align="left"><td valign="top" width="50%">GammonEmpire Game</td><td valign="top" width="50%"><code>import empire &lt;filepath&gt;</code>
+<br></td></tr><tr align="left"><td valign="top" width="50%">Hans Berliner's BKG Format</td><td valign="top" width="50%"><code>import bkg &lt;filepath&gt;</code>
+<br></td></tr><tr align="left"><td valign="top" width="50%">Jellyfish Game</td><td valign="top" width="50%"><code>import gam &lt;filepath&gt;</code>
+<br></td></tr><tr align="left"><td valign="top" width="50%">Jellyfish Match</td><td valign="top" width="50%"><code>import mat &lt;filepath&gt;</code>
+<br></td></tr><tr align="left"><td valign="top" width="50%">Jellyfish Position</td><td valign="top" width="50%"><code>import pos &lt;filepath&gt;</code>
+<br></td></tr><tr align="left"><td valign="top" width="50%">PartyGammon Game</td><td valign="top" width="50%"><code>import party &lt;filepath&gt;</code>
+<br></td></tr><tr align="left"><td valign="top" width="50%">Snowie Text</td><td valign="top" width="50%"><code>import snowietxt &lt;filepath&gt;</code>
+<br></td></tr><tr align="left"><td valign="top" width="50%">True Moneygames</td><td valign="top" width="50%"><code>import tmg &lt;filepath&gt;</code>
+   <br></td></tr></table>
+
+   </body></html>
+

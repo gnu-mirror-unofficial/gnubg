@@ -1,0 +1,85 @@
+<html lang="en">
+<head>
+<title>Cubeful vs_ Cubeless - GNU Backgammon Manual  V0.16</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="description" content="GNU Backgammon Manual  V0.16">
+<meta name="generator" content="makeinfo 4.8">
+<link title="Top" rel="start" href="index.html#Top">
+<link rel="up" href="Evaluation-settings.html#Evaluation-settings" title="Evaluation settings">
+<link rel="prev" href="Move-filters.html#Move-filters" title="Move filters">
+<link rel="next" href="Reduced-evaluations.html#Reduced-evaluations" title="Reduced evaluations">
+<link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+  pre.display { font-family:inherit }
+  pre.format  { font-family:inherit }
+  pre.smalldisplay { font-family:inherit; font-size:smaller }
+  pre.smallformat  { font-family:inherit; font-size:smaller }
+  pre.smallexample { font-size:smaller }
+  pre.smalllisp    { font-size:smaller }
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+--></style>
+</head>
+<body>
+<div class="node">
+<p>
+<a name="Cubeful-vs_-Cubeless"></a>
+<a name="Cubeful-vs_005f-Cubeless"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Reduced-evaluations.html#Reduced-evaluations">Reduced evaluations</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="Move-filters.html#Move-filters">Move filters</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="Evaluation-settings.html#Evaluation-settings">Evaluation settings</a>
+<hr>
+</div>
+
+<h4 class="subsection">10.1.11 Cubeful vs. Cubeless</h4>
+
+<p>In the evaluation settings dialog box you can specify whether or
+not checker play should be evaluated cubeful. It's recommended that
+you use cubeful evaluation. To get an understanding of what cubeful
+checker play evaluations are, you can take a look at this position:
+
+<p class="noindent"><a name="Cubeful-example"></a>
+
+   <p><strong>Cubeful example</strong>
+
+   <p>[[cubeful-ex1.png]]
+
+   <p>In this position black has rolled 51 and he has a good position. 
+If the position is evaluated cubeless the best move is 13/7. Black can
+hope white does not roll 34 or 35 form the bar and has now a good
+chance to close white out in the next few rolls. However if white
+rolls one of the four hitting numbers from the bar, white will quite
+soon have a really hot redouble. This redouble increases whites equity
+so much that black actually should play this move safe. He should play
+13/8 6/5. However if the evaluation was set to cubeless, an setting
+which assumes white will never redouble, black should play 13/8.
+
+   <p>Here's another example:
+
+<p class="noindent"><a name="Cubeful-example-2"></a>
+
+   <p><strong>Cubeful example 2</strong>
+
+   <p>[[cubeful-ex2.png]]
+
+   <p>This is from a 5 point match where black has 1 point and white has
+3 points. Black wins the opening roll and considers playing 13/11 6/5
+or 24/23 13/11.
+
+   <p>If GNU Backgammon uses a cubeless
+evaluation it will play 24/23 13/11. But if you're using a cubeful
+evaluation it will play 13/11 6/5. Slotting with 6/5 is at this score
+a better move even though it loses more gammons. The gammons black are
+losing won't matter anyway, since black will turn the cube in the next
+few rolls anyway. The slotting play also wins more gammons, and with
+the cube tuned to 2, black should play towards gammonish positions at
+this score.
+
+   <p>You can read more about cubeful evaluations in the [[Appendix]].
+
+   <p>It's recommended that you use cubeful checker evaluations.
+
+   </body></html>
+

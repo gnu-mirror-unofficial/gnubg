@@ -1,0 +1,77 @@
+<html lang="en">
+<head>
+<title>What are Plies? - GNU Backgammon Manual  V0.16</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="description" content="GNU Backgammon Manual  V0.16">
+<meta name="generator" content="makeinfo 4.8">
+<link title="Top" rel="start" href="index.html#Top">
+<link rel="up" href="Settings.html#Settings" title="Settings">
+<link rel="prev" href="How-do-I-stop-the-annoying-beeps_003f_0022.html#How-do-I-stop-the-annoying-beeps_003f_0022" title="How do I stop the annoying beeps?"">
+<link rel="next" href="What-is-noise_003f.html#What-is-noise_003f" title="What is noise?">
+<link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+  pre.display { font-family:inherit }
+  pre.format  { font-family:inherit }
+  pre.smalldisplay { font-family:inherit; font-size:smaller }
+  pre.smallformat  { font-family:inherit; font-size:smaller }
+  pre.smallexample { font-size:smaller }
+  pre.smalllisp    { font-size:smaller }
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+--></style>
+</head>
+<body>
+<div class="node">
+<p>
+<a name="What-are-Plies%3f"></a>
+<a name="What-are-Plies_003f"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="What-is-noise_003f.html#What-is-noise_003f">What is noise?</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="How-do-I-stop-the-annoying-beeps_003f_0022.html#How-do-I-stop-the-annoying-beeps_003f_0022">How do I stop the annoying beeps?&quot;</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="Settings.html#Settings">Settings</a>
+<hr>
+</div>
+
+<h4 class="subsection">12.5.4 What are Plies?</h4>
+
+<p>A ply describes how far GNU Backgammon
+evaluates the position. <em>0-ply</em> means that
+GNU Backgammon estimates the worth of the
+position as it is. A <em>1-ply</em> evaluation looks one
+step deeper, i.e. it evaluates the position after making the best
+possible move for each of the 21 different rolls and returns the
+averaged result. <em>2-ply</em> is another roll further
+and so on.
+
+   <p>The more plies you choose, the more you strengthen
+GNU Backgammon. Keep in mind that this
+will also decrease the playing speed.
+
+   <p>Note also that <em>0-ply</em> in GNU
+Backgammon is equivalent to the
+<em>1-ply</em> evaluation of Snowie.
+
+   <p>It's possible that Snowie's is a <em>playing</em> ply
+while gnubg's is a <em>position evaluation</em> ply. When
+playing at 1-ply Snowie will make each possible move for the player's
+roll (that's 1 ply) and analyze the resulting positions. Playing at
+2-ply it will take each of those positions and make all the opponent
+moves for all possible rolls (the 2nd ply) and then analyze the
+resulting positions. In GNU Backgammon the
+initial set of possible moves is taken for granted, i.e. not counted
+as a ply, because gnubg's plies are position evaluation plies. Thus,
+for each of those possible moves a 0-ply analysis is done. gnubg's
+discounting of the first set of moves perhaps makes the counting seem
+funny.
+
+   <p>Looking at it a different way, if you give GNU
+Backgammon a position and analyze it at 1-ply, it will
+make all the moves for all possible rolls (the 1st ply) and then
+analyze the resulting positions. With Snowie it will assume that the
+position arose from a move (that's a pretend 1st ply) then make all
+the moves for all possible rolls (the 2nd ply) and analyze them. This
+time it's Snowie that seems to be counting strangely.
+
+   </body></html>
+

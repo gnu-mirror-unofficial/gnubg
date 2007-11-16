@@ -1,0 +1,93 @@
+<html lang="en">
+<head>
+<title>The depth to search and plies - GNU Backgammon Manual  V0.16</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="description" content="GNU Backgammon Manual  V0.16">
+<meta name="generator" content="makeinfo 4.8">
+<link title="Top" rel="start" href="index.html#Top">
+<link rel="up" href="Evaluation-settings.html#Evaluation-settings" title="Evaluation settings">
+<link rel="prev" href="Introduction-to-evaluation-settings.html#Introduction-to-evaluation-settings" title="Introduction to evaluation settings">
+<link rel="next" href="Defining-evaluation-settings.html#Defining-evaluation-settings" title="Defining evaluation settings">
+<link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+  pre.display { font-family:inherit }
+  pre.format  { font-family:inherit }
+  pre.smalldisplay { font-family:inherit; font-size:smaller }
+  pre.smallformat  { font-family:inherit; font-size:smaller }
+  pre.smallexample { font-size:smaller }
+  pre.smalllisp    { font-size:smaller }
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+--></style>
+</head>
+<body>
+<div class="node">
+<p>
+<a name="The-depth-to-search-and-plies"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Defining-evaluation-settings.html#Defining-evaluation-settings">Defining evaluation settings</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="Introduction-to-evaluation-settings.html#Introduction-to-evaluation-settings">Introduction to evaluation settings</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="Evaluation-settings.html#Evaluation-settings">Evaluation settings</a>
+<hr>
+</div>
+
+<h4 class="subsection">10.1.2 The depth to search and plies</h4>
+
+<p>A <em>ply</em> is simply considered to be one turn by
+a player. Any position can be evaluated at 0-ply. That means that GNU
+Backgammon does not look ahead in the game to evaluate the position. 
+When GNU Backgammon is evaluating a checker play decision, it looks at
+all resulting positions after all the legal moves with the given dice
+roll, and evaluates these position at the given ply. It's possible to
+set the search depth by specifying the plies lookahead in any
+evaluation settings dialog.
+
+   <p>Snowie users: GNU Backgammon differs
+from some other software, notably Snowie in that GNU
+Backgammon zero ply is the same as Snowie 1 ply. In
+the same way what is called 2-ply in GNU
+Backgammon will therefore be similar to a Snowie 3-ply.
+
+   <p>For GNU Backgammon, a 0-ply evaluation
+of a move would be done by:
+
+   <p>Build a list of all legal moves. For each move, take the resulting
+board position and use the neural net to estimate the expected
+percentage of wins/gammons/backgammons/losses/gammon losses/backgammon
+losses. Rank the moves based on this evaluation.
+
+   <p>For one ply, after doing the above step, GNU
+Backgammon chooses the best n moves (where n is set by
+the move filters). For each one, it takes the resulting position for
+that move and goes through all 21 possible dice rolls for the
+opponent. From these results, it works out the average expectation for
+the initial move and ranks them. This is the same as Snowie 2 ply. You
+can think of it as asking "what's my best move if I also consider
+every possible dice roll and move my opponent might make?"
+
+   <p>For 2 ply (Snowie 3 ply), a similar process is done, but this
+time, not only are the opponents possible moves considered, but, for
+each of these, the player on roll's next move will be considered as
+well.
+
+   <p>For a single move, on average there are about 20 legal moves to
+consider.
+
+   <p>When doing a one ply analysis/evaluation, for the top n moves
+(from the move filter, GNU Backgammon needs
+to consider 21 rolls by the opponent, 20 and possible legal moves per
+roll) = 420 positions to evaluate.
+
+   <p>Every additional ply will multiply the previous number of
+evaluations by about 400 odd, which explains the huge difference in
+playing speed/analysis speed between 0 ply and 2 ply settings. I don't
+think many people would enjoy playing against GNU
+Backgammon at 3 ply settings, where moves could take
+minutes to be selected. It's also not clear that using much deeper
+lookahead actually gains a lot in terms of playing strength - if you
+really need better answers than 2 ply, rollouts are probably a lot
+better.
+
+   </body></html>
+

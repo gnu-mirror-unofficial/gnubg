@@ -1,0 +1,68 @@
+<html lang="en">
+<head>
+<title>CP? - GNU Backgammon Manual  V0.16</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="description" content="GNU Backgammon Manual  V0.16">
+<meta name="generator" content="makeinfo 4.8">
+<link title="Top" rel="start" href="index.html#Top">
+<link rel="up" href="Abbreviations.html#Abbreviations" title="Abbreviations">
+<link rel="prev" href="DP_003f.html#DP_003f" title="DP?">
+<link rel="next" href="TG_003f.html#TG_003f" title="TG?">
+<link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+  pre.display { font-family:inherit }
+  pre.format  { font-family:inherit }
+  pre.smalldisplay { font-family:inherit; font-size:smaller }
+  pre.smallformat  { font-family:inherit; font-size:smaller }
+  pre.smallexample { font-size:smaller }
+  pre.smalllisp    { font-size:smaller }
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+--></style>
+</head>
+<body>
+<div class="node">
+<p>
+<a name="CP%3f"></a>
+<a name="CP_003f"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="TG_003f.html#TG_003f">TG?</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="DP_003f.html#DP_003f">DP?</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="Abbreviations.html#Abbreviations">Abbreviations</a>
+<hr>
+</div>
+
+<h4 class="subsection">12.8.4 CP?</h4>
+
+<p>From Max Friis page <a href="http://xfriis.dk/maxfriis/bg/double.html">http://xfriis.dk/maxfriis/bg/double.html</a> Cash-point(CP) is:
+<em>your opponent's take-point now seen from your side of the
+board (your cash-point which equals 100% minus your opponent's
+take-point</em>). GNU Backgammon
+uses the term <em>missed double below cash-point</em>,
+which means that the player should have doubled, and had he done so,
+his opponent should take. <em>. Missed double above CP</em>
+in a similar way means that the correct cube-action was double pass.
+
+   <p>If you are the leader in the match, the relevant take- and
+double-points will often look something like this (where TP*=CP):
+
+<p class="noindent"><a name="The-double-line"></a>
+
+   <p><strong>The double line</strong>
+
+   <p>[[doubleline.png]]
+
+   <p>The double windows (intervals) are:
+
+   <p>[DP;CP] = Your double window! This window does not contain any
+information about redoubles but only the distance to the point where
+you do not want to play for the double amount of points.
+
+   <p>[TP;DP] = 100% minus your opponent's double window now.
+
+   <p>[reTP;reDP] = 100% minus your opponent's double window after he
+has taken.
+
+   </body></html>
+

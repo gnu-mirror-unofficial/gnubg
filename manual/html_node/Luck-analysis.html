@@ -1,0 +1,87 @@
+<html lang="en">
+<head>
+<title>Luck analysis - GNU Backgammon Manual  V0.16</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="description" content="GNU Backgammon Manual  V0.16">
+<meta name="generator" content="makeinfo 4.8">
+<link title="Top" rel="start" href="index.html#Top">
+<link rel="up" href="Statistics.html#Statistics" title="Statistics">
+<link rel="prev" href="Checker-play-statistics.html#Checker-play-statistics" title="Checker play statistics">
+<link rel="next" href="Cube-statistics.html#Cube-statistics" title="Cube statistics">
+<link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+  pre.display { font-family:inherit }
+  pre.format  { font-family:inherit }
+  pre.smalldisplay { font-family:inherit; font-size:smaller }
+  pre.smallformat  { font-family:inherit; font-size:smaller }
+  pre.smallexample { font-size:smaller }
+  pre.smalllisp    { font-size:smaller }
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+--></style>
+</head>
+<body>
+<div class="node">
+<p>
+<a name="Luck-analysis"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Cube-statistics.html#Cube-statistics">Cube statistics</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="Checker-play-statistics.html#Checker-play-statistics">Checker play statistics</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="Statistics.html#Statistics">Statistics</a>
+<hr>
+</div>
+
+<h5 class="subsubsection">8.4.3.2 Luck analysis</h5>
+
+<p>This section provides information about how Ms. Fortuna
+distributed her luck. The following information is available:
+
+     <ol type=1 start=1>
+
+     <li>Rolls marked <em>xxx</em>: The number of moves
+marked <em>very lucky</em>,
+<em>lucky</em> etc. Moves marked <em>very
+lucky</em> are huge jokers that improve your equity with
+more the +0.6 relative to the average equity. GNU
+Backgammon normally uses cubeful 0-ply
+evaluations to calculate the luck, but you can change that under
+the analysis settings. See below for a complete overview of what
+is considered <em>very lucky</em>,
+<em>lucky</em>, etc.
+
+     <li>Luck rate (total): The total luck for this game or match
+reported both normalized and unnormalized.
+
+     <li>Luck rate (per move): The luck rate per move reported both
+normalized and unnormalized.
+
+     <li>Luck rating: Based on the luck rate per move
+GNU Backgammon will assign you a
+humorous luck rating. See below for the possible ratings.
+        </ol>
+
+   <p>Thresholds for marking of rolls:
+
+   <p><table summary=""><tr align="left"><td valign="top" width="50%">Deviation of equity from average</td><td valign="top" width="50%">Roll is marked
+<br></td></tr><tr align="left"><td valign="top" width="50%">&gt; 0.6</td><td valign="top" width="50%">very lucky
+<br></td></tr><tr align="left"><td valign="top" width="50%">0.3 - 0.6</td><td valign="top" width="50%">lucky
+<br></td></tr><tr align="left"><td valign="top" width="50%">-0.3 - 0.3</td><td valign="top" width="50%">unmarked
+<br></td></tr><tr align="left"><td valign="top" width="50%">-0.6 - -0.3</td><td valign="top" width="50%">unlucky
+<br></td></tr><tr align="left"><td valign="top" width="50%">&lt; -0.6</td><td valign="top" width="50%">very unlucky
+   <br></td></tr></table>
+
+   <p>Luck ratings:
+
+   <p><table summary=""><tr align="left"><td valign="top" width="50%">Normalized luck rate per move</td><td valign="top" width="50%">Luck rating
+<br></td></tr><tr align="left"><td valign="top" width="50%">&gt; 0.10</td><td valign="top" width="50%">Cheater :-)
+<br></td></tr><tr align="left"><td valign="top" width="50%">0.06 - 0.10</td><td valign="top" width="50%">Go to Las Vegas immediately
+<br></td></tr><tr align="left"><td valign="top" width="50%">0.02 - 0.06</td><td valign="top" width="50%">Good dice, man! 
+<br></td></tr><tr align="left"><td valign="top" width="50%">-0.02 - 0.02</td><td valign="top" width="50%">none
+<br></td></tr><tr align="left"><td valign="top" width="50%">-0.06 - -0.02</td><td valign="top" width="50%">Better luck next time
+<br></td></tr><tr align="left"><td valign="top" width="50%">-0.06 - -0.10</td><td valign="top" width="50%">Go to bed
+<br></td></tr><tr align="left"><td valign="top" width="50%">&lt; -0.10</td><td valign="top" width="50%">Haaa-haaa
+   <br></td></tr></table>
+
+   </body></html>
+

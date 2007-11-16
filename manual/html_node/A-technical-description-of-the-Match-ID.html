@@ -1,0 +1,139 @@
+<html lang="en">
+<head>
+<title>A technical description of the Match ID - GNU Backgammon Manual  V0.16</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="description" content="GNU Backgammon Manual  V0.16">
+<meta name="generator" content="makeinfo 4.8">
+<link title="Top" rel="start" href="index.html#Top">
+<link rel="up" href="Technical-Notes.html#Technical-Notes" title="Technical Notes">
+<link rel="prev" href="A-technical-description-of-the-Position-ID.html#A-technical-description-of-the-Position-ID" title="A technical description of the Position ID">
+<link rel="next" href="Description-of-the-CSS-style-sheet.html#Description-of-the-CSS-style-sheet" title="Description of the CSS style sheet">
+<link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+  pre.display { font-family:inherit }
+  pre.format  { font-family:inherit }
+  pre.smalldisplay { font-family:inherit; font-size:smaller }
+  pre.smallformat  { font-family:inherit; font-size:smaller }
+  pre.smallexample { font-size:smaller }
+  pre.smalllisp    { font-size:smaller }
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+--></style>
+</head>
+<body>
+<div class="node">
+<p>
+<a name="A-technical-description-of-the-Match-ID"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Description-of-the-CSS-style-sheet.html#Description-of-the-CSS-style-sheet">Description of the CSS style sheet</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="A-technical-description-of-the-Position-ID.html#A-technical-description-of-the-Position-ID">A technical description of the Position ID</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="Technical-Notes.html#Technical-Notes">Technical Notes</a>
+<hr>
+</div>
+
+<h3 class="section">11.7 A technical description of the Match ID</h3>
+
+<p>This section describes how the match ID is calculated. The match
+ID can be used for easy exchange of positions for gnubg users in
+conjunction with the position ID. The match key is a 9 byte
+representation of the match score, match length, value of cube, owner
+of cube, Crawford game flag, player on roll, player to make a
+decision, doubled flag, resigned flag, and the dice rolled. The match
+ID is the 12 character Base64 encoding of the match key. Match key
+
+   <p>The match key is a bit string of length 66:
+
+   <p><table summary=""><tr align="left"><td valign="top" width="13%">1-4</td><td valign="top" width="13%">5-6</td><td valign="top" width="13%">7</td><td valign="top" width="13%">8</td><td valign="top" width="13%">9-11</td><td valign="top" width="13%">12</td><td valign="top" width="13%">13</td><td valign="top" width="13%">14-1516-1819-2122-3637-5152
+<br></td></tr><tr align="left"><td valign="top" width="13%">Cube</td><td valign="top" width="13%">CubeOwner</td><td valign="top" width="13%">DiceOwner</td><td valign="top" width="13%">Crawford</td><td valign="top" width="13%">GameState</td><td valign="top" width="13%">TurnOwner</td><td valign="top" width="13%">Double</td><td valign="top" width="13%">ResignDice1Dice2MatchLen x 15 Score1 x 15Score2 x 15
+   <br></td></tr></table>
+
+     <ol type=1 start=1>
+
+     <li>Bit 1-4 contains the 2-logarithm of the cube value. For
+example, a 8-cube is encoded as 0011 binary (or 3), since 2 to the
+power of 3 is 8. The maximum value of the cube in with this
+encoding is 2 to the power of 15, i.e., a 32768-cube.
+
+     <li>Bit 5-6 contains the cube owner. 00 if player 0 owns the cube,
+01 if player 1 owns the cube, or 11 for a centered cube.
+
+     <li>Bit 7 is the player on roll or the player who did roll (0 and
+1 for player 0 and 1, respectively).
+
+     <li>Bit 8 is the Crawford flag: 1 if this game is the Crawford
+game, 0 otherwise.
+
+     <li>Bit 9-11 is the game state: 000 for no game started, 001 for
+playing a game, 010 if the game is over, 011 if the game was
+resigned, or 100 if the game was ended by dropping a cube.
+
+     <li>Bit 12 indicates whose turn it is. For example, suppose player
+0 is on roll then bit 7 above will be 0. Player 0 now decides to
+double, this will make bit 12 equal to 1, since it is now player
+1's turn to decide whether she takes or passes the cube.
+
+     <li>Bit 13 indicates whether an doubled is being offered. 0 if no
+double is being offered and 1 if a double is being offered.
+
+     <li>Bit 14-15 indicates whether an resignation was offered. 00 for
+no resignation, 01 for resign of a single game, 10 for resign of a
+gammon, or 11 for resign of a backgammon. The player offering the
+resignation is the inverse of bit 12, e.g., if player 0 resigns a
+gammon then bit 12 will be 1 (as it is now player 1 now has to
+decide whether to accept or reject the resignation) and bit 13-14
+will be 10 for resign of a gammon.
+
+     <li>Bit 16-18 and bit 19-21 is the first and second die,
+respectively. 0 if the dice has not yet be rolled, otherwise the
+binary encoding of the dice, e.g., if 5-2 was rolled bit 16-21
+will be 101-010.
+
+     <li>Bit 22 to 36 is the match length. The maximum value for the
+match length is 32767. A match score of zero indicates that the
+game is a money game.
+
+     <li>Bit 37-51 and bit 52-66 is the score for player 0 and player 1
+respectively. The maximum value of the match score is 32767.
+        </ol>
+
+   <p>For example, assume the score is 2-4 in a 9 point match with
+player 0 holding a 2-cube, and player 1 has just rolled 52. The match
+key for this will be (note that the bit order is reversed below for
+readability)
+
+   <p>1000 00 1 0 100 1 0 00 101 010 100100000000000 010000000000000
+001000000000000
+
+   <p>In little endian the bytes looks like:
+
+   <p>01000001 10001001 00101010 00000001 00100000 00000000 00100000
+00000000 00
+
+   <p>0x41 0x89 0x2A 0x01 0x20 0x00 0x20 0x00 0x00
+
+   <p>Analogous to the position ID from the previous section the match
+ID format is simply the Base64 encoding of the key.
+
+   <p>To continue the example above, the 9 8-bit bytes are grouped into
+12 6-bits groups:
+
+   <p>010000 011000 100100 101010 000000 010010 000000 000000 001000
+000000 000000 000000
+
+   <p>In Base64 encoding, the groups are represented as:
+
+   <p>Q Y k q A S A A I A A A
+
+   <p>So, the match id is simply:
+
+   <p>QYkqASAAIAAA
+
+   <p>If someone post a match ID you can set up the position in gnubg by
+writing or pasting it into the Match ID text input field on the main
+window, or by executing the command
+
+   <p>set matchid QYkqASAAIAAA.
+
+   </body></html>
+

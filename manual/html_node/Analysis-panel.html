@@ -1,0 +1,100 @@
+<html lang="en">
+<head>
+<title>Analysis panel - GNU Backgammon Manual  V0.16</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="description" content="GNU Backgammon Manual  V0.16">
+<meta name="generator" content="makeinfo 4.8">
+<link title="Top" rel="start" href="index.html#Top">
+<link rel="up" href="Reviewing-matches.html#Reviewing-matches" title="Reviewing matches">
+<link rel="prev" href="Game-record.html#Game-record" title="Game record">
+<link rel="next" href="Statistics.html#Statistics" title="Statistics">
+<link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+  pre.display { font-family:inherit }
+  pre.format  { font-family:inherit }
+  pre.smalldisplay { font-family:inherit; font-size:smaller }
+  pre.smallformat  { font-family:inherit; font-size:smaller }
+  pre.smallexample { font-size:smaller }
+  pre.smalllisp    { font-size:smaller }
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+--></style>
+</head>
+<body>
+<div class="node">
+<p>
+<a name="Analysis-panel"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Statistics.html#Statistics">Statistics</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="Game-record.html#Game-record">Game record</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="Reviewing-matches.html#Reviewing-matches">Reviewing matches</a>
+<hr>
+</div>
+
+<h4 class="subsection">8.4.2 Analysis panel</h4>
+
+<p>You can also study your moves and cube decisions in more detail in
+the analysis window, or analysis panel if you have checked Dock panels
+in the Window menu. You can open this window by checking on Window-&gt;Analysis. If you have docked panels the analysis panel will
+appear under the game record. The analysis window is basically the
+same as the Hint window described in the "[[Playing a game or match]]"
+chapter.
+
+<p class="noindent"><a name="The-Analyze-pane"></a>
+
+   <p><strong>The Analyze pane</strong>
+
+   <p>[[analasyepane.png]]
+
+   <p>In the figure you can see the analysis panel. At the top of the
+analysis panel you will see three pull-down menus. The leftmost
+pull-down menu is a comment on the cube decision. In the figure it is
+a position where the player didn't double and the GNU
+Backgammon's analysis of this is empty. There was
+nothing wrong with not doubling in this position. The user can also
+override GNU Backgammon's evaluation and
+mark the cube decision as 'Doubtful', 'Bad' or 'Very bad'. Note that
+the cube decision pull-down menu will only be visible when the player
+has the cube available.
+
+   <p>The next pull-down menu shows a simple analysis of the roll. The
+roll in this position was 32. GNU
+Backgammon's evaluation of this dice roll is also empty. 
+It shows that this particular roll was -.162 equity worse than the
+average roll. This means that the roll is a bit unlucky, but does not
+qualify for being marked as an unlucky roll. The rolls are marked in
+these categories: 'Very lucky', 'Lucky', 'Unlucky' and 'Very unlucky'.
+
+   <p>The rightmost pull-down menu, shows the move which was done. In
+this situation the move that was done was 3/off 2/off. This move did
+not qualify for any mark. Moves that GNU
+Backgammon don't like will be marked as 'Doubtful',
+'Bad' or 'Very bad'. The user can also override GNU
+Backgammon's evaluation and mark the move manually
+with the pull-down menu.
+
+   <p>The rest of the analysis window is a notebook of two pages. The
+first page is the list of possible moves. The list is sorted in the
+ranked order with the best considered move at the top. The moves are
+sorted by equity or EMG. In the list in the figure there is only two
+possible moves. The move that was actually done in the match, is
+marked with red color. The only difference of this list of moves and
+the list of moves in the hint window, is that this list does not show
+the probabilities for each outcome of the game. If you want to see the
+probabilities of the different outcomes, you can click on the button
+labeled Details. This will then show you a list with these numbers.
+
+   <p>The other page of the notebook is the cube decision analysis. This
+analysis show exactly the same as in the Hint window described in the
+chapter called "[[Playing a game or match]]". Note that the cube
+decision page will only be available if there is a cube decision. It
+will not be visible if the cube is not available to the player.
+
+   <p>There is also a set of tool buttons in the analysis panel. These
+buttons does exactly the same as the tool buttons in the Hint window,
+which is described in the the chapter called "[[Playing a game or
+match]]".
+
+   </body></html>
+

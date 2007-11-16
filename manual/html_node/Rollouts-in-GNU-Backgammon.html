@@ -1,0 +1,94 @@
+<html lang="en">
+<head>
+<title>Rollouts in GNU Backgammon - GNU Backgammon Manual  V0.16</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="description" content="GNU Backgammon Manual  V0.16">
+<meta name="generator" content="makeinfo 4.8">
+<link title="Top" rel="start" href="index.html#Top">
+<link rel="up" href="Rollouts.html#Rollouts" title="Rollouts">
+<link rel="prev" href="Introduction-to-rollouts.html#Introduction-to-rollouts" title="Introduction to rollouts">
+<link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+  pre.display { font-family:inherit }
+  pre.format  { font-family:inherit }
+  pre.smalldisplay { font-family:inherit; font-size:smaller }
+  pre.smallformat  { font-family:inherit; font-size:smaller }
+  pre.smallexample { font-size:smaller }
+  pre.smalllisp    { font-size:smaller }
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+--></style>
+</head>
+<body>
+<div class="node">
+<p>
+<a name="Rollouts-in-GNU-Backgammon"></a>
+Previous:&nbsp;<a rel="previous" accesskey="p" href="Introduction-to-rollouts.html#Introduction-to-rollouts">Introduction to rollouts</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="Rollouts.html#Rollouts">Rollouts</a>
+<hr>
+</div>
+
+<h3 class="section">9.2 Rollouts in GNU Backgammon</h3>
+
+<p>In GNU Backgammon the Rollout function
+implements the procedure described above, with the following
+improvements:
+
+     <ol type=1 start=1>
+
+     <li>Truncation: instead of rolling out all the way to the end of the
+game, it can stop and pretend its evaluation after a few plies is
+perfect. This may obviously introduce some amount of systematic
+error, but in practice this may not matter because:
+
+     <li>it makes rollouts much faster, which means you can do more of
+them (and thus trade sampling error for systematic error);
+
+     <li>different positions will be reached in different trials, so the
+correlation between errors in each trial weakens and the errors
+cancel out to some extent;
+
+     <li>if you are rolling out the positions after making different
+plays, then any remaining systematic error between the two rollouts
+is likely to be somewhat correlated and so the error in the
+comparison between the plays is hopefully small. This implies that
+truncated rollouts are better for estimating
+<em>relative</em> equity (<em>which is the better
+move here, 13/10*/9 or 13/10* 6/5*?</em>) than
+<em>absolute</em> equity (<em>at this match
+score I need 29% wins to accept a dead cube; can I take in this
+position?</em>).
+
+     <li>Race database truncation: when the game enters its 2-sided
+bearoff database, GNU Backgammon can
+estimate the probability of winning from that position with no error
+at all (it can play and evaluate endgame positions perfectly), which
+saves time and avoids introducing the errors that can result from
+large equity variances at the end of the game.
+
+     <li>Variance reduction: when using lookahead evaluations, it can
+reduce errors by making use of the equity difference from one ply to
+the next. (This can be interpreted as either canceling out the
+estimated <em>luck</em> (i.e. the difference in equity
+evaluations before and after rolling) or using subsequent
+evaluations to estimate the error in prior ones; the two views are
+equivalent). GNU Backgammon automatically
+performs variance reduction when looking ahead at least one ply.
+
+     <li>Stratified sampling: uses quasi-random number generation instead
+of pseudo-random number generation (this is a standard technique in
+Monte Carlo simulations where having a near-perfect uniform
+distribution in your sample is more important than
+unpredictability). GNU Backgammon only
+stratifies the first 2 plies of a rollout, though it would be easy
+enough to extend it to the remainder.
+        </ol>
+
+<ul class="menu">
+<li><a accesskey="1" href="Quasi_002dRandom-Dice.html#Quasi_002dRandom-Dice">Quasi-Random Dice</a>
+</ul>
+
+   </body></html>
+

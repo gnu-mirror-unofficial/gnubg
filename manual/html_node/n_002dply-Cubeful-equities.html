@@ -1,0 +1,72 @@
+<html lang="en">
+<head>
+<title>n-ply Cubeful equities - GNU Backgammon Manual  V0.16</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="description" content="GNU Backgammon Manual  V0.16">
+<meta name="generator" content="makeinfo 4.8">
+<link title="Top" rel="start" href="index.html#Top">
+<link rel="up" href="Cubeful-equities.html#Cubeful-equities" title="Cubeful equities">
+<link rel="prev" href="0_002dply-Cubeful-equities.html#g_t0_002dply-Cubeful-equities" title="0-ply Cubeful equities">
+<link rel="next" href="The-cube-efficiency.html#The-cube-efficiency" title="The cube efficiency">
+<link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+  pre.display { font-family:inherit }
+  pre.format  { font-family:inherit }
+  pre.smalldisplay { font-family:inherit; font-size:smaller }
+  pre.smallformat  { font-family:inherit; font-size:smaller }
+  pre.smallexample { font-size:smaller }
+  pre.smalllisp    { font-size:smaller }
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+--></style>
+</head>
+<body>
+<div class="node">
+<p>
+<a name="n-ply-Cubeful-equities"></a>
+<a name="n_002dply-Cubeful-equities"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="The-cube-efficiency.html#The-cube-efficiency">The cube efficiency</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="0_002dply-Cubeful-equities.html#g_t0_002dply-Cubeful-equities">0-ply Cubeful equities</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="Cubeful-equities.html#Cubeful-equities">Cubeful equities</a>
+<hr>
+</div>
+
+<h5 class="subsubsection">11.5.5.4 n-ply Cubeful equities</h5>
+
+<p>The previous section concerned the calculation of 0-ply cubeful
+equities, so how so GNU Backgammon
+calculate cubeful 2-ply equities? The answer is: by simple recursion:
+
+   <p>Equity=0
+
+   <p>Loop over 21 dice rolls
+
+   <p>Find best move for given roll
+
+   <p>Equity = Equity + Evaluate n-1 ply equity for resulting position
+
+   <p>End Loop
+
+   <p>Equity = Equity/36
+
+   <p>Note that evaluating the n-1 ply equity involves a cube decision,
+since the opponent may double, so GNU
+Backgammon will actually calculate the two n-1 ply
+equities: (a) assuming no double, and (b) assuming double, take. These
+two equities are combined with the equity for a pass, and the optimum
+of these three is added to the resulting equity. For a cubeful 2-ply
+evaluation GNU Backgammon will end up
+calculating the following cubeful 0-ply equities: centered 1-cube,
+opponent owns 2-cube, owned 4-cube, and opponent owns 8-cube.
+
+   <p>Note that the 2-ply level does not use the cube efficiency, it's
+not used until at the 0-ply level, but it's possible to calculate an
+effective one by isolating x in the basic cube formula:
+
+   <p>x(eff) = (E(2-ply cubeful) - E(2-ply dead))/(E(2-ply live)-E(2-ply
+dead)).
+
+   </body></html>
+

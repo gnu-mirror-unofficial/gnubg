@@ -1,0 +1,67 @@
+<html lang="en">
+<head>
+<title>Match Winning Chance - GNU Backgammon Manual  V0.16</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="description" content="GNU Backgammon Manual  V0.16">
+<meta name="generator" content="makeinfo 4.8">
+<link title="Top" rel="start" href="index.html#Top">
+<link rel="up" href="Equities-explained.html#Equities-explained" title="Equities explained">
+<link rel="prev" href="Money-equity.html#Money-equity" title="Money equity">
+<link rel="next" href="Normalized-equity.html#Normalized-equity" title="Normalized equity">
+<link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+  pre.display { font-family:inherit }
+  pre.format  { font-family:inherit }
+  pre.smalldisplay { font-family:inherit; font-size:smaller }
+  pre.smallformat  { font-family:inherit; font-size:smaller }
+  pre.smallexample { font-size:smaller }
+  pre.smalllisp    { font-size:smaller }
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+--></style>
+</head>
+<body>
+<div class="node">
+<p>
+<a name="Match-Winning-Chance"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Normalized-equity.html#Normalized-equity">Normalized equity</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="Money-equity.html#Money-equity">Money equity</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="Equities-explained.html#Equities-explained">Equities explained</a>
+<hr>
+</div>
+
+<h4 class="subsection">11.5.3 Match Winning Chance</h4>
+
+<p>In match play we're generally not particular interested in the
+outcome of the individual games as much as the outcome of the entire
+match, so the interesting quantity for match play is <em>match
+winning chance</em> (MWC). As for the money equity the MWC can
+be calculated with and without the effect of the double cube. The MWCs
+are generally calculated with the use of a match equity table, which
+contains the chance of winning the match before a game starts, e.g.,
+if the score is 0-0 in a 1pt match each player has 50% chance of
+winning the match before the game starts assuming they're of equal
+skill.
+
+   <p>The cubeless MWC is calculated as: MWC(cubeless) = p(w) * MWC(w) +
+p(l) * MWC(l) + p(wg) * MWC(wg) + p(lg) * MWC(lg) + p(wbg) * MWC(wbg)
+* p(lbg) * MWC(lbg).
+
+   <p>For example, if the w/g/bg distribution is 0 30 60 - 40 10 0 and
+the match score is 1-3 to 5 with the cube on 2 the cubeless MWC is:
+
+   <p>MWC(cubeless)= 30% * 50% + 30% * 0% + 30% * 100% + 10% * 0% + 0% *
+100% + 0% * 0% = 45%,
+
+   <p>so the cubeless MWC is 45%.
+
+   <p>Evaluating the cubeful MWC is more difficult, and as for the
+cubeful money equity it's possible to estimate cubeful MWCs from
+transformation on the w/g/bg distribution or directly calculate it
+from neural nets. GNU Backgammon uses the former approach, but the
+formula are currently not published.
+
+   </body></html>
+

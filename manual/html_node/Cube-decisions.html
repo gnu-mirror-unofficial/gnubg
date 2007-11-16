@@ -1,0 +1,89 @@
+<html lang="en">
+<head>
+<title>Cube decisions - GNU Backgammon Manual  V0.16</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="description" content="GNU Backgammon Manual  V0.16">
+<meta name="generator" content="makeinfo 4.8">
+<link title="Top" rel="start" href="index.html#Top">
+<link rel="up" href="Cubeful-equities.html#Cubeful-equities" title="Cubeful equities">
+<link rel="prev" href="The-cube-efficiency.html#The-cube-efficiency" title="The cube efficiency">
+<link rel="next" href="Beyond-the-simple-model.html#Beyond-the-simple-model" title="Beyond the simple model">
+<link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+  pre.display { font-family:inherit }
+  pre.format  { font-family:inherit }
+  pre.smalldisplay { font-family:inherit; font-size:smaller }
+  pre.smallformat  { font-family:inherit; font-size:smaller }
+  pre.smallexample { font-size:smaller }
+  pre.smalllisp    { font-size:smaller }
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+--></style>
+</head>
+<body>
+<div class="node">
+<p>
+<a name="Cube-decisions"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Beyond-the-simple-model.html#Beyond-the-simple-model">Beyond the simple model</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="The-cube-efficiency.html#The-cube-efficiency">The cube efficiency</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="Cubeful-equities.html#Cubeful-equities">Cubeful equities</a>
+<hr>
+</div>
+
+<h5 class="subsubsection">11.5.5.6 Cube decisions</h5>
+
+<p>GNU Backgammon's cube decisions are
+simple based on calculations of cubeful equities. For a double
+decision GNU Backgammon calculates the
+cubeful equity for <em>no double</em> and the cubeful
+equity for <em>double, take</em>. Combined with the equity
+for <em>double, pass</em>, it's possible to determine the
+correct cube action.
+
+   <p>The figure below shows the relevant cubeful equities for White and
+black's cube decisions in sample position from earlier.
+
+<p class="noindent"><a name="mgcd"></a>
+
+   <p><strong>mgcd</strong>
+
+<pre class="example">     
+     Equity
+       2.5 ++------------+-------------+-------------+-------------+-----------$##
+           +             +             +             +      centered cube$******#+
+         2 ++                                               O owns 2-cube#######++
+           |                                                X owns 2-cube#$$$$$$ |
+       1.5 ++                                             $$$$     ####         ++
+           |                                           $$$$    ####      *********
+         1 ++                                      $$$$     ###**********       ++
+           |                                    $$$$     ******                  |
+       0.5 ++                                $$$$  ******                       ++
+           |                             $$$$ ******##                           |
+         0 ++                          $$******###                              ++
+      -0.5 ++                      ******   ###                                 ++
+           |                  *****     ####                                     |
+        -1 ++      ***********$$     ###                                        ++
+           ********      $$$      ###                                            |
+      -1.5 ++         $$$     ####                                              ++
+           |      $$$$    ####                                                   |
+        -2 ++  $$$ #######                                                      ++
+           +#######      +             +             +             +             +
+      -2.5 #+------------+-------------+-------------+-------------+------------++
+           0            0.2           0.4           0.6           0.8            1
+                                            Wins
+     
+</pre>
+   <p>On 0-ply Black will double when the green curve (White owns
+2-cube) is above the red curve (centered cube), and White will take as
+long as the green curve is below 1. Similarly, White will double when
+the blue curve (Black owns 2-cube) is below the red curve (centered
+cube), and Black takes as long as the blue curve is above -1.
+
+   <p>Note that GNU Backgammon doesn't
+calculate the take point or double point explicitly. The cube decision
+is simply made by comparing equities from the figure.
+
+   </body></html>
+

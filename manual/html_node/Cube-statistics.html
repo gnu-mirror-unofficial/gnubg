@@ -1,0 +1,97 @@
+<html lang="en">
+<head>
+<title>Cube statistics - GNU Backgammon Manual  V0.16</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="description" content="GNU Backgammon Manual  V0.16">
+<meta name="generator" content="makeinfo 4.8">
+<link title="Top" rel="start" href="index.html#Top">
+<link rel="up" href="Statistics.html#Statistics" title="Statistics">
+<link rel="prev" href="Luck-analysis.html#Luck-analysis" title="Luck analysis">
+<link rel="next" href="Overall-rating.html#Overall-rating" title="Overall rating">
+<link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+  pre.display { font-family:inherit }
+  pre.format  { font-family:inherit }
+  pre.smalldisplay { font-family:inherit; font-size:smaller }
+  pre.smallformat  { font-family:inherit; font-size:smaller }
+  pre.smallexample { font-size:smaller }
+  pre.smalllisp    { font-size:smaller }
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+--></style>
+</head>
+<body>
+<div class="node">
+<p>
+<a name="Cube-statistics"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Overall-rating.html#Overall-rating">Overall rating</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="Luck-analysis.html#Luck-analysis">Luck analysis</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="Statistics.html#Statistics">Statistics</a>
+<hr>
+</div>
+
+<h5 class="subsubsection">8.4.3.3 Cube statistics</h5>
+
+<p>This section provides a summary of the cube decision statistics:
+the number of cube decisions, missed doubles, etc.
+
+     <ol type=1 start=1>
+
+     <li>Total cube decisions: The total number of cube decisions,
+i.e., the sum of no-doubles, doubles, takes, and passes.
+
+     <li>Close or actual cube decisions: Similar to Total cube
+decisions, except that no-doubles are only included if they're
+considered <em>close</em>. GNU
+Backgammon considers a cube decision close if
+the relevant equities are within 0.25 from each other or if the
+position is too good.
+
+     <li>Doubles, Takes, Passes: The total number of doubles, takes,
+and passes in the game or match.
+
+     <li>Missed doubles around DP, Missed doubles around TG: The
+number of missed doubles around the double point and too good
+point respectively. If the equity is below 0.95 the position is
+considered to be around the double point else it considered to
+be around the too good point. If you miss doubles around the
+double point, it usually means that you double too late, whereas
+missed doubles around the too good point means that you're too
+greedy and play on for gammon when the position is
+<em>not</em> too good.
+
+     <li>Wrong doubles around DP, Wrong doubles around TG: The number
+of wrong doubles around the double point and too good point,
+respectively. If you have wrong doubles around the double point
+that generally means that you double too early where you really
+should hold the cube, whereas wrong doubles around the too good
+point means that you double positions where you really should
+play on for a gammon or backgammon.
+
+     <li>Wrong takes, Wrong passes: The total number of wrong takes
+and passes, respectively.
+
+     <li>Error rate (total): The accumulated cube errors for this
+game or match reported both normalized and unnormalized.
+
+     <li>Error rate (per cube decision): The error rate per cube
+decision is the total error rate divided by the number of
+<em>close or actual cube decisions</em>. Note that
+is different from Snowie 4 that defines the error rate per cube
+decision as the total error rate divided by the total number of
+moves for both players. In general, your error rate per cube
+decision will be lower in Snowie than in GNU
+Backgammon. Note that the reported number is
+multiplied by 1000 in the default settings.
+
+     <li>Cube decision rating: GNU
+Backgammon will assign a rating for your cube
+decisions ranging from <em>Awful!</em> to
+<em>Supernatural</em>. See the description for the
+overall rating below.
+        </ol>
+
+   </body></html>
+

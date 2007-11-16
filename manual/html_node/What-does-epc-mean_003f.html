@@ -1,0 +1,94 @@
+<html lang="en">
+<head>
+<title>What does epc mean? - GNU Backgammon Manual  V0.16</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="description" content="GNU Backgammon Manual  V0.16">
+<meta name="generator" content="makeinfo 4.8">
+<link title="Top" rel="start" href="index.html#Top">
+<link rel="up" href="Analyzing.html#Analyzing" title="Analyzing">
+<link rel="prev" href="What-does-Pips-mean_003f.html#What-does-Pips-mean_003f" title="What does Pips mean?">
+<link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+  pre.display { font-family:inherit }
+  pre.format  { font-family:inherit }
+  pre.smalldisplay { font-family:inherit; font-size:smaller }
+  pre.smallformat  { font-family:inherit; font-size:smaller }
+  pre.smallexample { font-size:smaller }
+  pre.smalllisp    { font-size:smaller }
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+--></style>
+</head>
+<body>
+<div class="node">
+<p>
+<a name="What-does-epc-mean%3f"></a>
+<a name="What-does-epc-mean_003f"></a>
+Previous:&nbsp;<a rel="previous" accesskey="p" href="What-does-Pips-mean_003f.html#What-does-Pips-mean_003f">What does Pips mean?</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="Analyzing.html#Analyzing">Analyzing</a>
+<hr>
+</div>
+
+<h4 class="subsection">12.6.8 What does epc mean?</h4>
+
+<p>When bearing off checkers, you may notice a display showing the
+current <em>epc</em> value (next to the display of
+<em>Pips</em>). The epc display can be turned on or off
+under menu <em>Settings &mdash;&gt; Options &mdash;&gt;
+Display</em> (at least in the current version, as of June 2005).
+
+   <p><em>epc</em> stands for Effective Pip Count, and is an
+alternative measurement of the <em>goodness</em> of the
+position. The usual pip count can be a misleading
+<em>goodness</em> estimate when both players are bearing
+off. What is more important (for making cubing decisions) is
+<em>the expected number of rolls</em> each player needs
+to bear off hes checkers.
+
+   <p>The effective pip count is defined as this expected number of
+remaining rolls, multiplied with the average number of pips in a roll,
+which is 8.167. (The average number of pips in a roll would be 7 if
+rolling a double wouldn't yield a double pip count &ndash; i.e. a double-6
+yields 24 pips, not 12.)
+
+   <p>Thus, epc takes into account not only the current pip count, but
+also the expected pip wastage:
+
+     <ol type=1 start=1>
+
+     <li>effective pip count (epc) = pip count + expected pip wastage
+        </ol>
+
+   <p>An example:
+
+     <ol type=1 start=1>
+
+     <li>Position: 5 checkers on the 1-point, 4 checkers on the
+2-point.
+
+     <li>Pip count: 5x1 + 4x2 = 13
+
+     <li>epc: 2.189 (expected number of remaining rolls) * 8.167 =
+17.878
+
+     <li>Wasted: 17.878 - 13 = 4.878
+        </ol>
+
+   <p>It's clear (hopefully) that the expected pip wastage (and hence
+the <em>epc</em>) increases with more checkers on lower
+points (e.g. you get pip wastage when rolling a 6 to bear off a
+checker from the 2- or 1-point).
+
+   <p>It is further <a href="http://www.bkgm.com/gloss/lookup.cgi?effective+pip+count">explained on BackGammon Galore</a>, especially in a <a href="http://www.bkgm.com/rgb/rgb.cgi?view+1076">post by Douglas Zare</a>.
+
+   <p>How do one calculate the epc then, or the expected number of
+remaining rolls? Gnu BG uses the one-sided bearoff database, which
+contains the change of bearing off the final checker in any given
+number of rolls. A player would probably use some quite complicated
+heuristics (please see the aforementioned post by Douglas Zare,
+<em>and do get back here and explain it!</em>)
+
+   </body></html>
+

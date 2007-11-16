@@ -1,0 +1,76 @@
+<html lang="en">
+<head>
+<title>Normalized equity - GNU Backgammon Manual  V0.16</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="description" content="GNU Backgammon Manual  V0.16">
+<meta name="generator" content="makeinfo 4.8">
+<link title="Top" rel="start" href="index.html#Top">
+<link rel="up" href="Equities-explained.html#Equities-explained" title="Equities explained">
+<link rel="prev" href="Match-Winning-Chance.html#Match-Winning-Chance" title="Match Winning Chance">
+<link rel="next" href="Cubeful-equities.html#Cubeful-equities" title="Cubeful equities">
+<link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+  pre.display { font-family:inherit }
+  pre.format  { font-family:inherit }
+  pre.smalldisplay { font-family:inherit; font-size:smaller }
+  pre.smallformat  { font-family:inherit; font-size:smaller }
+  pre.smallexample { font-size:smaller }
+  pre.smalllisp    { font-size:smaller }
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+--></style>
+</head>
+<body>
+<div class="node">
+<p>
+<a name="Normalized-equity"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Cubeful-equities.html#Cubeful-equities">Cubeful equities</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="Match-Winning-Chance.html#Match-Winning-Chance">Match Winning Chance</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="Equities-explained.html#Equities-explained">Equities explained</a>
+<hr>
+</div>
+
+<h4 class="subsection">11.5.4 Normalized equity</h4>
+
+<p>It's generally very difficult to compare MWCs. For example, it's
+hardly worth mentioning a 0.5% MWC error at DMP where as it's a huge
+error at 0-0 to 7. It is therefore of interesting to normalize the
+MWCs to some common scale. The most often used normalization is
+Normalized Money Game Equity (NEMG) where the MWC for any game is
+transformed into the same interval as money game, i.e., -3 to +3 (due
+to anomalies at certain match scores the NEMG can go below -3 and
+above +3). The transformation is linear:
+
+   <p>NEMG = 2 * (MWC-MWC(l))/(MWC(w)-MWC(l)) - 1
+
+   <p>In other words, extrapolation with the following two extrapolation
+points: (MWC(w),+1) and (MWC(l),-1).
+
+   <p>For example, suppose the score is 3-1 to 5 with the cube on 2:
+MWC(l)=0% and MWC(w)=50%:
+
+   <p><table summary=""><tr align="left"><td valign="top" width="33%">MWC</td><td valign="top" width="33%">NEMG</td><td valign="top" width="33%">
+<br></td></tr><tr align="left"><td valign="top" width="33%">0%</td><td valign="top" width="33%">-1</td><td valign="top" width="33%">
+<br></td></tr><tr align="left"><td valign="top" width="33%">25%</td><td valign="top" width="33%">0</td><td valign="top" width="33%">
+<br></td></tr><tr align="left"><td valign="top" width="33%">50%</td><td valign="top" width="33%">+1</td><td valign="top" width="33%">
+<br></td></tr><tr align="left"><td valign="top" width="33%">75%</td><td valign="top" width="33%">+2</td><td valign="top" width="33%">
+<br></td></tr><tr align="left"><td valign="top" width="33%">100%</td><td valign="top" width="33%">+3</td><td valign="top" width="33%">
+   <br></td></tr></table>
+
+   <p>Note that a w/g/bg distribution of 0 100 100 - 0 0 0 gives a NEMG
+of +3 whereas the corresponding money equity is only +2. This is
+because the gammon price is high for that particular score. When both
+players are far from winning the match, e.g., 0-0 to 17 or 1-0 to 17,
+NEMG is very close to the usual money equity.
+
+   <p>NEMG can be calculated from both cubeless and cubeful MWCs.
+
+   <p>A word of caution: A cubeless NEMG calculated from a cubeless MWC
+could be named <em>cubeless equity</em>, but in most
+backgammon literature this term seems to be reserved for the cubeless
+money equity.
+
+   </body></html>
+

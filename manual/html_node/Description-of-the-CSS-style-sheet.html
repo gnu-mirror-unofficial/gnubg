@@ -1,0 +1,84 @@
+<html lang="en">
+<head>
+<title>Description of the CSS style sheet - GNU Backgammon Manual  V0.16</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="description" content="GNU Backgammon Manual  V0.16">
+<meta name="generator" content="makeinfo 4.8">
+<link title="Top" rel="start" href="index.html#Top">
+<link rel="up" href="Technical-Notes.html#Technical-Notes" title="Technical Notes">
+<link rel="prev" href="A-technical-description-of-the-Match-ID.html#A-technical-description-of-the-Match-ID" title="A technical description of the Match ID">
+<link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+  pre.display { font-family:inherit }
+  pre.format  { font-family:inherit }
+  pre.smalldisplay { font-family:inherit; font-size:smaller }
+  pre.smallformat  { font-family:inherit; font-size:smaller }
+  pre.smallexample { font-size:smaller }
+  pre.smalllisp    { font-size:smaller }
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+--></style>
+</head>
+<body>
+<div class="node">
+<p>
+<a name="Description-of-the-CSS-style-sheet"></a>
+Previous:&nbsp;<a rel="previous" accesskey="p" href="A-technical-description-of-the-Match-ID.html#A-technical-description-of-the-Match-ID">A technical description of the Match ID</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="Technical-Notes.html#Technical-Notes">Technical Notes</a>
+<hr>
+</div>
+
+<h3 class="section">11.8 Description of the CSS style sheet</h3>
+
+<p>As mentioned above GNU Backgammon
+writes a CSS style sheet along with the generated XHTML file. The CSS
+style sheet may be written verbatim in the header section of the XHTML
+file, to an external file named gnubg.css, or inside the tags using
+the style attribute. If you wish to make any modifications to the
+style sheet without modifying the actual source code of
+GNU Backgammon you have to choose one of
+the first two methods. Note that the special export for Kit Woolsey's
+GammOnLine uses the third method since the XHTML is pasted into a web
+page without the possibility to modify the header section of the page
+where the style sheet is defined. Thus, it's not possible to modify
+the style of the generated XHTML for GammOnLine without modifications
+of the source code or extensive search and replace in the generated
+XHTML.
+
+   <p>Below follows a description of the CSS classes used in the XHTML
+export:
+
+   <p><table summary=""><tr align="left"><td valign="top" width="50%">Class</td><td valign="top" width="50%">Description
+<br></td></tr><tr align="left"><td valign="top" width="50%">.movetable</td><td valign="top" width="50%">Style applied to the entire table used for the move analysis
+<br></td></tr><tr align="left"><td valign="top" width="50%">.moveheader</td><td valign="top" width="50%">The header of the move analysis table
+<br></td></tr><tr align="left"><td valign="top" width="50%">.movenumber</td><td valign="top" width="50%">The rank number of a move in the move analysis
+<br></td></tr><tr align="left"><td valign="top" width="50%">.moveply</td><td valign="top" width="50%">The column indicating the number of plies or rollout
+<br></td></tr><tr align="left"><td valign="top" width="50%">.movemove</td><td valign="top" width="50%">The formatted move, e.g., 13/7 8/7. 
+<br></td></tr><tr align="left"><td valign="top" width="50%">.moveequity</td><td valign="top" width="50%">The column with the equity or MWC. 
+<br></td></tr><tr align="left"><td valign="top" width="50%">.movethemove</td><td valign="top" width="50%">Special style for row that contains the actual move chosen by the player
+<br></td></tr><tr align="left"><td valign="top" width="50%">.moveodd</td><td valign="top" width="50%">Special style for the odd rows. Can be used to give an alternating color for the rows. 
+<br></td></tr><tr align="left"><td valign="top" width="50%">.percent</td><td valign="top" width="50%">Style for the game winning probabilities and equities in the move analysis. 
+<br></td></tr><tr align="left"><td valign="top" width="50%">.blunder</td><td valign="top" width="50%">Emphasis blunders, e.g., <em>Alert: missed double</em> or <em>Alert: bad move</em>. 
+<br></td></tr><tr align="left"><td valign="top" width="50%">.joker</td><td valign="top" width="50%">Emphasis very good or bad rolls, e.g., <em>Alert: unlucky roll</em>. 
+<br></td></tr><tr align="left"><td valign="top" width="50%">.stattable</td><td valign="top" width="50%">The style applied to the entire table with game, match, and session statistics
+<br></td></tr><tr align="left"><td valign="top" width="50%">.stattableheader</td><td valign="top" width="50%">The header row of the statistics table
+<br></td></tr><tr align="left"><td valign="top" width="50%">.result</td><td valign="top" width="50%">Style for the text indicating the outcome of the game or match, e.g., Jørn<em> Thyssen wins 16 points</em>. 
+<br></td></tr><tr align="left"><td valign="top" width="50%">.tiny</td><td valign="top" width="50%">Currently unused. 
+<br></td></tr><tr align="left"><td valign="top" width="50%">.cubedecision</td><td valign="top" width="50%">The style applied to the entire cube decision table
+<br></td></tr><tr align="left"><td valign="top" width="50%">.cubedecisionheader</td><td valign="top" width="50%">Style for the header row of the cube decision table
+<br></td></tr><tr align="left"><td valign="top" width="50%">.cubeequity</td><td valign="top" width="50%">Style for any equity or MWC in the cube decision table
+<br></td></tr><tr align="left"><td valign="top" width="50%">.cubeaction</td><td valign="top" width="50%">Style for the text indicating the correct cube action
+<br></td></tr><tr align="left"><td valign="top" width="50%">.cubeply</td><td valign="top" width="50%">Style for the text that states the level of evaluation
+<br></td></tr><tr align="left"><td valign="top" width="50%">.cubeprobs</td><td valign="top" width="50%">Style for the game winning probabilities in the cube decision table
+<br></td></tr><tr align="left"><td valign="top" width="50%">.comment</td><td valign="top" width="50%">The style applied to the entire table used for annotations or comments, e.g., the kibitzing from imported SGG files
+<br></td></tr><tr align="left"><td valign="top" width="50%">.commentheader</td><td valign="top" width="50%">The style applied to the header row of the annotations' table
+<br></td></tr><tr align="left"><td valign="top" width="50%">.number</td><td valign="top" width="50%">Currently unused
+<br></td></tr><tr align="left"><td valign="top" width="50%">.fontfamily</td><td valign="top" width="50%">Style applied to the entire body of the XHTML document. 
+<br></td></tr><tr align="left"><td valign="top" width="50%">.block</td><td valign="top" width="50%">Style applied to the images in the export to avoid gaps between individual pictures both horizontally and vertically. 
+<br></td></tr><tr align="left"><td valign="top" width="50%">.positionid</td><td valign="top" width="50%">Style for the Position ID and match ID.
+   <br></td></tr></table>
+
+   </body></html>
+

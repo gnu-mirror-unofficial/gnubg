@@ -1,0 +1,114 @@
+<html lang="en">
+<head>
+<title>Overall rating - GNU Backgammon Manual  V0.16</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="description" content="GNU Backgammon Manual  V0.16">
+<meta name="generator" content="makeinfo 4.8">
+<link title="Top" rel="start" href="index.html#Top">
+<link rel="up" href="Statistics.html#Statistics" title="Statistics">
+<link rel="prev" href="Cube-statistics.html#Cube-statistics" title="Cube statistics">
+<link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+  pre.display { font-family:inherit }
+  pre.format  { font-family:inherit }
+  pre.smalldisplay { font-family:inherit; font-size:smaller }
+  pre.smallformat  { font-family:inherit; font-size:smaller }
+  pre.smallexample { font-size:smaller }
+  pre.smalllisp    { font-size:smaller }
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+--></style>
+</head>
+<body>
+<div class="node">
+<p>
+<a name="Overall-rating"></a>
+Previous:&nbsp;<a rel="previous" accesskey="p" href="Cube-statistics.html#Cube-statistics">Cube statistics</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="Statistics.html#Statistics">Statistics</a>
+<hr>
+</div>
+
+<h5 class="subsubsection">8.4.3.4 Overall rating</h5>
+
+<p>The last section is the overall summary.
+
+     <ol type=1 start=1>
+
+     <li>Error rate (total): The accumulated checker play and cube
+decision errors reported by normalized and unnormalized.
+
+     <li>Error rate (per decision): The error rate per decision is
+the total error rate divided by the number of non-trivial
+decisions (i.e., the sum of <em>unforced moves</em>
+and <em>close or actual cube decisions</em>). Again,
+please note that is different from Snowie 4 that defines the
+error rate per decision as the total error rate divided by the
+total number of moves for both players. In general, your error
+rate per move will be lower in Snowie than in GNU
+Backgammon. An investigation of approximately
+300 matches showed the on average the GNU
+Backgammon error rate with be 1.4 times higher
+than your Snowie 4 error rate.
+
+     <li>Equivalent Snowie error rate: For easy comparison
+GNU Backgammon will also print the
+total error rate calculated by the same formula as Snowie 4.
+
+     <li>Overall rating: Based on your normalized error rate per move
+GNU Backgammon will assign you a rating ranging from
+<em>Awful!</em> to
+<em>Supernatural</em>. See the table below for the
+thresholds.
+
+     <li>Actual result: The actual result of the game or match. For
+money game this is simply the number of points won or lost
+during the game or match. For match play the number is
+calculated as 50% added to the result of the game or match in
+MWC. For example, losing a match or winning a match corresponds
+to an actual result of 0% and 100%, respectively. Winning 1
+point in the first game of 7 point match is worth 6% using Kit
+Woolsey's match equity table, hence the actual result is 56%.
+
+     <li>Luck adjusted result: The luck adjusted result is calculated
+as the <em>actual result</em> plus the total
+unnormalized luck rate. This is also called <em>variance
+reduction of skill</em> as described in Douglas Zare's
+excellent article <a href="http://math.columbia.edu/~zare/vrskill.html">Hedging Toward Skill</a>. This should give an unbiased measure of
+the strengths of the players.
+
+     <li>MWC against current opponent: For match play
+GNU Backgammon will calculate your
+MWC against the current opponent. The number is calculated as
+50% - your total unnormalized error rate + your opponent's total
+unnormalized error rate. If your opponent is really lucky but
+plays rather bad, this number can become larger than 100%, since
+he due to the extra luck has the possibly to give up even more
+MWC. However, GNU Backgammon will
+report this number as 100%, and 0% for the opposite situation. 
+Note that this number is biased towards the analyzing bot, e.g.,
+a 0-ply analysis a game between GNU Backgammon 2-ply and 0-ply
+will suggest that 0-ply is a favorite, which it is clearly not. 
+For an unbiased measure use the <em>luck adjusted
+result</em> above.
+        </ol>
+
+   <p>Threshold for ratings:
+
+   <p><table summary=""><tr align="left"><td valign="top" width="50%">Normalized total error rate per move</td><td valign="top" width="50%">Rating
+<br></td></tr><tr align="left"><td valign="top" width="50%">0.000 - 0.002</td><td valign="top" width="50%">Supernatural
+<br></td></tr><tr align="left"><td valign="top" width="50%">0.002 - 0.005</td><td valign="top" width="50%">World Class
+<br></td></tr><tr align="left"><td valign="top" width="50%">0.005 - 0.008</td><td valign="top" width="50%">Expert
+<br></td></tr><tr align="left"><td valign="top" width="50%">0.008 - 0.012</td><td valign="top" width="50%">Advanced
+<br></td></tr><tr align="left"><td valign="top" width="50%">0.012 - 0.018</td><td valign="top" width="50%">Intermediate
+<br></td></tr><tr align="left"><td valign="top" width="50%">0.018 - 0.026</td><td valign="top" width="50%">Casual Player
+<br></td></tr><tr align="left"><td valign="top" width="50%">0.026 - 0.035</td><td valign="top" width="50%">Beginner
+<br></td></tr><tr align="left"><td valign="top" width="50%">&gt; 0.035</td><td valign="top" width="50%">Awful!
+   <br></td></tr></table>
+
+   <p>Please note: The Normalized total error rate per move is
+multiplied by 1000 in the default settings.
+
+   </body></html>
+

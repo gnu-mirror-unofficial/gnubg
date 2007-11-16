@@ -1,0 +1,83 @@
+<html lang="en">
+<head>
+<title>Analysis settings - GNU Backgammon Manual  V0.16</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="description" content="GNU Backgammon Manual  V0.16">
+<meta name="generator" content="makeinfo 4.8">
+<link title="Top" rel="start" href="index.html#Top">
+<link rel="up" href="Analyzing-matches.html#Analyzing-matches" title="Analyzing matches">
+<link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+  pre.display { font-family:inherit }
+  pre.format  { font-family:inherit }
+  pre.smalldisplay { font-family:inherit; font-size:smaller }
+  pre.smallformat  { font-family:inherit; font-size:smaller }
+  pre.smallexample { font-size:smaller }
+  pre.smalllisp    { font-size:smaller }
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+--></style>
+</head>
+<body>
+<div class="node">
+<p>
+<a name="Analysis-settings"></a>
+Up:&nbsp;<a rel="up" accesskey="u" href="Analyzing-matches.html#Analyzing-matches">Analyzing matches</a>
+<hr>
+</div>
+
+<h4 class="subsection">8.3.1 Analysis settings</h4>
+
+<p>You can configure how GNU Backgammon
+analysis the match or game for you. This can be configured in the dialog
+box that appears when choose Settings-&gt;Analysis.
+
+<p class="noindent"><a name="Analyze-settings-dialog"></a>
+
+   <p><strong>Analyze settings dialog</strong>
+
+   <p>[[analysesettings.png]]
+
+   <p>In the top left frame in this dialog box, you can select what to
+analyze. GNU Backgammon is able to analyze
+three different properties in a match.
+
+     <ol type=1 start=1>
+
+     <li>Checker play
+
+     <li>Cube decisions
+
+     <li>Luck of each roll
+        </ol>
+
+   <p>In addition you can have the analysis to analyze just one of the
+players, or both. There is also possible to set a limit of how many
+moves to be analyzed at each position. When you're reviewing your match,
+the number of analyzed moves will be limited to number in this field. 
+However, if you want to analyze further moves in a particular position,
+it's not a problem to do that later. The move that was actually done in
+the match will be analyzed even if it is ranked below the number of
+moves limit.
+
+   <p>GNU Backgammon will also mark each move
+or cube decision with Doubtful, Bad and Very bad. You can adjust the
+limits in equity difference for which label to assign. This is done in
+the frame box to the left. Notice, currently the Good and Very good
+classes are not used.
+
+   <p>You can also adjust the classes for what GNU
+Backgammon considers lucky and unlucky rolls. The luck of
+a roll is defined as the difference of equity after the best move after
+rolled dice and the equity after best move averaged over all possible
+rolls.
+
+   <p>The right part of the dialog box is an evaluation setting for how
+each move or cube decision should be evaluated in the analysis. For an
+explanation of this settings, see the chapter called "[[Evaluation
+settings]]".
+
+   </body></html>
+

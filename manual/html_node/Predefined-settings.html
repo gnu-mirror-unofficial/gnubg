@@ -1,0 +1,74 @@
+<html lang="en">
+<head>
+<title>Predefined settings - GNU Backgammon Manual  V0.16</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="description" content="GNU Backgammon Manual  V0.16">
+<meta name="generator" content="makeinfo 4.8">
+<link title="Top" rel="start" href="index.html#Top">
+<link rel="up" href="Evaluation-settings.html#Evaluation-settings" title="Evaluation settings">
+<link rel="prev" href="Changing-evaluation-settings.html#Changing-evaluation-settings" title="Changing evaluation settings">
+<link rel="next" href="Move-filters.html#Move-filters" title="Move filters">
+<link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+  pre.display { font-family:inherit }
+  pre.format  { font-family:inherit }
+  pre.smalldisplay { font-family:inherit; font-size:smaller }
+  pre.smallformat  { font-family:inherit; font-size:smaller }
+  pre.smallexample { font-size:smaller }
+  pre.smalllisp    { font-size:smaller }
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+--></style>
+</head>
+<body>
+<div class="node">
+<p>
+<a name="Predefined-settings"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Move-filters.html#Move-filters">Move filters</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="Changing-evaluation-settings.html#Changing-evaluation-settings">Changing evaluation settings</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="Evaluation-settings.html#Evaluation-settings">Evaluation settings</a>
+<hr>
+</div>
+
+<h4 class="subsection">10.1.9 Predefined settings</h4>
+
+<p>At the top of each evaluation settings column, it's possible to
+set a predefined setting.
+
+     <ol type=1 start=1>
+
+     <li>Beginner This setting uses no lookahead and add up to 0.060
+noise to the evaluation. With this setting GNU
+Backgammon will evaluate like a beginner.
+
+     <li>Casual play This setting uses no lookahead and add up to 0.050
+noise to the evaluation. With this setting GNU
+Backgammon will evaluate a bit better than the
+beginner setting but not much.
+
+     <li>Intermediate This setting uses no lookahead and add up to
+0.030 noise to each evaluation. It still plays a intermediate
+game.
+
+     <li>Advanced This setting uses no lookahead and add up to 0.015
+noise to each evaluation. This setting plays a good game.
+
+     <li>Expert This setting uses no lookahead, but does not add any
+noise to the evaluations. This settings play a strong game.
+
+     <li>World class This setting uses 2-ply lookahead, it uses no
+noise, and it uses a normal move filter. This plays a really
+strong game close to the best humans players in the world.
+
+     <li>Supremo This is basically the same as the World Class setting,
+but it uses a larger move filter.
+
+     <li>Grandmaster This setting uses 3-ply lookahead, no noises, and
+a normal move filter. This setting is extremely strong, but it's
+also very slow.
+        </ol>
+
+   </body></html>
+

@@ -1,0 +1,77 @@
+<html lang="en">
+<head>
+<title>Getting cube decision hints while playing - GNU Backgammon Manual  V0.16</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="description" content="GNU Backgammon Manual  V0.16">
+<meta name="generator" content="makeinfo 4.8">
+<link title="Top" rel="start" href="index.html#Top">
+<link rel="up" href="Getting-hints-manually.html#Getting-hints-manually" title="Getting hints manually">
+<link rel="prev" href="Getting-checker-play-hints-while-playing.html#Getting-checker-play-hints-while-playing" title="Getting checker play hints while playing">
+<link rel="next" href="The-hint-tool-buttons.html#The-hint-tool-buttons" title="The hint tool buttons">
+<link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+  pre.display { font-family:inherit }
+  pre.format  { font-family:inherit }
+  pre.smalldisplay { font-family:inherit; font-size:smaller }
+  pre.smallformat  { font-family:inherit; font-size:smaller }
+  pre.smallexample { font-size:smaller }
+  pre.smalllisp    { font-size:smaller }
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+--></style>
+</head>
+<body>
+<div class="node">
+<p>
+<a name="Getting-cube-decision-hints-while-playing"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="The-hint-tool-buttons.html#The-hint-tool-buttons">The hint tool buttons</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="Getting-checker-play-hints-while-playing.html#Getting-checker-play-hints-while-playing">Getting checker play hints while playing</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="Getting-hints-manually.html#Getting-hints-manually">Getting hints manually</a>
+<hr>
+</div>
+
+<h4 class="subsection">5.1.2 Getting cube decision hints while playing</h4>
+
+<p>If you're thinking about a cube decision before rolling you can
+press the same Hint button in the toolbar, as you pressed when you
+wanted checker play hint. The hint window will again appear, but this
+time it will look a bit different and it will show a hint of the correct
+cube decision.
+
+<p class="noindent"><a name="The-cube-hint-window"></a>
+
+   <p><strong>The cube hint window</strong>
+
+   <p>[[hintcubewindow.png]]
+
+   <p>The first lines is the window dialog shows the evaluation depth, and
+the cubeless equity with the evaluated probabilities. This equity is
+compensated for the match score. The cubeless equity for a money game,
+where the the calculation of equity is not compensated for match score,
+is also reported.
+
+   <p>Next follow three lines with cubeful equities. In figure above, the
+cubeful equity for the player on roll for not doubling at this turn, is
++0.123. The equity for a double and the opponent passing is (of course)
++1.000, since the player then will win one point. (The number is
+normalized to cube value of one, so even if it is a redouble to 4 or 8
+or higher, the cubeful equity for double/pass is still +1.000 for the
+doubler.) The third number in figure above is the cubeful equity for the
+player doubling and the opponent accepting the double. The different
+option will be listed in order with the best option highest. The number
+right to the listed equities is the differences from the cube decision
+considered best.
+
+   <p>The last line states the best considered cube action. In the figure
+above, GNU Backgammon considers the best cube
+action to be No double, take. When percentage number right to the proper
+cube action, is a number which indicates the <em>bluff</em>
+potential. It is the necessary percentage chance you think you can bluff
+your opponent into passing the cube to make the double theoretically
+correct. This number is only available when the position is considered
+No double, take or Too good to double, pass.
+
+   </body></html>
+

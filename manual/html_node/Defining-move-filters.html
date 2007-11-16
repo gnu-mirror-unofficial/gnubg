@@ -1,0 +1,109 @@
+<html lang="en">
+<head>
+<title>Defining move filters - GNU Backgammon Manual  V0.16</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="description" content="GNU Backgammon Manual  V0.16">
+<meta name="generator" content="makeinfo 4.8">
+<link title="Top" rel="start" href="index.html#Top">
+<link rel="up" href="Move-filters.html#Move-filters" title="Move filters">
+<link rel="prev" href="Introduction-to-move-filters.html#Introduction-to-move-filters" title="Introduction to move filters">
+<link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+  pre.display { font-family:inherit }
+  pre.format  { font-family:inherit }
+  pre.smalldisplay { font-family:inherit; font-size:smaller }
+  pre.smallformat  { font-family:inherit; font-size:smaller }
+  pre.smallexample { font-size:smaller }
+  pre.smalllisp    { font-size:smaller }
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+--></style>
+</head>
+<body>
+<div class="node">
+<p>
+<a name="Defining-move-filters"></a>
+Previous:&nbsp;<a rel="previous" accesskey="p" href="Introduction-to-move-filters.html#Introduction-to-move-filters">Introduction to move filters</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="Move-filters.html#Move-filters">Move filters</a>
+<hr>
+</div>
+
+<h5 class="subsubsection">10.1.10.2 Defining move filters</h5>
+
+<p>The move filter allows you to control exactly how many moves GNU
+is examining at each ply. A ply is basically one move played by one
+side, thus if both sides played a move, it would be one whole move,
+but two plies, one for each side. To change the specific settings,
+press the Modify... button.
+
+   <p>Although the predefined levels, such as World Class, Supremo,
+etc. are tested and good, you may want to know or control how GNU
+filters its moves to analyze and how many.
+
+<p class="noindent"><a name="Move-filter-1"></a>
+
+   <p><strong>Move filter 1</strong>
+
+   <p>[[movefilter1.png]]
+
+   <p>If you are playing Expert level (this is what GGRaccoon is set
+at) or another 0-ply setting, the Move Filter settings will not
+change a thing, as Expert level automatically examines all moves. At
+Supremo level, this changes though, as it takes a selection of the
+best moves from 0-ply and examines them at 2-ply. This means that
+for those selected moves it will calculate all the possibilities 2
+plies ahead and evaluate them, allowing it to find better moves. 
+Since Supremo is a 2-ply setting, we are only interested in the
+2-ply settings of Large as in the figure above. 3-ply or 4-ply
+settings will have no effect here because Supremo doesn't examine at
+that depth.
+
+   <p>In the figure above, we can see it first will Always accept 0
+moves. This first line means that it won't force any moves to be
+analyzed at 2-ply, it will only analyze moves according to the
+second line. If it had said it would always analyze 2 moves, this
+would mean that no matter how ridiculously bad the 2nd move was
+compared to the 1st, it would analyze both at 2-ply.
+
+   <p>The second line says it will Add extra 16 moves within 0.320. 
+This means that provided they aren't more than 0.320 equity worse
+than the top move, it will select a maximum of 16 moves to analyze
+at 2-ply. For example, in the figure below, the 2nd best move is no
+less than 0.453 equity worse than the top choice, so it didn't
+bother analyzing them at 2-ply as it is unlikely to change its mind
+on what the best move is.
+
+<p class="noindent"><a name="Move-filter-2"></a>
+
+   <p><strong>Move filter 2</strong>
+
+   <p>[[movefilter2.png]]
+
+   <p>Take a look at next figure.
+
+<p class="noindent"><a name="Move-filter-3"></a>
+
+   <p><strong>Move filter 3</strong>
+
+   <p>[[movefilter3.png]]
+
+   <p>Here, the exact same settings were maintained, but the 1-ply
+filter was activated. This just means that those 16 moves selected
+from the 0-ply are sent instead to be analyzed at 1-ply, and then up
+to 5 moves from 1-ply will be sent to be analyzed at 2-ply. So this
+would actually be faster than the previous setting (and weaker),
+since a maximum of only 5 moves would be analyzed at 2-ply depth.
+
+   <p>Tip: Feel free to experiment with the settings, as you can
+always reset them by simply choosing one of the predefined levels. 
+In order to see if they are better, or as good but faster, I'd
+suggest comparing the results with Supremo. One setting I have that
+works quite well, is to take the basic Supremo setting and in the
+Move filter reduce the 16 to 12. It cuts down on the thinking time
+by 20-25% more or less, and I haven't seen more than one case in
+over 10,000 moves where it missed the best move.
+
+   </body></html>
+

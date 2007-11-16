@@ -1,0 +1,73 @@
+<html lang="en">
+<head>
+<title>The cube efficiency - GNU Backgammon Manual  V0.16</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="description" content="GNU Backgammon Manual  V0.16">
+<meta name="generator" content="makeinfo 4.8">
+<link title="Top" rel="start" href="index.html#Top">
+<link rel="up" href="Cubeful-equities.html#Cubeful-equities" title="Cubeful equities">
+<link rel="prev" href="n_002dply-Cubeful-equities.html#n_002dply-Cubeful-equities" title="n-ply Cubeful equities">
+<link rel="next" href="Cube-decisions.html#Cube-decisions" title="Cube decisions">
+<link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+  pre.display { font-family:inherit }
+  pre.format  { font-family:inherit }
+  pre.smalldisplay { font-family:inherit; font-size:smaller }
+  pre.smallformat  { font-family:inherit; font-size:smaller }
+  pre.smallexample { font-size:smaller }
+  pre.smalllisp    { font-size:smaller }
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+--></style>
+</head>
+<body>
+<div class="node">
+<p>
+<a name="The-cube-efficiency"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Cube-decisions.html#Cube-decisions">Cube decisions</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="n_002dply-Cubeful-equities.html#n_002dply-Cubeful-equities">n-ply Cubeful equities</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="Cubeful-equities.html#Cubeful-equities">Cubeful equities</a>
+<hr>
+</div>
+
+<h5 class="subsubsection">11.5.5.5 The cube efficiency</h5>
+
+<p>The cube efficiency is obviously an important parameter,
+unfortunately there haven't been much investigation carried out, so
+GNU Backgammon basically uses the values
+0.6-0.7 originally suggested by Rick Janowski:
+
+   <p><table summary=""><tr align="left"><td valign="top" width="50%">Position Class </td><td valign="top" width="50%">x (Cube efficiency)
+<br></td></tr><tr align="left"><td valign="top" width="50%">Two-sided (exact) bearoff</td><td valign="top" width="50%">n/a
+<br></td></tr><tr align="left"><td valign="top" width="50%">One-sided bearoff</td><td valign="top" width="50%">0.6
+<br></td></tr><tr align="left"><td valign="top" width="50%">Crashed</td><td valign="top" width="50%">0.68
+<br></td></tr><tr align="left"><td valign="top" width="50%">Contact</td><td valign="top" width="50%">0.68
+<br></td></tr><tr align="left"><td valign="top" width="50%">Race</td><td valign="top" width="50%">linear interpolation between 0.6 and 0.7
+   <br></td></tr></table>
+
+   <p>For race GNU Backgammon uses linear
+interpolation based on pip count for the player on roll. A pip count
+of 40 gives x=0.6 and 120 gives x=0.7. If the pip count is below 40 or
+above 120 values of x=0.6 and x=0.7 are used, respectively.
+
+   <p>For the two sided bearoff positions the cubeful money equity is
+already available from the database, so for money game there is no
+need to calculate cubeful equities via Janowski's formula. However,
+the cubeful equities for money game cannot be used for match play. 
+Instead of using a fixed value of x, say, 0.6, GNU
+Backgammon will calculate an effective value based on
+the cubeful money equity. The cubeful MWC is calculated as usual, but
+with the calculated x.
+
+   <p>There is obviously room for improvements. For example, holding
+games should intuitively have a lower cube efficiency, since it's very
+difficult to double effectively: either it's not good enough or you've
+lost the market by a mile after rolling a high double or hitting a
+single shot. Similarly, backgames will often have a low cube
+efficiency, whereas blitzes have may have a higher cube
+efficiency.
+
+   </body></html>
+

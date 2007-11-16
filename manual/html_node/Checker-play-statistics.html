@@ -1,0 +1,78 @@
+<html lang="en">
+<head>
+<title>Checker play statistics - GNU Backgammon Manual  V0.16</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="description" content="GNU Backgammon Manual  V0.16">
+<meta name="generator" content="makeinfo 4.8">
+<link title="Top" rel="start" href="index.html#Top">
+<link rel="up" href="Statistics.html#Statistics" title="Statistics">
+<link rel="next" href="Luck-analysis.html#Luck-analysis" title="Luck analysis">
+<link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+  pre.display { font-family:inherit }
+  pre.format  { font-family:inherit }
+  pre.smalldisplay { font-family:inherit; font-size:smaller }
+  pre.smallformat  { font-family:inherit; font-size:smaller }
+  pre.smallexample { font-size:smaller }
+  pre.smalllisp    { font-size:smaller }
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+--></style>
+</head>
+<body>
+<div class="node">
+<p>
+<a name="Checker-play-statistics"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Luck-analysis.html#Luck-analysis">Luck analysis</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="Statistics.html#Statistics">Statistics</a>
+<hr>
+</div>
+
+<h5 class="subsubsection">8.4.3.1 Checker play statistics</h5>
+
+<p>This section provides a summary of the checker play statistics. 
+The following information is available
+
+     <ol type=1 start=1>
+
+     <li>Total moves: The total number of moves in the match.
+
+     <li>Unforced moves: The number of unforced moves, i.e., all
+checker play decisions which had more than one legal move.
+
+     <li>Moves marked <em>xxx</em>: The number of moves
+marked <em>very good</em>, <em>very
+bad</em> etc. The analysis will mark moves <em>very
+bad</em>, <em>bad</em> etc. based on the
+threshold you've defined in the analysis settings. 
+GNU Backgammon can currently not
+automatically mark moves, e.g., <em>good</em>, but
+you can mark moves <em>good</em> yourself.
+
+     <li>Error rate (total): The first number is the total amount of
+normalized equity that the player gave up during this game or
+match. The number in parenthesis is the un-normalized
+counterpart; for money play the all errors are multiplied with
+the value of the cube, and for match play the total match
+winning chance given up by the player is reported.
+
+     <li>Error rate (per move): The error rate per move is the total
+error rate divided by the number of <em>unforced
+moves</em>. Note that is different from Snowie 4 that
+defines the error rate per move as the total error rate divided
+by the total number of moves for both players, i.e., the sum of
+<em>total moves</em> for both players. In general,
+your error rate per move will be lower in Snowie than in
+GNU Backgammon.
+
+     <li>Checker play rating: GNU
+Backgammon will assign a rating for your checker
+play ranging from <em>Awful!</em> to
+<em>Supernatural</em>. See the description for the
+overall rating below.
+        </ol>
+
+   </body></html>
+

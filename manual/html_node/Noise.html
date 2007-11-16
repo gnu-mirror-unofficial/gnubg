@@ -1,0 +1,59 @@
+<html lang="en">
+<head>
+<title>Noise - GNU Backgammon Manual  V0.16</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="description" content="GNU Backgammon Manual  V0.16">
+<meta name="generator" content="makeinfo 4.8">
+<link title="Top" rel="start" href="index.html#Top">
+<link rel="up" href="Evaluation-settings.html#Evaluation-settings" title="Evaluation settings">
+<link rel="prev" href="Pruning-neural-networks.html#Pruning-neural-networks" title="Pruning neural networks">
+<link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+  pre.display { font-family:inherit }
+  pre.format  { font-family:inherit }
+  pre.smalldisplay { font-family:inherit; font-size:smaller }
+  pre.smallformat  { font-family:inherit; font-size:smaller }
+  pre.smallexample { font-size:smaller }
+  pre.smalllisp    { font-size:smaller }
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+--></style>
+</head>
+<body>
+<div class="node">
+<p>
+<a name="Noise"></a>
+Previous:&nbsp;<a rel="previous" accesskey="p" href="Pruning-neural-networks.html#Pruning-neural-networks">Pruning neural networks</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="Evaluation-settings.html#Evaluation-settings">Evaluation settings</a>
+<hr>
+</div>
+
+<h4 class="subsection">10.1.14 Noise</h4>
+
+<p>If you think GNU Backgammon plays too
+strong for you, you can add some noise to its evaluation. The number
+you add into the field in the evaluations setting is the limit amount
+of noise that will be added to the evaluation.
+
+   <p>If noise is added to the evaluations GNU
+Backgammon will take a Box M&uuml;ller transform of a point
+in the unit circle and add to each possible outcome probability. This
+means that the addition is random, but distributed so that it's more
+likely to have an noise addition close to zero than a noise addition
+close to the limit. The noise addition is limited to the number you
+put into the noise field in the dialog box.
+
+   <p>If you check the box Deterministic noise, the noise added to each
+evaluation will be based on a sum of the bytes in the hash of the
+board position, which (by the central limit theorem) should have a
+normal distribution. In that way you will always have that same noise
+amount to a position, since the noise added to the evaluation is only
+depending on the position itself.
+
+   <p>If you want GNU Backgammon to evaluate
+and play as strong as possible, you should not add any noise.
+
+   </body></html>
+

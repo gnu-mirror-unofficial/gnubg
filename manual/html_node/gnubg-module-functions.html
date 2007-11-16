@@ -1,0 +1,103 @@
+<html lang="en">
+<head>
+<title>gnubg module functions - GNU Backgammon Manual  V0.16</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="description" content="GNU Backgammon Manual  V0.16">
+<meta name="generator" content="makeinfo 4.8">
+<link title="Top" rel="start" href="index.html#Top">
+<link rel="up" href="Python-scripting.html#Python-scripting" title="Python scripting">
+<link rel="next" href="Match-description.html#Match-description" title="Match description">
+<link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+  pre.display { font-family:inherit }
+  pre.format  { font-family:inherit }
+  pre.smalldisplay { font-family:inherit; font-size:smaller }
+  pre.smallformat  { font-family:inherit; font-size:smaller }
+  pre.smallexample { font-size:smaller }
+  pre.smalllisp    { font-size:smaller }
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+--></style>
+</head>
+<body>
+<div class="node">
+<p>
+<a name="gnubg-module-functions"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Match-description.html#Match-description">Match description</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="Python-scripting.html#Python-scripting">Python scripting</a>
+<hr>
+</div>
+
+<h4 class="subsection">11.3.1 gnubg module functions</h4>
+
+<p>board()
+
+   <p>command(cmd)
+
+   <p>evaluate()
+
+   <p>evalcontext()
+
+   <p>eq2mwc()
+
+   <p>mwc2eq()
+
+   <p>cubeinfo()
+
+   <p>met()
+
+   <p>positionid()
+
+   <p>positionfromid()
+
+   <p>positionkey()
+
+   <p>positionfromkey()
+
+   <p>positionbearoff()
+
+   <p>positionfrombearoff()
+
+   <p>navigate([next=N,[game=N]])
+
+   <p>Match navigation.
+
+   <p>Without any arguments, go to first move of first match.
+
+   <p>With next == N, move forward N game records.
+
+   <p>With game == N, move forward/backward N games.
+
+   <p>Navigate never wraps around.
+
+   <p>On success, returns None. If unable to complete the requested
+number of moves, returns a pair of (next-remaining,game-remaining).
+
+   <p>match([analysis=1/0, boards=1/0, statistics=0/1, verbose=0/1])
+
+   <p>Return the current match. For example,
+
+   <p>&gt; m = gnubg.match()
+
+   <p>Takes the following optional keyword arguments:
+
+   <p>analysis
+
+   <p>When 0, discard analysis data. default is 1.
+
+   <p>boards
+
+   <p>When 1, add current board to move/double records. Default is 1.
+
+   <p>statistics
+
+   <p>When 1, include game and match statistics. Default is 0.
+
+   <p>verbose
+
+   <p>When 1, include derived analysis values. Default is 0.
+
+   </body></html>
+

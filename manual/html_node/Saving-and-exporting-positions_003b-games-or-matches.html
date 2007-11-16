@@ -1,0 +1,86 @@
+<html lang="en">
+<head>
+<title>Saving and exporting positions; games or matches - GNU Backgammon Manual  V0.16</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="description" content="GNU Backgammon Manual  V0.16">
+<meta name="generator" content="makeinfo 4.8">
+<link title="Top" rel="start" href="index.html#Top">
+<link rel="up" href="Retrieving-and-storing-backgammon-files.html#Retrieving-and-storing-backgammon-files" title="Retrieving and storing backgammon files">
+<link rel="prev" href="Opening-and-importing-matches.html#Opening-and-importing-matches" title="Opening and importing matches">
+<link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+  pre.display { font-family:inherit }
+  pre.format  { font-family:inherit }
+  pre.smalldisplay { font-family:inherit; font-size:smaller }
+  pre.smallformat  { font-family:inherit; font-size:smaller }
+  pre.smallexample { font-size:smaller }
+  pre.smalllisp    { font-size:smaller }
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+--></style>
+</head>
+<body>
+<div class="node">
+<p>
+<a name="Saving-and-exporting-positions%3b-games-or-matches"></a>
+<a name="Saving-and-exporting-positions_003b-games-or-matches"></a>
+Previous:&nbsp;<a rel="previous" accesskey="p" href="Opening-and-importing-matches.html#Opening-and-importing-matches">Opening and importing matches</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="Retrieving-and-storing-backgammon-files.html#Retrieving-and-storing-backgammon-files">Retrieving and storing backgammon files</a>
+<hr>
+</div>
+
+<h4 class="subsection">8.1.3 Saving and exporting positions, games or matches</h4>
+
+<p>If you have played or imported a match into GNU
+Backgammon, and wish to save your efforts, you can
+choose File-&gt;Save. A file dialog box will appear and you can type in a
+file name or keep the suggested default file name. (The suggested
+default file name contains the date, the players name and the length
+of the match). This will save the whole match of the current match or
+session. If there is any analysis or commentary available this will
+also be saved to the file. You can also use the tool bar button
+labeled Save to open the file dialog box directly. There is also a
+keyboard shortcut, Ctrl-S, for saving a match or session.
+
+   <blockquote>
+
+        <p><strong>Warning</strong>
+
+        <p>Please note that saving a position will not save any
+analysis. 
+</blockquote>
+
+   <p>The export dialog is accessed by choosing File-&gt;Export This dialog is similar to the save dialog. Again you may
+choose a different filename and whether to export an entire match, a
+game or a position. Then you must choose an export format as well. 
+Notice some file formats only supports export of matches and some only
+supports position. Only when a legal combination is chosen will ending
+the dialog be possible. The following table contains the supported
+file formats and the corresponding commands for export. Again notice
+that with some formats only some of M(atch), G(ame), P(osition) is
+allowed. For example to export a Jellyfish position you would issue
+the command <code>export position pos
+&lt;filepath&gt;</code>
+
+   <p><table summary=""><tr align="left"><td valign="top" width="50%">Encapsulated Postscript</td><td valign="top" width="50%"><code>export &lt;P&gt; eps &lt;filepath&gt;</code>
+<br></td></tr><tr align="left"><td valign="top" width="50%">HTML</td><td valign="top" width="50%"><code>export &lt;MGP&gt; html &lt;filepath&gt;</code>
+<br></td></tr><tr align="left"><td valign="top" width="50%">Jellyfish Game</td><td valign="top" width="50%"><code>export &lt;G&gt; gam &lt;filepath&gt;</code>
+<br></td></tr><tr align="left"><td valign="top" width="50%">Jellyfish Match</td><td valign="top" width="50%"><code>export &lt;M&gt; mat &lt;filepath&gt;</code>
+<br></td></tr><tr align="left"><td valign="top" width="50%">Jellyfish Position</td><td valign="top" width="50%"><code>export &lt;P&gt; pos &lt;filepath&gt;</code>
+<br></td></tr><tr align="left"><td valign="top" width="50%">LaTeX</td><td valign="top" width="50%"><code>export &lt;MG&gt; latex &lt;filepath&gt;</code>
+<br></td></tr><tr align="left"><td valign="top" width="50%">PDF</td><td valign="top" width="50%"><code>export &lt;MG&gt; pdf &lt;filepath&gt;</code>
+<br></td></tr><tr align="left"><td valign="top" width="50%">Plain Text</td><td valign="top" width="50%"><code>export &lt;MGP&gt; text &lt;filepath&gt;</code>
+<br></td></tr><tr align="left"><td valign="top" width="50%">Portable Network Graphics</td><td valign="top" width="50%"><code>export &lt;P&gt; pdf &lt;filepath&gt;</code>
+<br></td></tr><tr align="left"><td valign="top" width="50%">PostScript</td><td valign="top" width="50%"><code>export &lt;MG&gt; postscript &lt;filepath&gt;</code>
+<br></td></tr><tr align="left"><td valign="top" width="50%">Snowie Text</td><td valign="top" width="50%"><code>export &lt;P&gt; snowietxt &lt;filepath&gt;</code>
+   <br></td></tr></table>
+
+<ul class="menu">
+<li><a accesskey="1" href="HTML-export.html#HTML-export">HTML export</a>
+<li><a accesskey="2" href="LaTeX-export.html#LaTeX-export">LaTeX export</a>
+</ul>
+
+   </body></html>
+

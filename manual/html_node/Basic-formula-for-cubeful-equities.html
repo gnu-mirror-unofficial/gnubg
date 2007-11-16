@@ -1,0 +1,55 @@
+<html lang="en">
+<head>
+<title>Basic formula for cubeful equities - GNU Backgammon Manual  V0.16</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="description" content="GNU Backgammon Manual  V0.16">
+<meta name="generator" content="makeinfo 4.8">
+<link title="Top" rel="start" href="index.html#Top">
+<link rel="up" href="Cubeful-equities.html#Cubeful-equities" title="Cubeful equities">
+<link rel="next" href="Live-cube-equities.html#Live-cube-equities" title="Live cube equities">
+<link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+  pre.display { font-family:inherit }
+  pre.format  { font-family:inherit }
+  pre.smalldisplay { font-family:inherit; font-size:smaller }
+  pre.smallformat  { font-family:inherit; font-size:smaller }
+  pre.smallexample { font-size:smaller }
+  pre.smalllisp    { font-size:smaller }
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+--></style>
+</head>
+<body>
+<div class="node">
+<p>
+<a name="Basic-formula-for-cubeful-equities"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Live-cube-equities.html#Live-cube-equities">Live cube equities</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="Cubeful-equities.html#Cubeful-equities">Cubeful equities</a>
+<hr>
+</div>
+
+<h5 class="subsubsection">11.5.5.1 Basic formula for cubeful equities</h5>
+
+<p>The basic formula for cubeful equities as derived by Janowski is
+
+   <p>E(cubeful) = E(dead) * (1-x) + E(live) * x,
+
+   <p>where E(dead) is the dead cube equity (cubeless equity) calculated
+from the standard formula. E(live) is the cubeful equity assuming a
+fully live cube. We'll return to that in the next section. x is the
+cube efficiency. x=0 gives E(cubeful)=E(dead) as one extreme and x=1
+gives E(cubeful)=E(live) as the other extreme. In reality x is
+somewhere in between, which typical values around 0.6 - 0.8.
+
+   <p>Janowski's article doesn't mention cubeful equities, so we use the
+straightforward generalization
+
+   <p>MWC(cubeful) = MWC(dead) * (1-x) + MWC(live) * x.
+
+   <p>as MWC is the entity that is used for match play
+evaluations.
+
+   </body></html>
+

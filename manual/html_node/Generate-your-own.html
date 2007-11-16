@@ -1,0 +1,99 @@
+<html lang="en">
+<head>
+<title>Generate your own - GNU Backgammon Manual  V0.16</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="description" content="GNU Backgammon Manual  V0.16">
+<meta name="generator" content="makeinfo 4.8">
+<link title="Top" rel="start" href="index.html#Top">
+<link rel="up" href="Obtaining-bearoff-databases.html#Obtaining-bearoff-databases" title="Obtaining bearoff databases">
+<link rel="next" href="Download.html#Download" title="Download">
+<link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+  pre.display { font-family:inherit }
+  pre.format  { font-family:inherit }
+  pre.smalldisplay { font-family:inherit; font-size:smaller }
+  pre.smallformat  { font-family:inherit; font-size:smaller }
+  pre.smallexample { font-size:smaller }
+  pre.smalllisp    { font-size:smaller }
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+--></style>
+</head>
+<body>
+<div class="node">
+<p>
+<a name="Generate-your-own"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Download.html#Download">Download</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="Obtaining-bearoff-databases.html#Obtaining-bearoff-databases">Obtaining bearoff databases</a>
+<hr>
+</div>
+
+<h4 class="subsection">11.1.1 Generate your own</h4>
+
+<p>GNU Backgammon is supplied with a
+program makebearoff that is used to generate bearoff databases. Due to
+various limitations it is only possible to generate bearoff databases
+with a size less than 2GB, i.e., the 13pt one-sided database and the
+11 checker two-sided database are the largest databases that can be
+generated with makebearoff.
+
+   <p>To generate one sided database issue
+
+   <p>makebearoff -o 10 -f gnubg_os.bd
+
+   <p>to generate the one sided 10 point database. The program
+makebearoff uses a cache to store previously generated positions. You
+may set the cache size with the -s size option, e.g.,
+
+   <p>makebearoff -o 10 -s 123456789 -f gnubg_os.bd
+
+   <p>to use 123,456,789 bytes of memory for cache size. In general, if
+the cache size is less than the size of the database to be generated,
+then extra time is needed to generate the bearoff database because
+some positions may have to be calculated several times.
+
+   <p>makebearoff can also reuse previously generated databases, so if
+you already had generated the 9 point database you can reuse it:
+
+   <p>mv gnubg_os.bd gnubg_os9.bd
+
+   <p>makebearoff -o 10 -O gnubg_os9.bd -f gnubg_os.bd
+
+   <p>Note that makebearoff requires temporary disk space to generate
+both one sided and two sided databases. In general, twice the disk
+space of the database to be generated is needed.
+
+   <p>To generate a two sided database issue
+
+   <p>makebearoff -t 6x8 -f gnubg_ts.bd
+
+   <p>This example will generate the 8 checkers on 6 points database. 
+Again, it's possible to adjust the amount of memory with the -s
+option. It's recommended to set the cache size to the maximum amount
+of memory available (although there is no need to set it beyond the
+size of the bearoff database to be generated).
+
+   <p>Other options for makebearoff are available, see makebearoff
+&ndash;help for the complete set.
+
+   <p>The accompanying program makehyper is used to generate databases
+for Hypergammon. For example, to generate the 3-checker database issue
+the command
+
+   <p>makehyper -c 3 -f hyper3.bd
+
+   <p>Since the generation is <em>very</em> time consuming
+makehyper will generate a checkpoint file (in the example above:
+hyper1.bd.tmp) that can be used to restart the calculation if needed
+by using the -r option. You can also change the default convergence
+threshold of 0.00001 if you're happy with less accurate equities. To
+generate the 3 checker database you need approximately 400 MB of free
+memory. On a 2.4 GHz box with 512 MB of RAM the calculation ran for 58
+iterations of 3000 seconds each, i.e., a total of 48 hours!
+
+   <p>See makehyper &ndash;help for the complete set of available options.
+
+   </body></html>
+

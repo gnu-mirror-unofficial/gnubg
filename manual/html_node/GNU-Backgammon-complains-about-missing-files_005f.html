@@ -1,0 +1,66 @@
+<html lang="en">
+<head>
+<title>GNU Backgammon complains about missing files_ - GNU Backgammon Manual  V0.16</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="description" content="GNU Backgammon Manual  V0.16">
+<meta name="generator" content="makeinfo 4.8">
+<link title="Top" rel="start" href="index.html#Top">
+<link rel="up" href="Running-GNU-Backgammon.html#Running-GNU-Backgammon" title="Running GNU Backgammon">
+<link rel="prev" href="I-get-an-error-message-when-starting_005f.html#I-get-an-error-message-when-starting_005f" title="I get an error message when starting_">
+<link rel="next" href="Starting-from-the-WinXP-menu-it-plays-like-a-beginner_005f.html#Starting-from-the-WinXP-menu-it-plays-like-a-beginner_005f" title="Starting from the WinXP menu it plays like a beginner_">
+<link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+  pre.display { font-family:inherit }
+  pre.format  { font-family:inherit }
+  pre.smalldisplay { font-family:inherit; font-size:smaller }
+  pre.smallformat  { font-family:inherit; font-size:smaller }
+  pre.smallexample { font-size:smaller }
+  pre.smalllisp    { font-size:smaller }
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+--></style>
+</head>
+<body>
+<div class="node">
+<p>
+<a name="GNU-Backgammon-complains-about-missing-files_"></a>
+<a name="GNU-Backgammon-complains-about-missing-files_005f"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Starting-from-the-WinXP-menu-it-plays-like-a-beginner_005f.html#Starting-from-the-WinXP-menu-it-plays-like-a-beginner_005f">Starting from the WinXP menu it plays like a beginner_</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="I-get-an-error-message-when-starting_005f.html#I-get-an-error-message-when-starting_005f">I get an error message when starting_</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="Running-GNU-Backgammon.html#Running-GNU-Backgammon">Running GNU Backgammon</a>
+<hr>
+</div>
+
+<h4 class="subsection">12.3.2 GNU Backgammon complains about missing  files.</h4>
+
+<p>GNU Backgammon reads several different
+files at start-up. It will first try to read a file called gnubg.wd. 
+This is a file which contains all the neural net weights and is
+necessary for the program to evaluate positions. If this file is not
+found, or found corrupted or with an incompatible version,
+GNU Backgammon will search for a weights
+file called gnubg.weights. This file also contains the neural net
+weights, but is stored in ASCII format. If none of these files are
+found, GNU Backgammon will start, but it
+will give you a warning about these missing files, and it will play
+<em>very</em> poorly.
+
+   <p>GNU Backgammon will also read the
+bearoff databases at start-up. There are usually two bearoff
+databases. The first is called gnubg_os0.bd, and has stored data about
+the bearoff probabilities of all position where both players have 15
+or fewer checkers left on their six home board points. If this file is
+not found, GNU Backgammon will create a
+heuristic bearoff database for these positions. This database is a
+also called the 'One Sided Database', since it evaluates each player
+separately. The other bearoff database is called gnubg_ts0.bd. This
+bearoff database contains win probabilities for all bearoff positions
+with six or less checkers. It also contains cubeful equities (Money
+Game) for all the positions. If this file is not found at start-up,
+GNU Backgammon will evaluate late bearoff
+positions with the one sided bearoff database.
+
+   </body></html>
+

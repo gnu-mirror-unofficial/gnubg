@@ -1,0 +1,79 @@
+<html lang="en">
+<head>
+<title>Command line options - GNU Backgammon Manual  V0.16</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="description" content="GNU Backgammon Manual  V0.16">
+<meta name="generator" content="makeinfo 4.8">
+<link title="Top" rel="start" href="index.html#Top">
+<link rel="up" href="Starting-GNU-Backgammon.html#Starting-GNU-Backgammon" title="Starting GNU Backgammon">
+<link rel="prev" href="Mac-OSX.html#Mac-OSX" title="Mac OSX">
+<link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+  pre.display { font-family:inherit }
+  pre.format  { font-family:inherit }
+  pre.smalldisplay { font-family:inherit; font-size:smaller }
+  pre.smallformat  { font-family:inherit; font-size:smaller }
+  pre.smallexample { font-size:smaller }
+  pre.smalllisp    { font-size:smaller }
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+--></style>
+</head>
+<body>
+<div class="node">
+<p>
+<a name="Command-line-options"></a>
+Previous:&nbsp;<a rel="previous" accesskey="p" href="Mac-OSX.html#Mac-OSX">Mac OSX</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="Starting-GNU-Backgammon.html#Starting-GNU-Backgammon">Starting GNU Backgammon</a>
+<hr>
+</div>
+
+<h3 class="section">3.4 Command line options</h3>
+
+<p>The following options control the startup of GNU Backgammon. Most options are
+available in all versions of GNU
+Backgammon, but notably, the -w and -t options don't work
+under MS windows where separate command line and GUI applications exist
+instead.
+
+<p class="noindent"><a name="GNU-Backgammon-startup-options"></a>
+
+   <p><strong>GNU Backgammon startup options</strong>
+
+<pre class="example">     
+     Usage:
+     gnubg [OPTION...] [file.sgf]
+     
+     Help Options:
+     -?, --help                   Show help options
+     --help-all                   Show all help options
+     --help-gtk                   Show GTK+ Options
+     
+     GTK+ Options
+     --class=CLASS                Program class as used by the window manager
+     --name=NAME                  Program name as used by the window manager
+     --screen=SCREEN              X screen to use
+     --sync                       Make X calls synchronous
+     --gtk-module=MODULES         Load additional GTK+ modules
+     --g-fatal-warnings           Make all warnings fatal
+     
+     Application Options:
+     -b, --no-bearoff             Do not use bearoff database
+     -c, --commands=FILE          Evaluate commands in FILE and exit
+     -d, --datadir=DIR            Read database and weight files from DIR
+     -l, --lang=LANG              Set language to LANG
+     -n, --new-weights=N          Create new neural net (of size N)
+     -p, --python=FILE            Evaluate Python code in FILE and exit
+     -q, --quiet                  Disable sound effects
+     -r, --no-rc                  Do not read .gnubgrc and .gnubgautorc commands
+     -S, --no-splash              Don't show gtk splash screen
+     -t, --tty                    Start on tty instead of using window system
+     -v, --version                Show version information and exit
+     -w, --window-system-only     Ignore tty input when using window system
+     --display=DISPLAY            X display to use
+     
+</pre>
+   </body></html>
+

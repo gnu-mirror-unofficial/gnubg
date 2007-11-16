@@ -1,162 +1,143 @@
 <html lang="en">
 <head>
-<title>GNU Backgammon</title>
-<meta http-equiv="Content-Type" content="text/html">
-<meta name="description" content="GNU Backgammon">
-<meta name="generator" content="makeinfo 4.3">
-<link href="http://www.gnu.org/software/texinfo/" rel="generator-home">
+<title>Introduction - GNU Backgammon Manual  V0.16</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="description" content="GNU Backgammon Manual  V0.16">
+<meta name="generator" content="makeinfo 4.8">
+<link title="Top" rel="start" href="index.html#Top">
+<link rel="prev" href="index.html#Top" title="Top">
+<link rel="next" href="Rules-of-the-game.html#Rules-of-the-game" title="Rules of the game">
+<link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+  pre.display { font-family:inherit }
+  pre.format  { font-family:inherit }
+  pre.smalldisplay { font-family:inherit; font-size:smaller }
+  pre.smallformat  { font-family:inherit; font-size:smaller }
+  pre.smallexample { font-size:smaller }
+  pre.smalllisp    { font-size:smaller }
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+--></style>
 </head>
 <body>
 <div class="node">
 <p>
-Node:<a name="Introduction">Introduction</a>,
-Next:<a rel="next" accesskey="n" href="For-the-impatient.html#For%20the%20impatient">For the impatient</a>,
-Previous:<a rel="previous" accesskey="p" href="index.html#Top">Top</a>,
-Up:<a rel="up" accesskey="u" href="index.html#Top">Top</a>
-<hr><br>
+<a name="Introduction"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Rules-of-the-game.html#Rules-of-the-game">Rules of the game</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="index.html#Top">Top</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="index.html#Top">Top</a>
+<hr>
 </div>
 
-<h2 class="chapter">Introduction</h2>
+<h2 class="chapter">1 Introduction</h2>
 
-   <p>GNU Backgammon works on
+<p>This manual describes how to use GNU
+Backgammon to play and analyze backgammon games and
+matches. It corresponds to version 0.16-devel (updated in February, 2007).
+
+   <p>GNU Backgammon (gnubg)
+plays and analyzes backgammon games and matches. It is able to play and
+analyze both money games and tournament matches, evaluate and roll out
+positions, and more. Driven by a command-line interface, it displays an
+ASCII rendering of a board on text-only terminals, but also allows the
+user to play games and manipulate positions with a graphical GTK+
+interface. GNU Backgammon is
+extensible on platforms which support Python.
+
+<pre class="example">     
+     (No game) new game
+     gnubg rolls 3, anthon rolls 1.
+     
+     GNU Backgammon  Positions ID: 4HPwATDgc/ABMA
+     Match ID   : MIEFAAAAAAAA
+      +12-11-10--9--8--7-------6--5--4--3--2--1-+     O: gnubg
+      | X           O    |   | O              X |     0 points
+      | X           O    |   | O              X |     Rolled 31
+      | X           O    |   | O                |
+      | X                |   | O                |
+      | X                |   | O                |
+     ^|                  |BAR|                  |     (Cube: 1)
+      | O                |   | X                |
+      | O                |   | X                |
+      | O           X    |   | X                |
+      | O           X    |   | X              O |
+      | O           X    |   | X              O |     0 points
+      +13-14-15-16-17-18------19-20-21-22-23-24-+     X: anthon
+     
+     gnubg moves 8/5 6/5.
+     
+</pre>
+   <p>GNU Backgammon is a world
+class opponent and rates at around 2000 on FIBS, the First Internet
+Backgammon Server &ndash; at its best, it is in the top 5 of over 6000 rated
+players there). GNU Backgammon
+can be played on numerous other on-line backgammon servers.
+
+   <p>The following features can be found in the current release of
+GNU Backgammon.
 
      <ul>
-<li>MS Windows operating systems
-<li>Linux
-<li>FreeBSD
-<li>Solaris
-<li>MacOS 10
+<li>A command line interface (with full command editing features if
+GNU readline is available) that lets you play matches and sessions
+against GNU Backgammon with a rough ASCII representation of the board
+on text terminals.
+
+     <li>Support for a GTK+ interface with a graphical board window. Both
+2D and 3D graphics are available.
+
+     <li>Tournament match and money session cube handling and cubeful play. 
+All governed by an underlying cubeless money game based
+neuralnet.
+
+     <li>Support for both 1-sided and 2-sided bearoff databases: 1-sided
+bearoff database for 15 checkers on the first 6 points and optional
+2-sided database kept in memory. Optional larger 1-sided and 2-sided
+databases stored on disk.
+
+     <li>Automated rollouts of positions, with lookahead and race variance
+reduction where appropriate. Rollouts may be extended.
+
+     <li>Automatic and manual annotation (analysis and commentary) of games
+and matches.
+
+     <li>Record keeping of statistics of players in games and matches (both
+native inside GNU
+Backgammon and externally using relational databases and
+Python).
+
+     <li>Loading and saving analyzed games and matches as .sgf files (Smart
+Game Format).
+
+     <li>Exporting positions, games and matches to: (.eps) Encapsulated
+Postscript, (.gam) Jellyfish Game, (.html) HTML, (.mat) Jellyfish
+Match, (.pdf) PDF, (.png) Portable Network Graphics, (.pos) Jellyfish
+Position, (.ps) PostScript, (.sgf) Gnu Backgammon File, (.tex) LaTeX,
+(.txt) Plain Text, (.txt) Snowie Text
+
+     <li>Import of matches and positions from a number of file formats:
+(.bkg) Hans Berliner's BKG Format, (.gam) GammonEmpire Game, (.gam)
+PartyGammon Game, (.mat) Jellyfish Match, (.pos) Jellyfish Position,
+(.sgf) Gnu Backgammon File, (.sgg) GamesGrid Save Game, (.tmg)
+TrueMoneyGames, (.txt) Snowie Text
+
+     <li>Python Scripting ability.
+
+     <li>Native language support; 10 languages complete or in progress:
+(cs_CZ, da_DK, en_GB; en_US, fr_FR, de_DE, is_IS, it_IT, ja_JP, and
+tr_TR)
 </ul>
 
-<br><p>
-   <p>GNU Backgammon is available in different languages
+   <blockquote>
 
-     <ul>
-<li>English
-<li>German (nearly finished)
-<li>Italian (3/4 finished)
-<li>Japanese (2/3 finished)
-<li>Danish (1/4 finished)
-<li>Turkish (1/4 finished)
-<li>Icelandic (1/4 finished)
-<li>French (not ready yet)
-</ul>
+        <p><strong>Note</strong>
 
-<br><p>
-   <p>GNU Backgammon comes with
+        <p>Some language translations are not completed yet. 
+</blockquote>
 
-     <ul>
-<li>A Graphical User Interface (GUI) with 2D- or 3D-Animation
-<li>Including a selection of board designs to choose from
-<li>Powerful but simple tools to change or create your own design
-<li>You can choose colours, lighting, textures and even the perspective of the 3D board
-<li>A command line modus (CLI) with support of the script language python
-</ul>
-
-<br><p>
-   <p>With GNU Backgammon you may play
-
-     <ul>
-<li>backgammon, nackgammon or hypergammon
-<li>games, matches or sessions (<tt>gnubg</tt> adjusts its play always to the match score)
-</ul>
-
-<br><p>
-   <p>Gnubgs analysing functions allow you to
-
-     <ul>
-<li>get hints during the game
-<li>evaluate positions
-<li>use a tutor during the game
-<li>use a "temperature map" which gives a graphical simple overview of the possible
-results of the next dice roll
-<li>analyse or rollout positions, games, matches or sessions (with probably the most
-extensive controls to set speed and accuracy of any backgammon software)
-</ul>
-
-<br><p>
-   <p>You can
-
-     <ul>
-<li>setup, edit and save positions, games, matches and sessions
-<li>replay games, matches and sessions
-<li>record annotations
-<li>explore doubling windows, gammon prices and similar cube theory, valuable
-for money games and essential for match play
-<li>store error rates for different players
-</ul>
-
-<br><p>
-   <p>GNU Backgammon imports matches and sessions from
-
-     <ul>
-<li>Fibs
-<li>Gamesgrid
-<li>TrueMoneygame
-<li>Netgammon
-<li>Snowie
-<li>Jellyfish
-</ul>
-
-<br><p>
-   <p>GNU Backgammon exports positions, games, matches and sessions into
-
-     <ul>
-<li>*.pos
-<li>*.mat
-<li>plain text
-<li>different html formats
-<li>png
-<li>LaTeX
-<li>(Encapsulated) Postscript
-<li>PDF
-</ul>
-
-<br><p>
-   <p>With GNU Backgammon you may choose between the following dice generators
-
-     <ul>
-<li>Manual dice settings
-<li>from a file
-<li>a dice generator created by the user
-<li>Ansi
-<li>Blum, Blum and Shub
-<li>BSD
-<li>ISAAC
-<li>MD5
-<li>Mersenne Twister
-<li>www.random.org
-</ul>
-
-<br><p>
-   <p>GNU Backgammon comes with several databases for handling bearoffs and
-match equities, i.e.
-
-     <ul>
-<li>larger bearoff databases (to be generated)
-<li>databases for 1/2/3-chequer hypergammon (to be generated)
-<li>a selection of several Match Equity Tables (METs)
-<li>an interface to Hugh Sconyers huge databases for races and bearoffs
-</ul>
-
-<br><p>
-   <p>But don't forget ... GNU Backgammon is work in progress. Don't blame us if
-
-     <ul>
-<li>a feature isn't implemented yet
-<li>a feature doesn't work correctly
-<li><tt>gnubg</tt> crashes
-<li>your system suffers after gnubg is installed
-</ul>
-
-<br><p>
-   <p>Don't forget also ...
-
-     <ul>
-<li>it's free software (free as in "free speech", not in "free beer")
-<li>we are all volunteers
-<li>we need feedback and bug reports
-<li>we need your help
+<ul class="menu">
+<li><a accesskey="1" href="GPL-copying_002fwarranty-info.html#GPL-copying_002fwarranty-info">GPL copying/warranty info</a>
 </ul>
 
    </body></html>
