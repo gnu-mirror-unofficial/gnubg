@@ -1,220 +1,219 @@
-<meta http-equiv="refresh" content="0;
-      url=http://gnubg.org">
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 
-<!-- <?xml version="1.0" encoding="utf-8" ?> -->
-<!-- <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" -->
-<!--     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> -->
-<!-- <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"> -->
+<head>
+<title>GNU Backgammon</title>
+<meta http-equiv="content-type" content='text/html; charset=utf-8' />
+<link rel="stylesheet" type="text/css" href="/gnu.css" />
+<link rev="made" href="webmasters@gnu.org" />
+</head>
 
-<!-- <head> -->
-<!-- <title>GNU Backgammon</title> -->
-<!-- <meta http-equiv="content-type" content='text/html; charset=utf-8' /> -->
-<!-- <link rel="stylesheet" type="text/css" href="/gnu.css" /> -->
-<!-- <link rev="made" href="webmasters@gnu.org" /> -->
-<!-- </head> -->
+<!-- This document is in XML, and xhtml 1.0 -->
+<!-- Please make sure to properly nest your tags -->
+<!-- and ensure that your final document validates -->
+<!-- consistent with W3C xhtml 1.0 and CSS standards -->
+<!-- See validator.w3.org -->
 
-<!-- <\!-- This document is in XML, and xhtml 1.0 -\-> -->
-<!-- <\!-- Please make sure to properly nest your tags -\-> -->
-<!-- <\!-- and ensure that your final document validates -\-> -->
-<!-- <\!-- consistent with W3C xhtml 1.0 and CSS standards -\-> -->
-<!-- <\!-- See validator.w3.org -\-> -->
+<body>
 
-<!-- <body> -->
+<a href="#translations">Translations</a> of this page
 
-<!-- <a href="#translations">Translations</a> of this page -->
+<h3>GNU Backgammon</h3>
 
-<!-- <h3>GNU Backgammon</h3> -->
+<!-- When you replace this graphic, make sure you change -->
+<!-- the link to also point to the correct HTML page. -->
+<!-- If you make a new graphic for this page, make sure it -->
+<!-- has a corresponding entry in /graphics/graphics.html. -->
 
-<!-- <\!-- When you replace this graphic, make sure you change -\-> -->
-<!-- <\!-- the link to also point to the correct HTML page. -\-> -->
-<!-- <\!-- If you make a new graphic for this page, make sure it -\-> -->
-<!-- <\!-- has a corresponding entry in /graphics/graphics.html. -\-> -->
+<a href="/graphics/agnuhead.html"><img src="/graphics/gnu-head-sm.jpg" alt=" [image of the Head of a GNU] " width="129" height="122" /></a>
 
-<!-- <a href="/graphics/agnuhead.html"><img src="/graphics/gnu-head-sm.jpg" alt=" [image of the Head of a GNU] " width="129" height="122" /></a> -->
+<hr />
 
-<!-- <hr /> -->
+<!-- Put your content here -->
+<!-- Following is an example -->
+<h4>Table of Contents</h4>
+<ul>
+  <li>
+    <a href="#introduction" id="TOCintroduction">Introduction to GNU Backgammon</a>
+  </li>
+  <li><a href="#features" id="TOCfeatures">Features in GNU Backgammon</a></li>
+  <li><a href="#downloading" id="TOCdownloading">Downloading 
+  GNU Backgammon</a></li>
+  <li><a href="#documentation" id="TOCdocumentation">Documentation and
+  other resources</a></li>
+</ul>
 
-<!-- <\!-- Put your content here -\-> -->
-<!-- <\!-- Following is an example -\-> -->
-<!-- <h4>Table of Contents</h4> -->
-<!-- <ul> -->
-<!--   <li> -->
-<!--     <a href="#introduction" id="TOCintroduction">Introduction to GNU Backgammon</a> -->
-<!--   </li> -->
-<!--   <li><a href="#features" id="TOCfeatures">Features in GNU Backgammon</a></li> -->
-<!--   <li><a href="#downloading" id="TOCdownloading">Downloading  -->
-<!--   GNU Backgammon</a></li> -->
-<!--   <li><a href="#documentation" id="TOCdocumentation">Documentation and -->
-<!--   other resources</a></li> -->
-<!-- </ul> -->
+<hr />
 
-<!-- <hr /> -->
+<h4>
+<a href="#TOCintroduction" id="introduction">Introduction to GNU Backgammon</a>
+</h4>
 
-<!-- <h4> -->
-<!-- <a href="#TOCintroduction" id="introduction">Introduction to GNU Backgammon</a> -->
-<!-- </h4> -->
+   <p>GNU Backgammon (GNUbg)
+plays and analyzes backgammon games and matches. It is able to play and
+analyze both money games and tournament matches, evaluate and roll out
+positions, and more. Driven by a command-line interface, it displays an
+ASCII rendering of a board on text-only terminals, but also allows the
+user to play games and manipulate positions with a <a href="board.png">graphical GTK+
+	interface</a>. GNU Backgammon is
+extensible on platforms which support Python.
+</p>
 
-<!--    <p>GNU Backgammon (gnubg) -->
-<!-- plays and analyzes backgammon games and matches. It is able to play and -->
-<!-- analyze both money games and tournament matches, evaluate and roll out -->
-<!-- positions, and more. Driven by a command-line interface, it displays an -->
-<!-- ASCII rendering of a board on text-only terminals, but also allows the -->
-<!-- user to play games and manipulate positions with a <a href="board.png">graphical GTK+ -->
-<!-- 	interface</a>. GNU Backgammon is -->
-<!-- extensible on platforms which support Python. -->
-<!-- </p> -->
+   <p>GNU Backgammon is a world
+class opponent and rates at over 2000 on FIBS, the First Internet
+Backgammon Server.
 
-<!--    <p>GNU Backgammon is a world -->
-<!-- class opponent and rates at around 2000 on FIBS, the First Internet -->
-<!-- Backgammon Server &ndash; at its best, it is in the top 5 of over 6000 rated -->
-<!-- players there). GNU Backgammon -->
-<!-- can be played on numerous other on-line backgammon servers. -->
+   <p>The following features can be found in the current release of
+GNU Backgammon.
 
-<!--    <p>The following features can be found in the current release of -->
-<!-- GNU Backgammon. -->
+     <ul>
+<li>A command line interface (with full command editing features if
+GNU readline is available) that lets you play matches and sessions
+against GNU Backgammon with a rough ASCII representation of the board
+on text terminals.
 
-<!--      <ul> -->
-<!-- <li>A command line interface (with full command editing features if -->
-<!-- GNU readline is available) that lets you play matches and sessions -->
-<!-- against GNU Backgammon with a rough ASCII representation of the board -->
-<!-- on text terminals. -->
+     <li>Support for a GTK+ interface with a graphical board window. Both
+2D and 3D graphics are available.
 
-<!--      <li>Support for a GTK+ interface with a graphical board window. Both -->
-<!-- 2D and 3D graphics are available. -->
+     <li>Tournament match and money session cube handling and cubeful play. 
+All governed by an underlying cubeless money game based
+neuralnet.
 
-<!--      <li>Tournament match and money session cube handling and cubeful play.  -->
-<!-- All governed by an underlying cubeless money game based -->
-<!-- neuralnet. -->
+     <li>Support for both 1-sided and 2-sided bearoff databases: 1-sided
+bearoff database for 15 checkers on the first 6 points and optional
+2-sided database kept in memory. Optional larger 1-sided and 2-sided
+databases stored on disk.
 
-<!--      <li>Support for both 1-sided and 2-sided bearoff databases: 1-sided -->
-<!-- bearoff database for 15 checkers on the first 6 points and optional -->
-<!-- 2-sided database kept in memory. Optional larger 1-sided and 2-sided -->
-<!-- databases stored on disk. -->
+     <li>Automated rollouts of positions, with lookahead and race variance
+reduction where appropriate. Rollouts may be extended.
 
-<!--      <li>Automated rollouts of positions, with lookahead and race variance -->
-<!-- reduction where appropriate. Rollouts may be extended. -->
+     <li>Automatic and manual annotation (analysis and commentary) of games
+and matches.
 
-<!--      <li>Automatic and manual annotation (analysis and commentary) of games -->
-<!-- and matches. -->
+     <li>Record keeping of statistics of players in games and matches (both
+native inside GNU
+Backgammon and externally using relational databases and
+Python).
 
-<!--      <li>Record keeping of statistics of players in games and matches (both -->
-<!-- native inside GNU -->
-<!-- Backgammon and externally using relational databases and -->
-<!-- Python). -->
+     <li>Loading and saving analyzed games and matches as .sgf files (Smart
+Game Format).
 
-<!--      <li>Loading and saving analyzed games and matches as .sgf files (Smart -->
-<!-- Game Format). -->
+     <li>Exporting positions, games and matches to: (.eps) Encapsulated
+Postscript, (.gam) Jellyfish Game, (.html) HTML, (.mat) Jellyfish
+Match, (.pdf) PDF, (.png) Portable Network Graphics, (.pos) Jellyfish
+Position, (.ps) PostScript, (.sgf) GNU Backgammon File, (.tex) LaTeX,
+(.txt) Plain Text, (.txt) Snowie Text
 
-<!--      <li>Exporting positions, games and matches to: (.eps) Encapsulated -->
-<!-- Postscript, (.gam) Jellyfish Game, (.html) HTML, (.mat) Jellyfish -->
-<!-- Match, (.pdf) PDF, (.png) Portable Network Graphics, (.pos) Jellyfish -->
-<!-- Position, (.ps) PostScript, (.sgf) Gnu Backgammon File, (.tex) LaTeX, -->
-<!-- (.txt) Plain Text, (.txt) Snowie Text -->
+     <li>Import of matches and positions from a number of file
+       formats: (.bgf) BGRoom Game, (.gam) GammonEmpire Game,
+       (.gam) PartyGammon Game, (.mat) Jellyfish Match,
+       (.pos) Jellyfish Position, (.sgf) GNU Backgammon File,
+       (.sgg) GridGammon Save Game, (.tmg) TrueMoneyGames,
+       (.txt) Snowie Text
+     <li>Python Scripting ability.
 
-<!--      <li>Import of matches and positions from a number of file formats: -->
-<!-- (.bkg) Hans Berliner's BKG Format, (.gam) GammonEmpire Game, (.gam) -->
-<!-- PartyGammon Game, (.mat) Jellyfish Match, (.pos) Jellyfish Position, -->
-<!-- (.sgf) Gnu Backgammon File, (.sgg) GamesGrid Save Game, (.tmg) -->
-<!-- TrueMoneyGames, (.txt) Snowie Text -->
+     <li>Native language support; 14 languages complete or in
+progress: (cs_CZ, da_DK, en_GB; en_US, fr_FR, de_DE, el_GR, is_IS,
+it_IT, ja_JP, ro_RO, ru_RU, es_ES and tr_TR)
+</ul>
 
-<!--      <li>Python Scripting ability. -->
+<h4>
+<a href="#TOCdownloading" id="downloading">Downloading GNU Backgammon</a>
+</h4>
 
-<!--      <li>Native language support; 10 languages complete or in progress: -->
-<!-- (cs_CZ, da_DK, en_GB; en_US, fr_FR, de_DE, is_IS, it_IT, ja_JP, and -->
-<!-- tr_TR) -->
-<!-- </ul> -->
+<p>
+  Anonymous CVS access to the source repository is
+  <a href="https://savannah.gnu.org/cvs/?group=gnubg">available</a>. The current code is generally stable although less tested than the released versions.
+</p>
 
-<!-- <h4> -->
-<!-- <a href="#TOCdownloading" id="downloading">Downloading GNU Backgammon</a> -->
-<!-- </h4> -->
+<p>
+  GNU Backgammon should build on any reasonably recent POSIX environment. The only mandatory prerequisite is the availability of GLib, version 2.8 or higher. Optional features may have more prerequisites, though.
+</p>
 
-<!-- <p> -->
-<!-- Releases of the source will be made on <a href="ftp://alpha.gnu.org/gnu/gnubg/">the -->
-<!--   alpha.gnu.org FTP server</a>. The current pre-release is <a href="ftp://alpha.gnu.org/gnu/gnubg/README.txt">0.15</a>.</p> -->
+<p>
+  The source archive of the most recent release is <a href="http://files.gnubg.org/media/sources/gnubg-release-1.06.002-sources.tar.gz">gnubg-release-1.06.002-sources.tar.gz</a>.
+</p>
 
-<!-- <p> -->
-<!-- Anonymous CVS access to the very latest code -->
-<!--  is <a -->
-<!--  href="https://savannah.gnu.org/cvs/?group=gnubg">available</a>. Do -->
-<!--  not expect this code to be stable; it will generally  -->
-<!--  include both more features and more bugs than the main pre-release -->
-<!--  version. -->
-<!-- </p> -->
+<p>
+ GNU Backgammon is usually available as a binary package in Linux distributions and included in BSD and macOS ports repositories.
+</p>
 
-<!-- <p> -->
-<!-- Binary versions of the pre-releases as well as a lot of other stuff -->
-<!-- can be found at <a href="http://www.gnubg.org/">http://www.gnubg.org</a>.  -->
-<!-- </p> -->
+<p>
+  To install it on Windows, use
+  <a href="http://files.gnubg.org/media/windows/gnubg-1_06_002-20180802-setup.exe">gnubg-1_06_002-20180802-setup.exe</a>. 
+</p>
 
-<!-- <h4> -->
-<!-- <a href="#TOCdocumentation" id="documentation">Documentation and other -->
-<!-- resources</a> -->
-<!-- </h4> -->
+<h4>
+<a href="#TOCdocumentation" id="documentation">Documentation and other
+resources</a>
+</h4>
 
-<!-- <p><a href="/manual/gnubg/">The GNU Backgammon manual</a> is -->
-<!-- available in the distribution, but bear in mind that this manual is still being -->
-<!-- completed and might not correspond to any particular version of <tt>gnubg</tt>. -->
-<!-- Please <a href="mailto:bug-gnubg@gnu.org">send comments</a> if you would like -->
-<!-- to improve or extend the manual.</p> -->
+<p><a href="/manual/gnubg/">The GNU Backgammon manual</a> is
+available in the distribution, but bear in mind that this manual is still being
+completed and might not correspond to any particular version of <tt>gnubg</tt>.
+Please <a href="mailto:bug-gnubg@gnu.org">send comments</a> if you would like
+to improve or extend the manual.</p>
 
-<!-- <p> -->
-<!--  Bugs, feature requests, patches, etc. should be sent to the <a -->
-<!--  href="mailto:bug-gnubg@gnu.org">gnubg mailing list</a> or submitted -->
-<!--  using the <a href="https://savannah.gnu.org/bugs/?group=gnubg">bug -->
-<!--  tracker</a>.  -->
-<!-- </p> -->
+<p>
+ Bugs, feature requests, patches, etc. should be sent to the <a
+ href="mailto:bug-gnubg@gnu.org">gnubg mailing list</a> or submitted
+ using the <a href="https://savannah.gnu.org/bugs/?group=gnubg">bug
+ tracker</a>. 
+</p>
 
-<!-- Additional information may be found at <a -->
-<!-- href="http://www.gnubg.org/">http://www.gnubg.org</a>. -->
+Additional information may be found at <a
+href="http://www.gnubg.org/">http://www.gnubg.org</a>.
 
 
-<!-- <\!-- If needed, change the copyright block at the bottom. In general, -\-> -->
-<!-- <\!-- all pages on the GNU web server should have the section about    -\-> -->
-<!-- <\!-- verbatim copying.  Please do NOT remove this without talking     -\-> -->
-<!-- <\!-- with the webmasters first. -\->  -->
-<!-- <\!-- Please make sure the copyright date is consistent with the document -\-> -->
-<!-- <\!-- and that it is like this "2001, 2002" not this "2001-2002." -\-> -->
+<!-- If needed, change the copyright block at the bottom. In general, -->
+<!-- all pages on the GNU web server should have the section about    -->
+<!-- verbatim copying.  Please do NOT remove this without talking     -->
+<!-- with the webmasters first. --> 
+<!-- Please make sure the copyright date is consistent with the document -->
+<!-- and that it is like this "2001, 2002" not this "2001-2002." -->
 
-<!-- <div class="copyright"> -->
-<!-- <p> -->
-<!-- Return to the <a href="/home.html">GNU Project home page</a>. -->
-<!-- </p> -->
+<div class="copyright">
+<p>
+Return to the <a href="/home.html">GNU Project home page</a>.
+</p>
 
-<!-- <p> -->
-<!-- Please send FSF &amp; GNU inquiries to  -->
-<!-- <a href="mailto:gnu@gnu.org"><em>gnu@gnu.org</em></a>. -->
-<!-- There are also <a href="http://www.fsf.org/about/contact.html">other ways to contact</a>  -->
-<!-- the FSF. -->
-<!-- <br /> -->
-<!-- Please send broken links and other corrections (or suggestions) to -->
-<!-- <a href="mailto:webmasters@gnu.org"><em>webmasters@gnu.org</em></a>. -->
-<!-- </p> -->
+<p>
+Please send FSF &amp; GNU inquiries to 
+<a href="mailto:gnu@gnu.org"><em>gnu@gnu.org</em></a>.
+There are also <a href="http://www.fsf.org/about/contact.html">other ways to contact</a> 
+the FSF.
+<br />
+Please send broken links and other corrections (or suggestions) to
+<a href="mailto:webmasters@gnu.org"><em>webmasters@gnu.org</em></a>.
+</p>
 
-<!-- <p> -->
-<!-- Please see the  -->
-<!-- <a href="/server/standards/README.translations.html">Translations -->
-<!-- README</a> for information on coordinating and submitting -->
-<!-- translations of this article. -->
-<!-- </p> -->
+<p>
+Please see the 
+<a href="/server/standards/README.translations.html">Translations
+README</a> for information on coordinating and submitting
+translations of this article.
+</p>
 
-<!-- <p> -->
-<!-- Copyright &copy; 2001, 2002, 2003, 2004 Free Software Foundation, Inc., -->
-<!-- 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA -->
-<!-- <br /> -->
-<!-- Verbatim copying and distribution of this entire article is -->
-<!-- permitted in any medium without royalty provided this notice is  -->
-<!-- preserved. -->
-<!-- </p> -->
+<p>
+Copyright &copy; 2001, 2002, 2003, 2004 Free Software Foundation, Inc.,
+51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA
+<br />
+Verbatim copying and distribution of this entire article is
+permitted in any medium without royalty provided this notice is 
+preserved.
+</p>
 
-<!-- <p> -->
-<!-- Updated: -->
-<!-- <\!-- timestamp start -\-> -->
-<!-- $Date: 2013/10/08 21:57:58 $ $Author: brandon $ -->
-<!-- <\!-- timestamp end -\-> -->
-<!-- </p> -->
-<!-- </div> -->
+<p>
+Updated:
+<!-- timestamp start -->
+$Date: 2018/10/14 16:54:33 $ $Author: plm $
+<!-- timestamp end -->
+</p>
+</div>
 
-<!-- <hr /> -->
+<hr />
 
-<!-- </body> -->
-<!-- </html> -->
+</body>
+</html>
